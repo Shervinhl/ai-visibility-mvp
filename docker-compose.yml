@@ -1,0 +1,187 @@
+version: '3.9'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai-visibility-postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-aivisibility}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-devpassword}
+      POSTGRES_DB: ${DB_NAME:-ai_visibility}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-aivisibility}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai-visibility-network
+
+  # Redis Cache & Job Queue
+  redis:
+    image: redis:7-alpine
+    container_name: ai-visibility-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai-visibility-network
+
+  # Backend API Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-visibility-backend
+    environment:
+      NODE_ENV: development
+      
+      # Database
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-aivisibility}
+      DB_PASSWORD: ${DB_PASSWORD:-devpassword}
+      DB_NAME: ${DB_NAME:-ai_visibility}
+      
+      # Redis
+      REDIS_URL: redis://redis:6379
+      
+      # API
+      API_PORT: 4000
+      API_HOST: 0.0.0.0
+      
+      # Authentication
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-key-change-in-prod}
+      JWT_EXPIRE: 7d
+      
+      # AI Services
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      
+      # Web Crawling
+      MAX_PAGES_PER_AUDIT: 500
+      CRAWL_TIMEOUT_MS: 30000
+      
+      # Logging
+      LOG_LEVEL: debug
+      
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src
+      - /app/node_modules
+    command: npm run dev
+    networks:
+      - ai-visibility-network
+
+  # Background Job Processor
+  worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.worker
+    container_name: ai-visibility-worker
+    environment:
+      NODE_ENV: development
+      
+      # Database
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-aivisibility}
+      DB_PASSWORD: ${DB_PASSWORD:-devpassword}
+      DB_NAME: ${DB_NAME:-ai_visibility}
+      
+      # Redis
+      REDIS_URL: redis://redis:6379
+      
+      # AI Services
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      
+      # Logging
+      LOG_LEVEL: debug
+      WORKER_CONCURRENCY: 2
+      
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src
+      - /app/node_modules
+    command: npm run worker
+    networks:
+      - ai-visibility-network
+
+  # Frontend React App
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-visibility-frontend
+    environment:
+      REACT_APP_API_URL: http://localhost:4000
+      REACT_APP_ENV: development
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/src:/app/src
+      - /app/node_modules
+    command: npm start
+    networks:
+      - ai-visibility-network
+
+  # pgAdmin for Database Management (optional)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ai-visibility-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@aivisibility.local
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - ai-visibility-network
+
+  # Redis Commander for Cache Management (optional)
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: ai-visibility-redis-commander
+    environment:
+      REDIS_HOSTS: local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - ai-visibility-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  ai-visibility-network:
+    driver: bridge

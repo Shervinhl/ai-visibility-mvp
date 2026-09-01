@@ -1,0 +1,107 @@
+version: '3.9'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai-visibility-postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-aivisibility}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-devpassword}
+      POSTGRES_DB: ${DB_NAME:-ai_visibility}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-aivisibility}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai-visibility-network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: ai-visibility-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai-visibility-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-visibility-backend
+    environment:
+      NODE_ENV: development
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-aivisibility}
+      DB_PASSWORD: ${DB_PASSWORD:-devpassword}
+      DB_NAME: ${DB_NAME:-ai_visibility}
+      REDIS_URL: redis://redis:6379
+      API_PORT: 4000
+      API_HOST: 0.0.0.0
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-key-change-in-prod}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      LOG_LEVEL: debug
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src
+      - /app/node_modules
+    command: npm run dev
+    networks:
+      - ai-visibility-network
+
+  # pgAdmin for Database Management
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ai-visibility-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - ai-visibility-network
+
+  # Redis Commander for Cache Management
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: ai-visibility-redis-commander
+    environment:
+      REDIS_HOSTS: local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - ai-visibility-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  ai-visibility-network:
+    driver: bridge
