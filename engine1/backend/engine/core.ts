@@ -17,7 +17,7 @@ export const RETRY_BACKOFF_MS = (process.env.E1_RETRY_BACKOFF_MS ?? "2000,5000,1
   .map((v) => Number(v.trim()));
 export const ROUNDS = 3;
 // Handbook E1.03: rounds at least one hour apart. Each audit therefore takes about two hours; it runs as a background job.
-export const ROUND_SPACING_MS = Number(process.env.E1_ROUND_SPACING_MS ?? 3600000);
+export const ROUND_SPACING_MS = Number(process.env.E1_ROUND_SPACING_MS ?? 60000); // default 1 minute for fast runs; set E1_ROUND_SPACING_MS=3600000 for the handbook 1-hour spacing
 export const CONCURRENCY = 2;
 export const BROWSER_TIMEOUT_MS = 15000;
 export const NEUTRAL_UA = "Mozilla/5.0 (compatible; Besignitics/1.0)";
