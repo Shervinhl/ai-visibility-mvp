@@ -1,3 +1,10 @@
+import { existsSync } from "fs";
+import path from "path";
+
+// Load v2/backend/.env if present (Node 21.7+). Real environment variables win over the file.
+const envFile = path.resolve(process.cwd(), ".env");
+if (existsSync(envFile)) process.loadEnvFile(envFile);
+
 import { loadConfig } from "./config";
 import { openDb } from "./db/db";
 import { realClock } from "./db/repo";
