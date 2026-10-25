@@ -101,7 +101,7 @@ function htmlGate(d: SiteData, url: string, opts: { nonHtmlNotApplicable: boolea
   if (!isHtmlContentType(obs.contentType)) {
     if (opts.nonHtmlNotApplicable) {
       return {
-        result: page(url, "NOT_APPLICABLE", `This page is a ${obs.contentType} file, not an HTML page, so ${opts.checkLabel} does not apply.`, null, ev(d, url, obsSummary(obs), obs.fetchedAt)),
+        result: page(url, "NOT_APPLICABLE", `This page is a ${obs.contentType} file, not an HTML page, so ${opts.checkLabel} does not apply.`, "Does not apply; no action needed.", ev(d, url, obsSummary(obs), obs.fetchedAt)),
       };
     }
   }
