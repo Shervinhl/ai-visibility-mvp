@@ -65,7 +65,7 @@ export function buildReport(db: Db, businessId: string, ai: AiConfig, opts: { ch
         overall: aggregateOverall(runs, cells, "all providers", ai.minAnswersForComparison),
         perProvider: providers.map((p) => aggregateOverall(runs.filter((r) => r.provider === p), cells.filter((c) => c.provider === p), p, ai.minAnswersForComparison)),
         competitors: facts.content.competitors.length ? aggregateCompetitors(runs, facts.content.competitors, cells) : { note: "No competitor list in the fact list, so competitor mentions are not counted." },
-        humanReview: { open: queue.filter((q) => !q.done).length, total: queue.length, agreement: repo.labelAgreement(db, ids) },
+        humanReview: { open: queue.filter((q) => !q.done).length, items: queue.length, agreement: repo.labelAgreement(db, ids) },
       };
     }
   }

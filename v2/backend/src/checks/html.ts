@@ -15,9 +15,18 @@ export function loadHtml(html: string): CheerioAPI {
  * Text a reader sees without JavaScript: body text excluding script, style, template and svg.
  * Image alt text is deliberately excluded (A6: "text, not images").
  */
+const BLOCK_TAGS =
+  "address,article,aside,blockquote,dd,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,li,main,nav,ol,p,pre,section,table,tbody,td,tfoot,th,thead,tr,ul,option,label,button,summary,details";
+
 export function visibleText(html: string): string {
   const $ = load(html);
   $("script, style, template, svg, head").remove();
+  // Block elements are separate pieces of text: "<h1>A</h1><p>B</p>" reads "A B", not "AB".
+  $("br").replaceWith(" ");
+  $(BLOCK_TAGS).each((_, el) => {
+    $(el).prepend(" ");
+    $(el).append(" ");
+  });
   return $("body").length ? $("body").text().replace(/\s+/g, " ").trim() : $.root().text().replace(/\s+/g, " ").trim();
 }
 

@@ -7,7 +7,7 @@ import { TextGenerator } from "../questions/generate";
  * Keys come from environment variables only. Every run stores the exact settings that were sent.
  */
 
-export type ProviderName = "anthropic" | "openai" | "gemini" | "fake";
+export type ProviderName = "anthropic" | "openai" | "gemini" | `fake-${string}`;
 
 export interface ProviderSettings {
   provider: ProviderName;
@@ -166,11 +166,10 @@ export function asGenerator(p: AiProvider, timeoutMs: number): TextGenerator {
 export type FakeScript = (question: string, callNo: number) => { text: string; finishReason?: string; refusal?: boolean } | { error: number; retryAfter?: string } | "timeout";
 
 export class FakeProvider implements AiProvider {
-  readonly name = "fake" as const;
   readonly settings: ProviderSettings;
   private readonly calls = new Map<string, number>();
-  constructor(readonly model: string, private readonly script: FakeScript) {
-    this.settings = { provider: "fake", model, temperature: 0, maxTokens: 1024, systemPrompt: null, tools: [], endpoint: "fake://", apiVersion: null };
+  constructor(readonly name: `fake-${string}`, readonly model: string, private readonly script: FakeScript) {
+    this.settings = { provider: name, model, temperature: 0, maxTokens: 1024, systemPrompt: null, tools: [], endpoint: "fake://", apiVersion: null };
   }
   async ask(question: string): Promise<ProviderReply> {
     const n = (this.calls.get(question) ?? 0) + 1;
