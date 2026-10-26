@@ -17,6 +17,10 @@ export interface FactSuggestion {
   contactPhone: string;
   contactUrl: string;
   prices: { plan: string; amount: number; currency: string; period: string; pageUrl: string }[];
+  shortPhrase: string;
+  serviceArea: string;
+  competitors: string[];
+  keyPages: string[];
 }
 
 export interface SuggestResult {
@@ -106,7 +110,9 @@ export function metadataSuggestion(html: string, finalUrl: string): FactSuggesti
   const title = ($("title").first().text() || "").replace(/\s+/g, " ").trim();
   const siteName = meta("og:site_name");
   const text = visibleText(html);
-  const email = (text.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/) ?? [""])[0];
+  // Emails are often only in mailto: links, which are not visible text.
+  const mailto = ($("a[href^='mailto:']").first().attr("href") ?? "").replace(/^mailto:/i, "").split("?")[0].trim();
+  const email = mailto || (text.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/) ?? [""])[0];
   const phone = (text.match(/\+?\d[\d ()\-.]{7,}\d/) ?? [""])[0].trim();
   const contactHref = $("a[href]")
     .toArray()
@@ -134,13 +140,17 @@ export function metadataSuggestion(html: string, finalUrl: string): FactSuggesti
     contactPhone: phone,
     contactUrl,
     prices: [],
+    shortPhrase: "",
+    serviceArea: "",
+    competitors: [],
+    keyPages: [],
   };
 }
 
 const PROMPT = (website: string, text: string) => `You are filling in a business profile from its website text.
 Use ONLY facts stated in the text. If a fact is not stated, return an empty string or empty array. Do not guess.
 Return ONLY a JSON object with exactly these keys:
-{"businessName": string, "aliases": string[], "whatItDoes": string (one paragraph), "productCategory": string (short phrase, e.g. "AI video clipping tool"), "products": [{"name": string, "description": string}], "buyers": string[] (who the product is for), "locations": string[] (e.g. "Toronto, ON, Canada"), "contactEmail": string, "contactPhone": string, "contactUrl": string, "prices": [{"plan": string, "amount": number, "currency": string, "period": string, "pageUrl": string}]}
+{"businessName": string, "aliases": string[], "whatItDoes": string (one paragraph), "productCategory": string (short phrase, e.g. "AI video clipping tool"), "products": [{"name": string, "description": string}], "buyers": string[] (who the product is for), "locations": string[] (e.g. "Toronto, ON, Canada"), "contactEmail": string, "contactPhone": string, "contactUrl": string, "prices": [{"plan": string, "amount": number, "currency": string, "period": string, "pageUrl": string}], "shortPhrase": string (3 to 10 words copied exactly from the homepage text that say what the business does), "serviceArea": string (where the service is available, e.g. "Worldwide, online"), "competitors": string[] (ONLY companies the website itself names as alternatives or comparisons; otherwise empty)}
 Website: ${website}
 Website text:
 """
@@ -171,6 +181,10 @@ const FIELD_LABELS: { key: keyof FactSuggestion; label: string }[] = [
   { key: "contactPhone", label: "Contact phone" },
   { key: "contactUrl", label: "Contact page URL" },
   { key: "prices", label: "Prices or plans" },
+  { key: "shortPhrase", label: "Short phrase from your site" },
+  { key: "serviceArea", label: "Service area" },
+  { key: "competitors", label: "Competitors" },
+  { key: "keyPages", label: "Key pages" },
 ];
 
 function isFilled(v: unknown): boolean {
@@ -202,7 +216,7 @@ export async function suggestFacts(website: string, generator: TextGenerator | n
     if (!base.contactEmail && extra.contactEmail) base.contactEmail = extra.contactEmail;
     if (!base.contactPhone && extra.contactPhone) base.contactPhone = extra.contactPhone;
   }
-  let suggestion: FactSuggestion = { ...base, products: [], buyers: [], locations: [], aliases: [], productCategory: "", prices: [] };
+  let suggestion: FactSuggestion = { ...base, products: [], buyers: [], locations: [], aliases: [], productCategory: "", prices: [], shortPhrase: "", serviceArea: "", competitors: [], keyPages: pages.map((p) => p.url) };
   let source: SuggestResult["source"] = "page-metadata";
   if (generator) {
     const text = pages.map((p) => `--- PAGE: ${p.url} ---\n${visibleText(p.html)}`).join("\n\n").slice(0, MAX_TEXT);
@@ -213,6 +227,7 @@ export async function suggestFacts(website: string, generator: TextGenerator | n
         suggestion = { ...suggestion };
         for (const { key } of FIELD_LABELS) {
           const v = ai[key];
+          if (key === "keyPages") continue; // taken from the pages actually read, not from the AI
           if (isFilled(v)) (suggestion as unknown as Record<string, unknown>)[key] = v;
         }
         source = "ai";

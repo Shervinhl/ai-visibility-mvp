@@ -64,6 +64,10 @@ interface SuggestResponse {
     contactPhone: string;
     contactUrl: string;
     prices: { plan: string; amount: number; currency: string; period: string; pageUrl: string }[];
+    shortPhrase: string;
+    serviceArea: string;
+    competitors: string[];
+    keyPages: string[];
   };
   filled: string[];
   notFound: string[];
@@ -191,6 +195,10 @@ function fillEmpty(f: Form, s: SuggestResponse["suggestion"]): Form {
   put("contactUrl", s.contactUrl);
   put("contactEmail", s.contactEmail);
   put("contactPhone", s.contactPhone);
+  put("whatItDoesPhrase", s.shortPhrase);
+  put("serviceArea", s.serviceArea);
+  put("competitors", s.competitors.join("\n"));
+  put("keyPages", s.keyPages.join("\n"));
   return next;
 }
 
