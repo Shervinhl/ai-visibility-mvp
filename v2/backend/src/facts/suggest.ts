@@ -2,6 +2,7 @@ import axios from "axios";
 import { TextGenerator } from "../questions/generate";
 import { isAllowed, parseRobots } from "../checks/robots";
 import { loadHtml, visibleText } from "../checks/html";
+import { ProviderHttpError } from "../ai/providers";
 
 /** Fields the AI (or page metadata) can fill. Every field is optional; missing ones are listed in notFound. */
 export interface FactSuggestion {
@@ -178,6 +179,17 @@ function isFilled(v: unknown): boolean {
   return typeof v === "string" && v.trim().length > 0;
 }
 
+/** Pull the readable message out of a provider error body (Anthropic and OpenAI both use error.message). */
+export function providerMessage(body: string): string {
+  try {
+    const j = JSON.parse(body) as { error?: { message?: string; type?: string } };
+    if (j.error?.message) return `${j.error.type ?? "error"}: ${j.error.message}`;
+  } catch {
+    // not JSON; fall through
+  }
+  return body.slice(0, 300);
+}
+
 /** Fill every field the AI or the pages can supply. Anything else is reported as not found. */
 export async function suggestFacts(website: string, generator: TextGenerator | null): Promise<SuggestResult> {
   const { pages, warnings: fetchWarnings } = await fetchForSuggest(website);
@@ -208,7 +220,9 @@ export async function suggestFacts(website: string, generator: TextGenerator | n
         warnings.push("The AI reply could not be read, so only page details were used.");
       }
     } catch (e) {
-      warnings.push(`The AI could not be reached (${(e as Error).message}), so only page details were used.`);
+      // Show the provider's own explanation (for example "credit balance too low" or "model not found").
+      const detail = e instanceof ProviderHttpError ? `${e.message}: ${providerMessage(e.body)}` : (e as Error).message;
+      warnings.push(`The AI could not be reached (${detail}), so only page details were used.`);
     }
   } else {
     warnings.push(
