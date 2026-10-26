@@ -36,3 +36,26 @@ test("AI reply is read even when wrapped in text; bad replies return null", () =
   assert.deepEqual(parseAiSuggestion('Here: {"businessName":"Acme","buyers":["Teams"]} done')?.businessName, "Acme");
   assert.equal(parseAiSuggestion("no json here"), null);
 });
+
+import { conformToRules } from "../src/facts/suggest";
+
+test("AI values are trimmed to the fact list rules and the reason is reported", () => {
+  const competitors = Array.from({ length: 12 }, (_, i) => `Rival ${i}`);
+  const { value, notes } = conformToRules(
+    {
+      businessName: " Flowjin ", aliases: [], whatItDoes: "x", productCategory: "tool", products: [], buyers: ["Creators"], locations: [],
+      contactEmail: "not-an-email", contactPhone: "", contactUrl: "mailto:a@b.com", prices: [{ plan: "Pro", amount: 29, currency: "usd", period: "month", pageUrl: "bad" }],
+      shortPhrase: "one two", serviceArea: "", competitors, keyPages: ["https://x.com/", "nope"],
+    } as never,
+    20
+  );
+  assert.equal(value.competitors.length, 10);
+  assert.equal(value.keyPages.length, 1);
+  assert.equal(value.contactEmail, "");
+  assert.equal(value.contactUrl, "");
+  assert.equal(value.prices[0].currency, "USD");
+  assert.equal(value.prices[0].pageUrl, "");
+  assert.equal(value.shortPhrase, "");
+  assert.equal(value.businessName, "Flowjin");
+  assert.ok(notes.some((n) => n.startsWith("Competitors")));
+});

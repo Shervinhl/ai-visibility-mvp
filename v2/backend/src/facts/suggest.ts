@@ -3,6 +3,7 @@ import { TextGenerator } from "../questions/generate";
 import { isAllowed, parseRobots } from "../checks/robots";
 import { loadHtml, visibleText } from "../checks/html";
 import { ProviderHttpError } from "../ai/providers";
+import { isHttpUrl, MAX_COMPETITORS, MAX_PRODUCTS } from "./types";
 
 /** Fields the AI (or page metadata) can fill. Every field is optional; missing ones are listed in notFound. */
 export interface FactSuggestion {
@@ -204,8 +205,55 @@ export function providerMessage(body: string): string {
   return body.slice(0, 300);
 }
 
+/**
+ * Make every value follow the same rules the fact list is saved with (see validateFactList).
+ * Values that break a rule are trimmed or dropped, and the reason is reported, so the form never gets an invalid list.
+ */
+export function conformToRules(s: FactSuggestion, maxKeyPages: number): { value: FactSuggestion; notes: string[] } {
+  const notes: string[] = [];
+  const clean = (list: unknown[]) => list.filter((x): x is string => typeof x === "string").map((x) => x.trim()).filter(Boolean);
+  const uniq = (list: string[]) => [...new Set(list)];
+  const out: FactSuggestion = { ...s };
+
+  out.businessName = (out.businessName ?? "").trim();
+  out.whatItDoes = (out.whatItDoes ?? "").trim();
+  out.productCategory = (out.productCategory ?? "").trim();
+  out.aliases = uniq(clean(out.aliases ?? []));
+  out.buyers = uniq(clean(out.buyers ?? []));
+  out.locations = uniq(clean(out.locations ?? []));
+
+  const products = (out.products ?? []).filter((p) => p && typeof p.name === "string" && p.name.trim()).map((p) => ({ name: p.name.trim(), description: String(p.description ?? "").trim() }));
+  if (products.length > MAX_PRODUCTS) notes.push(`Products: kept the first ${MAX_PRODUCTS} of ${products.length} (the limit).`);
+  out.products = products.slice(0, MAX_PRODUCTS);
+
+  const competitors = uniq(clean(out.competitors ?? []));
+  if (competitors.length > MAX_COMPETITORS) notes.push(`Competitors: kept the first ${MAX_COMPETITORS} of ${competitors.length} (the limit).`);
+  out.competitors = competitors.slice(0, MAX_COMPETITORS);
+
+  const keyPages = uniq((out.keyPages ?? []).filter((u) => isHttpUrl(u)));
+  if (keyPages.length > maxKeyPages) notes.push(`Key pages: kept the first ${maxKeyPages} of ${keyPages.length} (the limit).`);
+  out.keyPages = keyPages.slice(0, maxKeyPages);
+
+  out.prices = (out.prices ?? [])
+    .filter((p) => p && typeof p.plan === "string" && p.plan.trim() && typeof p.amount === "number" && Number.isFinite(p.amount) && typeof p.currency === "string" && typeof p.period === "string")
+    .map((p) => ({ plan: p.plan.trim(), amount: p.amount, currency: p.currency.trim().toUpperCase(), period: p.period.trim(), pageUrl: isHttpUrl(p.pageUrl) ? p.pageUrl : "" }));
+
+  const words = (out.shortPhrase ?? "").trim().split(/\s+/).filter(Boolean).length;
+  if (out.shortPhrase && (words < 3 || words > 10)) {
+    notes.push("Short phrase: dropped because it was not 3 to 10 words.");
+    out.shortPhrase = "";
+  }
+  out.shortPhrase = (out.shortPhrase ?? "").trim();
+  out.serviceArea = (out.serviceArea ?? "").trim();
+
+  out.contactEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((out.contactEmail ?? "").trim()) ? out.contactEmail.trim() : "";
+  out.contactUrl = isHttpUrl(out.contactUrl) ? out.contactUrl : "";
+  out.contactPhone = (out.contactPhone ?? "").trim();
+  return { value: out, notes };
+}
+
 /** Fill every field the AI or the pages can supply. Anything else is reported as not found. */
-export async function suggestFacts(website: string, generator: TextGenerator | null): Promise<SuggestResult> {
+export async function suggestFacts(website: string, generator: TextGenerator | null, checkConfigMaxKeyPages = 20): Promise<SuggestResult> {
   const { pages, warnings: fetchWarnings } = await fetchForSuggest(website);
   const warnings: string[] = [...fetchWarnings];
   const home = pages[0];
@@ -244,6 +292,9 @@ export async function suggestFacts(website: string, generator: TextGenerator | n
       `Without an AI key the tool can only read the company name, description, contact email, phone and contact page. It cannot read products, buyer types, locations or prices. Add ANTHROPIC_API_KEY (or OPENAI_API_KEY / GEMINI_API_KEY) to backend/.env and restart the backend to fill every field. Pages read: ${pages.map((p) => p.url).join(", ")}.`
     );
   }
+  const conformed = conformToRules(suggestion, checkConfigMaxKeyPages);
+  suggestion = conformed.value;
+  warnings.push(...conformed.notes);
   const filled = FIELD_LABELS.filter(({ key }) => isFilled((suggestion as unknown as Record<string, unknown>)[key])).map((f) => f.label);
   const notFound = FIELD_LABELS.filter(({ key }) => !isFilled((suggestion as unknown as Record<string, unknown>)[key])).map((f) => f.label);
   return { suggestion, filled, notFound, source, warnings };

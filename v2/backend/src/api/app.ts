@@ -75,7 +75,7 @@ export function createApp(deps: AppDeps): AppHandle {
     wrap(async (req, res) => {
       const website = typeof req.body?.website === "string" ? req.body.website : "";
       try {
-        const out = await suggestFacts(website, deps.generator());
+        const out = await suggestFacts(website, deps.generator(), checkConfig.maxKeyPages);
         res.json(out);
       } catch (e) {
         if (e instanceof SuggestError) {

@@ -73,10 +73,10 @@ export interface FactValidationIssue {
   problem: string;
 }
 
-const MAX_PRODUCTS = 10;
-const MAX_COMPETITORS = 10;
+export const MAX_PRODUCTS = 10;
+export const MAX_COMPETITORS = 10;
 
-function isHttpUrl(value: unknown): value is string {
+export function isHttpUrl(value: unknown): value is string {
   if (typeof value !== "string") return false;
   try {
     const u = new URL(value);
