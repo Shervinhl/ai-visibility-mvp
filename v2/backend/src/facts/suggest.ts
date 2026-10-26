@@ -194,6 +194,39 @@ function isFilled(v: unknown): boolean {
   return typeof v === "string" && v.trim().length > 0;
 }
 
+/** Monthly plans from the page's structured data (JSON-LD offers). Yearly offers are skipped on purpose. */
+export function jsonLdMonthlyPrices(html: string, pageUrl: string): { plan: string; amount: number; currency: string; period: string; pageUrl: string }[] {
+  const $ = loadHtml(html);
+  const out: { plan: string; amount: number; currency: string; period: string; pageUrl: string }[] = [];
+  const visit = (node: unknown) => {
+    if (!node || typeof node !== "object") return;
+    if (Array.isArray(node)) {
+      node.forEach(visit);
+      return;
+    }
+    const o = node as Record<string, unknown>;
+    if (typeof o.price === "string" || typeof o.price === "number") {
+      const name = String(o.name ?? "").trim();
+      const amount = Number(o.price);
+      const period = /yearly|annual/i.test(name) ? "year" : /monthly/i.test(name) ? "month" : "";
+      if (name && Number.isFinite(amount) && period === "month") {
+        const plan = name.replace(/\s*-\s*monthly$/i, "").replace(/\s+package$/i, "").trim();
+        out.push({ plan, amount, currency: String(o.priceCurrency ?? "").toUpperCase(), period, pageUrl });
+      }
+    }
+    Object.values(o).forEach(visit);
+  };
+  $("script[type='application/ld+json']").each((_, el) => {
+    try {
+      visit(JSON.parse($(el).html() ?? ""));
+    } catch {
+      // invalid JSON-LD is reported by check A12
+    }
+  });
+  const seen = new Set<string>();
+  return out.filter((p) => (seen.has(p.plan.toLowerCase()) ? false : (seen.add(p.plan.toLowerCase()), true)));
+}
+
 /** Pull the readable message out of a provider error body (Anthropic and OpenAI both use error.message). */
 export function providerMessage(body: string): string {
   try {
@@ -266,8 +299,12 @@ export async function suggestFacts(website: string, generator: TextGenerator | n
   }
   let suggestion: FactSuggestion = { ...base, products: [], buyers: [], locations: [], aliases: [], productCategory: "", prices: [], shortPhrase: "", serviceArea: "", competitors: [], keyPages: pages.map((p) => p.url) };
   let source: SuggestResult["source"] = "page-metadata";
+  const offers = pages.flatMap((p) => jsonLdMonthlyPrices(p.html, p.url));
+  suggestion.prices = offers;
   if (generator) {
-    const text = pages.map((p) => `--- PAGE: ${p.url} ---\n${visibleText(p.html)}`).join("\n\n").slice(0, MAX_TEXT);
+    const offers = pages.flatMap((p) => jsonLdMonthlyPrices(p.html, p.url));
+    const offerText = offers.length ? `--- STRUCTURED PRICE DATA (monthly plans, from the page code) ---\n${JSON.stringify(offers)}\n\n` : "";
+    const text = (offerText + pages.map((p) => `--- PAGE: ${p.url} ---\n${visibleText(p.html)}`).join("\n\n")).slice(0, MAX_TEXT);
     try {
       const reply = await generator.generate(PROMPT(home.url, text));
       const ai = parseAiSuggestion(reply);
@@ -276,9 +313,17 @@ export async function suggestFacts(website: string, generator: TextGenerator | n
         for (const { key } of FIELD_LABELS) {
           const v = ai[key];
           if (key === "keyPages") continue; // taken from the pages actually read, not from the AI
+          if (key === "prices") continue; // merged below with the structured price data
           if (isFilled(v)) (suggestion as unknown as Record<string, unknown>)[key] = v;
         }
         source = "ai";
+        // Every plan in the structured data is kept; AI-only plans are added after them.
+        const aiPrices = Array.isArray(ai.prices) ? ai.prices : [];
+        const merged = [...offers];
+        for (const p of aiPrices) {
+          if (p && typeof p.plan === "string" && !merged.some((m) => m.plan.toLowerCase() === p.plan.toLowerCase())) merged.push(p as never);
+        }
+        suggestion.prices = merged;
       } else {
         warnings.push("The AI reply could not be read, so only page details were used.");
       }

@@ -59,3 +59,15 @@ test("AI values are trimmed to the fact list rules and the reason is reported", 
   assert.equal(value.businessName, "Flowjin");
   assert.ok(notes.some((n) => n.startsWith("Competitors")));
 });
+
+import { jsonLdMonthlyPrices } from "../src/facts/suggest";
+
+test("monthly plans are read from structured data; yearly offers are skipped", () => {
+  const html = `<script type="application/ld+json">{"@type":"SoftwareApplication","offers":[
+    {"@type":"Offer","name":"Starter Package - Monthly","priceCurrency":"USD","price":"19"},
+    {"@type":"Offer","name":"Starter Package - Yearly","priceCurrency":"USD","price":"10"},
+    {"@type":"Offer","name":"Creator Package - Monthly","priceCurrency":"USD","price":"29"},
+    {"@type":"Offer","name":"Growth Package - Monthly","priceCurrency":"USD","price":"135"}]}</script>`;
+  const p = jsonLdMonthlyPrices(html, "https://www.flowjin.com/pricing");
+  assert.deepEqual(p.map((x) => [x.plan, x.amount, x.currency, x.period]), [["Starter", 19, "USD", "month"], ["Creator", 29, "USD", "month"], ["Growth", 135, "USD", "month"]]);
+});

@@ -213,14 +213,19 @@ export default function QuestionReview({ detail, reviewer, onChanged }: { detail
       title="Question review"
       subtitle="Generate 30 to 40 candidate buyer questions, approve 20 to 40, then freeze them as a version."
       actions={
-        <select className="input w-72" value={setId ?? ""} onChange={(e) => setSetId(e.target.value || null)}>
-          {detail.questionSets.length === 0 && <option value="">No question sets yet</option>}
-          {detail.questionSets.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.version ?? "draft"} · {s.status} · {fmtDate(s.createdAt)}
-            </option>
-          ))}
-        </select>
+        <div className="flex flex-wrap items-center gap-2">
+          <select className="input w-72" value={setId ?? ""} onChange={(e) => setSetId(e.target.value || null)}>
+            {detail.questionSets.length === 0 && <option value="">No question sets yet</option>}
+            {detail.questionSets.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.version ?? "draft"} · {s.status} · {fmtDate(s.createdAt)}
+              </option>
+            ))}
+          </select>
+          <button className="btn" disabled={busy} onClick={generate}>
+            {busy ? "Generating…" : "Generate questions with AI"}
+          </button>
+        </div>
       }
     >
       {msg && <Notice kind={msg.kind}>{msg.text}</Notice>}
