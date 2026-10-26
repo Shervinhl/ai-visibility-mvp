@@ -252,7 +252,7 @@ export default function BusinessSetup({ detail, reviewer, onSaved }: { detail: B
     try {
       const { data } = await api.post<SuggestResponse>("/facts/suggest", { website: form.website.trim() });
       setForm((f) => fillEmpty(f, data.suggestion));
-      const from = data.source === "ai" ? "the AI reading your site" : "the page details (no AI key is set)";
+      const from = data.source === "ai" ? "the AI reading your site" : "the page details";
       const missing = data.notFound.length ? ` Still empty, please enter: ${data.notFound.join(", ")}.` : "";
       const warn = data.warnings.length ? ` ${data.warnings.join(" ")}` : "";
       setMsg({ kind: "info", text: `Filled ${data.filled.length} field(s) from ${from}. Fields you had already typed were kept. You can change any field.${missing}${warn}` });

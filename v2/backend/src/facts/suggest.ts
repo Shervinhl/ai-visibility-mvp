@@ -113,7 +113,11 @@ export function metadataSuggestion(html: string, finalUrl: string): FactSuggesti
     .find((h) => /contact|about/i.test(h));
   let contactUrl = "";
   try {
-    if (contactHref) contactUrl = new URL(contactHref, finalUrl).toString();
+    // Only web links count as a contact page; mailto: and tel: links are contact details, not pages.
+    if (contactHref && !/^(mailto|tel):/i.test(contactHref.trim())) {
+      const u = new URL(contactHref, finalUrl);
+      if (u.protocol === "http:" || u.protocol === "https:") contactUrl = u.toString();
+    }
   } catch {
     contactUrl = "";
   }
