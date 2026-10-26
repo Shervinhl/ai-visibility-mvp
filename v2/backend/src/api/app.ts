@@ -8,6 +8,7 @@ import { FetcherDeps } from "../checks/fetcher";
 import { Renderer } from "../checks/renderer";
 import { planRequests, runChecks } from "../checks/runner";
 import { generateCandidates, QUESTION_TYPES, QuestionType, TextGenerator } from "../questions/generate";
+import { suggestFacts, SuggestError } from "../facts/suggest";
 import { validateReviewer } from "../questions/rules";
 import { AiProvider } from "../ai/providers";
 import { RunDeps, runQuestionSet } from "../ai/runner";
@@ -67,6 +68,24 @@ export function createApp(deps: AppDeps): AppHandle {
   app.get("/api/health", (_req, res) => {
     res.json({ ok: true, checkVersion: checkVersion(checkConfig), providersConfigured: deps.providers().map((p) => ({ provider: p.name, model: p.model })) });
   });
+
+  // Fill the business profile from the website (AI reads the page; page metadata is the fallback).
+  app.post(
+    "/api/facts/suggest",
+    wrap(async (req, res) => {
+      const website = typeof req.body?.website === "string" ? req.body.website : "";
+      try {
+        const out = await suggestFacts(website, deps.generator());
+        res.json(out);
+      } catch (e) {
+        if (e instanceof SuggestError) {
+          res.status(422).json({ error: e.message });
+          return;
+        }
+        throw e;
+      }
+    })
+  );
 
   // ---- Businesses and fact lists -------------------------------------------------
   app.post(

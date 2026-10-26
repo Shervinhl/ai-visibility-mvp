@@ -92,7 +92,10 @@ function stripNeeds(s: string): string {
 }
 
 export function notAssessedLine(nextStep: string | null): string {
-  return `We could not check this yet. Needs: ${stripNeeds(nextStep ?? "a re-run of the check")}.`;
+  const step = nextStep ?? "re-run the check";
+  // "Needs:" is only shown when the client must supply something. Technical retries are "Next step:".
+  if (/^Needs:/i.test(step)) return `We could not check this yet. Needs: ${stripNeeds(step)}.`;
+  return `We could not check this yet. Next step: ${step.replace(/\.$/, "")}.`;
 }
 
 export function notApplicableLine(reason: string): string {

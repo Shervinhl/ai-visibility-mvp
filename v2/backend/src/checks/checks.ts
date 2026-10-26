@@ -351,17 +351,35 @@ export function checkA4(d: SiteData): CheckOutcome {
     }
   }
   results.sort((a, b) => checkedPages(d).indexOf(a.pageUrl) - checkedPages(d).indexOf(b.pageUrl));
-  const s = pageSummary(results, "Every checked page has a unique title and exactly one main heading in the raw HTML.", "Title or main heading problems", "Fix the title and <h1> issues listed for each page.");
+  const base = pageSummary(results, "Every checked page has a unique title and exactly one main heading in the raw HTML.", "Title or main heading problems", "Fix the title and <h1> issues listed for each page.");
+  // Name the exact problem on each failing page, so the client does not have to open the evidence.
+  const failLines = results.filter((r) => r.status === "FAIL").map((r) => `${r.pageUrl} (${r.reason.replace(/\.$/, "")})`);
+  const s = failLines.length ? { ...base, reason: `Title or main heading problems on ${failLines.length} of ${results.length} page(s): ${failLines.join("; ")}.` } : base;
   return siteOutcome(d, "A4", results, s);
 }
 
 // ---------------------------------------------------------------------------
 // A5. Meta description
 // ---------------------------------------------------------------------------
+/** Legal and policy pages (terms, privacy, agreements, copyright) are not marketing pages. */
+const LEGAL_PATH = /\/(terms|terms-of-service|terms-and-conditions|privacy|privacy-policy|cookies?|cookie-policy|legal|disclaimer|copyright[^/]*|creator-agreement|agreement[^/]*|refund[^/]*|acceptable-use)(\/|$|\?)/i;
+
+export function isLegalPage(url: string): boolean {
+  try {
+    return LEGAL_PATH.test(new URL(url).pathname + "/");
+  } catch {
+    return false;
+  }
+}
+
 export function checkA5(d: SiteData): CheckOutcome {
   const results: PageResult[] = [];
   const { metaDescriptionMin: min, metaDescriptionMax: max } = d.cfg;
   for (const url of checkedPages(d)) {
+    if (isLegalPage(url)) {
+      results.push(page(url, "NOT_APPLICABLE", "This is a legal or policy page, which does not need a meta description for AI discovery.", "Does not apply; no action needed.", ev(d, url, { legalPage: true })));
+      continue;
+    }
     const gate = htmlGate(d, url, { nonHtmlNotApplicable: true, checkLabel: "a meta description" });
     if ("result" in gate) {
       results.push(gate.result);
@@ -544,7 +562,7 @@ export function checkA6(d: SiteData): CheckOutcome {
       d,
       "A6",
       [],
-      { reason: `Not found as text: ${notFound.map((i) => `${i.item} (${i.detail})`).join("; ")}${extra}.${notAssessed.length ? ` Could not check: ${notAssessed.map((i) => i.item).join(", ")}.` : ""}`, nextStep: "Write these details as plain HTML text on the homepage or the contact/about page (not inside images).", data },
+      { reason: `Not found as text: ${notFound.map((i) => `${i.item} (${i.detail})`).join("; ")}${extra}. Pages searched: ${scanned.map((s) => s.url).join(", ")}.${notAssessed.length ? ` Could not check: ${notAssessed.map((i) => i.item).join(", ")}.` : ""}`, nextStep: "Write these details as plain HTML text on the homepage or the contact/about page (not inside images).", data },
       "FAIL"
     );
   }
@@ -587,7 +605,17 @@ export function checkA7(d: SiteData): CheckOutcome {
     }
     const text = visibleText(gate.obs.body);
     const m = priceRegex(p.amount).exec(text);
-    items.push(m ? { ...base, status: "FOUND", detail: "found as text", excerpt: excerptAround(text, m.index, m[0].length, 60) } : { ...base, status: "NOT_FOUND", detail: `${p.amount} ${p.currency} not found as text on ${p.pageUrl}` });
+    if (m) {
+      items.push({ ...base, status: "FOUND", detail: "found as text", excerpt: excerptAround(text, m.index, m[0].length, 60) });
+      continue;
+    }
+    // Say why it is missing: only in the browser, or a different price in the structured data.
+    const render = d.renders.get(p.pageUrl);
+    const shownAfterJs = !!render && render.ok && priceRegex(p.amount).test(visibleText(render.html));
+    const jsonLdPrices = [...gate.obs.body.matchAll(/"price"\s*:\s*"?(\d+(?:\.\d+)?)"?/g)].map((x) => Number(x[1]));
+    const conflict = jsonLdPrices.length > 0 && !jsonLdPrices.includes(p.amount) ? ` The structured data on this page lists ${[...new Set(jsonLdPrices)].join(", ")} instead.` : "";
+    const why = shownAfterJs ? `${p.amount} ${p.currency} is shown only after JavaScript runs, so it is missing from the HTML source.` : `${p.amount} ${p.currency} not found as text on ${p.pageUrl}.`;
+    items.push({ ...base, status: "NOT_FOUND", detail: `${why}${conflict}` });
   }
   const nf = items.filter((i) => i.status === "NOT_FOUND");
   const na = items.filter((i) => i.status === "NOT_ASSESSED");
@@ -596,7 +624,7 @@ export function checkA7(d: SiteData): CheckOutcome {
       d,
       "A7",
       [],
-      { reason: `Price(s) not in the raw HTML: ${nf.map((i) => `${i.plan} (${i.amount} ${i.currency}) on ${i.pageUrl}`).join("; ")}.`, nextStep: "Put the listed prices in the HTML response as text (not loaded by JavaScript or shown as images).", data: { items } },
+      { reason: `Price(s) not in the raw HTML: ${nf.map((i) => `${i.plan} (${i.amount} ${i.currency}) on ${i.pageUrl}. ${i.detail}`).join(" ")}`, nextStep: "Put the listed prices in the HTML response as text (not loaded by JavaScript or shown as images), and make the structured data match the visible prices.", data: { items } },
       "FAIL"
     );
   }
@@ -827,12 +855,15 @@ export function checkA12(d: SiteData): CheckOutcome {
     });
     const bad = parsed.filter((p) => !p.ok);
     const data = { blocks: parsed };
+    // Template placeholders (for example DYNAMIC_URL) are replaced by a script in the browser only.
+    const placeholders = [...new Set(blocks.flatMap((b) => b.match(/DYNAMIC_[A-Z_]+/g) ?? []))];
     if (bad.length) results.push(page(url, "FAIL", `${bad.length} of ${blocks.length} JSON-LD block(s) fail to parse.`, "Fix the JSON syntax in the listed blocks.", ev(d, url, data, gate.obs.fetchedAt)));
-    else results.push(page(url, "PASS", `${blocks.length} JSON-LD block(s), all parse.`, null, ev(d, url, data, gate.obs.fetchedAt)));
+    else if (placeholders.length) results.push(page(url, "FAIL", `JSON-LD contains template placeholders (${placeholders.join(", ")}). A script fills them in only in the browser, so crawlers read invalid values.`, "Write the real page URL, name and description into the JSON-LD in the server HTML.", ev(d, url, { ...data, placeholders }, gate.obs.fetchedAt)));
+    else results.push(page(url, "PASS", `${blocks.length} JSON-LD block(s), all parse and contain no template placeholders.`, null, ev(d, url, data, gate.obs.fetchedAt)));
   }
   const fails = results.filter((r) => r.status === "FAIL");
   const data = { totalBlocks, pagesWithoutJsonLd: withoutBlocks };
-  if (fails.length) return siteOutcome(d, "A12", results, { reason: `JSON-LD fails to parse on: ${fails.map((f) => f.pageUrl).join(", ")}.`, nextStep: "Fix the JSON syntax errors listed.", data }, "FAIL");
+  if (fails.length) return siteOutcome(d, "A12", results, { reason: `Structured data problems on: ${fails.map((f) => `${f.pageUrl} (${f.reason.replace(/\.$/, "")})`).join("; ")}.`, nextStep: "Fix the JSON errors and placeholders listed for each page.", data }, "FAIL");
   if (unassessed.length) return siteOutcome(d, "A12", results, { reason: `${unassessed.length} page(s) could not be read, so not every block could be checked.`, nextStep: unassessed[0].nextStep, data }, "NOT_ASSESSED");
   if (totalBlocks === 0) {
     if (results.length > 0 && results.every((r) => r.status === "NOT_APPLICABLE")) return siteOutcome(d, "A12", results, { reason: "Does not apply: no checked page is an HTML page.", nextStep: "Does not apply; no action needed.", data }, "NOT_APPLICABLE");

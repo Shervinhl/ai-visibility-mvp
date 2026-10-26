@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { api, BusinessDetail, errorText, fmtDate, Question, QuestionSetView, QuestionType, QUESTION_TYPES } from "../api";
 import { Badge, Expand, Notice, Section } from "../components/ui";
 
@@ -116,6 +116,16 @@ export default function QuestionReview({ detail, reviewer, onChanged }: { detail
   useEffect(() => {
     void load();
   }, [load]);
+
+  // First visit for a business with no question set: generate candidates from its fact list automatically.
+  const autoTried = useRef(false);
+  useEffect(() => {
+    if (!setId && !autoTried.current && !busy) {
+      autoTried.current = true;
+      void generate();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setId]);
 
   const needReviewer = () => {
     if (reviewer.trim().length < 2) {
