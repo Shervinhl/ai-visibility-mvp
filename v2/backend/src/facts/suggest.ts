@@ -32,8 +32,19 @@ const MAX_TEXT = 12000;
 
 export class SuggestError extends Error {}
 
-/** Fetch one page for suggestions. Robots.txt is checked first. Only GET, one page, bounded time. */
-export async function fetchForSuggest(website: string): Promise<{ finalUrl: string; html: string }> {
+export interface FetchedPage {
+  url: string;
+  html: string;
+}
+
+const LINK_HINT = /pric|plan|contact|about|product|feature|solution|faq|team/i;
+const MAX_LINKED_PAGES = 4;
+
+/**
+ * Read the homepage plus up to four linked pages that usually hold the facts (pricing, contact, about, products).
+ * robots.txt is checked before every request. Only GET, bounded time, same site only.
+ */
+export async function fetchForSuggest(website: string): Promise<{ pages: FetchedPage[]; warnings: string[] }> {
   let url: URL;
   try {
     url = new URL(website.trim());
@@ -44,13 +55,47 @@ export async function fetchForSuggest(website: string): Promise<{ finalUrl: stri
   const robots = await axios
     .get(`${url.origin}/robots.txt`, { timeout: 10000, validateStatus: () => true, responseType: "text", headers: { "User-Agent": SUGGEST_USER_AGENT } })
     .catch(() => null);
-  if (robots && robots.status === 200) {
-    const decision = isAllowed(parseRobots(String(robots.data ?? "")), TOKEN, url.pathname + url.search);
-    if (!decision.allowed) throw new SuggestError("The site's robots.txt does not allow this tool to read the homepage. Ask the site owner or fill the fields by hand.");
+  const parsedRobots = robots && robots.status === 200 ? parseRobots(String(robots.data ?? "")) : null;
+  const allowed = (u: URL) => (parsedRobots ? isAllowed(parsedRobots, TOKEN, u.pathname + u.search).allowed : true);
+  if (!allowed(url)) throw new SuggestError("The site's robots.txt does not allow this tool to read the homepage. Ask the site owner or fill the fields by hand.");
+
+  const home = await axios.get(url.toString(), { timeout: 15000, maxRedirects: 3, validateStatus: () => true, responseType: "text", headers: { "User-Agent": SUGGEST_USER_AGENT, Accept: "text/html" } });
+  if (home.status !== 200) throw new SuggestError(`The homepage returned HTTP ${home.status}, so it could not be read.`);
+  const homeUrl = home.request?.res?.responseUrl ?? url.toString();
+  const homeHtml = String(home.data ?? "");
+  const pages: FetchedPage[] = [{ url: homeUrl, html: homeHtml }];
+  const warnings: string[] = [];
+
+  // Linked pages on the same site that usually hold prices, contact details and product facts.
+  const base = new URL(homeUrl);
+  const $home = loadHtml(homeHtml);
+  const links = [...new Set(
+    $home("a[href]")
+      .toArray()
+      .map((el) => {
+        try {
+          return new URL($home(el).attr("href") ?? "", base);
+        } catch {
+          return null;
+        }
+      })
+      .filter((u): u is URL => !!u && u.origin === base.origin && (u.protocol === "https:" || u.protocol === "http:"))
+      .filter((u) => LINK_HINT.test(u.pathname))
+      .map((u) => u.origin + u.pathname)
+  )].slice(0, MAX_LINKED_PAGES);
+
+  for (const link of links) {
+    const u = new URL(link);
+    if (!allowed(u)) {
+      warnings.push(`robots.txt does not allow reading ${u.pathname}, so it was skipped.`);
+      continue;
+    }
+    const res = await axios.get(link, { timeout: 15000, maxRedirects: 3, validateStatus: () => true, responseType: "text", headers: { "User-Agent": SUGGEST_USER_AGENT, Accept: "text/html" } }).catch(() => null);
+    if (res && res.status === 200 && String(res.headers?.["content-type"] ?? "").includes("html")) {
+      pages.push({ url: link, html: String(res.data ?? "") });
+    }
   }
-  const res = await axios.get(url.toString(), { timeout: 15000, maxRedirects: 3, validateStatus: () => true, responseType: "text", headers: { "User-Agent": SUGGEST_USER_AGENT, Accept: "text/html" } });
-  if (res.status !== 200) throw new SuggestError(`The homepage returned HTTP ${res.status}, so it could not be read.`);
-  return { finalUrl: res.request?.res?.responseUrl ?? url.toString(), html: String(res.data ?? "") };
+  return { pages, warnings };
 }
 
 /** Facts that the page states directly, without any AI. Used when no AI key is configured. */
@@ -129,16 +174,24 @@ function isFilled(v: unknown): boolean {
   return typeof v === "string" && v.trim().length > 0;
 }
 
-/** Fill every field the AI or the page can supply. Anything else is reported as not found. */
+/** Fill every field the AI or the pages can supply. Anything else is reported as not found. */
 export async function suggestFacts(website: string, generator: TextGenerator | null): Promise<SuggestResult> {
-  const { finalUrl, html } = await fetchForSuggest(website);
-  const base = metadataSuggestion(html, finalUrl);
-  const warnings: string[] = [];
+  const { pages, warnings: fetchWarnings } = await fetchForSuggest(website);
+  const warnings: string[] = [...fetchWarnings];
+  const home = pages[0];
+  const base = metadataSuggestion(home.html, home.url);
+  // Contact details can appear on any page we read.
+  for (const p of pages.slice(1)) {
+    const extra = metadataSuggestion(p.html, p.url);
+    if (!base.contactEmail && extra.contactEmail) base.contactEmail = extra.contactEmail;
+    if (!base.contactPhone && extra.contactPhone) base.contactPhone = extra.contactPhone;
+  }
   let suggestion: FactSuggestion = { ...base, products: [], buyers: [], locations: [], aliases: [], productCategory: "", prices: [] };
   let source: SuggestResult["source"] = "page-metadata";
   if (generator) {
+    const text = pages.map((p) => `--- PAGE: ${p.url} ---\n${visibleText(p.html)}`).join("\n\n").slice(0, MAX_TEXT);
     try {
-      const reply = await generator.generate(PROMPT(finalUrl, visibleText(html).slice(0, MAX_TEXT)));
+      const reply = await generator.generate(PROMPT(home.url, text));
       const ai = parseAiSuggestion(reply);
       if (ai) {
         suggestion = { ...suggestion };
@@ -148,13 +201,15 @@ export async function suggestFacts(website: string, generator: TextGenerator | n
         }
         source = "ai";
       } else {
-        warnings.push("The AI reply could not be read, so only page metadata was used.");
+        warnings.push("The AI reply could not be read, so only page details were used.");
       }
     } catch (e) {
-      warnings.push(`The AI could not be reached (${(e as Error).message}), so only page metadata was used.`);
+      warnings.push(`The AI could not be reached (${(e as Error).message}), so only page details were used.`);
     }
   } else {
-    warnings.push("No AI key is configured on the server, so only facts written in the page metadata were filled. Set ANTHROPIC_API_KEY (or another provider key) to let the AI read the whole page.");
+    warnings.push(
+      `Without an AI key the tool can only read the company name, description, contact email, phone and contact page. It cannot read products, buyer types, locations or prices. Add ANTHROPIC_API_KEY (or OPENAI_API_KEY / GEMINI_API_KEY) to backend/.env and restart the backend to fill every field. Pages read: ${pages.map((p) => p.url).join(", ")}.`
+    );
   }
   const filled = FIELD_LABELS.filter(({ key }) => isFilled((suggestion as unknown as Record<string, unknown>)[key])).map((f) => f.label);
   const notFound = FIELD_LABELS.filter(({ key }) => !isFilled((suggestion as unknown as Record<string, unknown>)[key])).map((f) => f.label);
