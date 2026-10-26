@@ -12,7 +12,8 @@ export type ProviderName = "anthropic" | "openai" | "gemini" | `fake-${string}`;
 export interface ProviderSettings {
   provider: ProviderName;
   model: string;
-  temperature: number;
+  /** null = not sent to the provider (Anthropic models no longer accept temperature). */
+  temperature: number | null;
   maxTokens: number;
   systemPrompt: null;
   tools: [];
@@ -79,13 +80,14 @@ export class AnthropicProvider implements AiProvider {
   readonly name = "anthropic" as const;
   readonly settings: ProviderSettings;
   constructor(private readonly apiKey: string, readonly model: string, cfg: Pick<AiConfig, "temperature" | "maxTokens">) {
-    this.settings = { provider: "anthropic", model, temperature: cfg.temperature, maxTokens: cfg.maxTokens, systemPrompt: null, tools: [], endpoint: "https://api.anthropic.com/v1/messages", apiVersion: "2023-06-01" };
+    // Newer Claude models reject the temperature parameter, so it is not sent and is recorded as null.
+    this.settings = { provider: "anthropic", model, temperature: null, maxTokens: cfg.maxTokens, systemPrompt: null, tools: [], endpoint: "https://api.anthropic.com/v1/messages", apiVersion: "2023-06-01" };
   }
   async ask(question: string, timeoutMs: number): Promise<ProviderReply> {
     const raw = await post(
       this.settings.endpoint,
       { "x-api-key": this.apiKey, "anthropic-version": this.settings.apiVersion! },
-      { model: this.model, max_tokens: this.settings.maxTokens, temperature: this.settings.temperature, messages: [{ role: "user", content: question }] },
+      { model: this.model, max_tokens: this.settings.maxTokens, messages: [{ role: "user", content: question }] },
       timeoutMs
     );
     const j = JSON.parse(raw) as { content?: { type: string; text?: string }[]; stop_reason?: string };
