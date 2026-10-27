@@ -8,7 +8,8 @@ import { FetcherDeps } from "../checks/fetcher";
 import { Renderer } from "../checks/renderer";
 import { planRequests, runChecks } from "../checks/runner";
 import { generateCandidates, QUESTION_TYPES, QuestionType, TextGenerator } from "../questions/generate";
-import { suggestFacts, SuggestError } from "../facts/suggest";
+import { providerMessage, suggestFacts, SuggestError } from "../facts/suggest";
+import { ProviderHttpError } from "../ai/providers";
 import { validateReviewer } from "../questions/rules";
 import { AiProvider } from "../ai/providers";
 import { RunDeps, runQuestionSet } from "../ai/runner";
@@ -335,6 +336,11 @@ export function createApp(deps: AppDeps): AppHandle {
     void _next;
     if (err instanceof repo.UserError) {
       res.status(err.status).json({ error: err.message });
+      return;
+    }
+    // Show the AI provider's own reason (for example "credit balance too low" or a rate limit).
+    if (err instanceof ProviderHttpError) {
+      res.status(502).json({ error: `The AI provider refused the request (${err.message}): ${providerMessage(err.body)}` });
       return;
     }
     const msg = (err as Error)?.message ?? "Unexpected error";
