@@ -6,7 +6,7 @@
       "name": "Flowjin",
       "factListVersion": 1
     },
-    "generatedAt": "2026-10-29T13:07:30.604Z",
+    "generatedAt": "2026-10-29T14:15:06.860Z",
     "technical": {
       "question": "Can AI read your site?",
       "run": {
@@ -547,15 +547,15 @@
       "questionSet": {
         "id": "id-00071",
         "version": "qs-v1",
-        "frozenAt": "2026-10-25T13:00:40.000Z",
+        "frozenAt": "2026-10-25T13:00:37.000Z",
         "frozenBy": "Test Reviewer"
       },
       "factListVersionUsed": 1,
       "runs": [
         {
-          "id": "id-00107",
-          "startedAt": "2026-10-25T13:00:41.000Z",
-          "finishedAt": "2026-10-25T13:04:09.000Z",
+          "id": "id-00104",
+          "startedAt": "2026-10-25T13:00:38.000Z",
+          "finishedAt": "2026-10-25T13:03:45.000Z",
           "providers": [
             "fake-alpha",
             "fake-beta"
@@ -639,7 +639,7 @@
         },
         {
           "questionId": "id-00073",
-          "questionText": "What is the best AI tool to turn long videos into short clips for podcasters?",
+          "questionText": "What is the best AI tool to make short clips for podcasters?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -673,24 +673,24 @@
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:14.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (77)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:21.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (77)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (60)"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:00:22.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (77)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00074",
-          "questionText": "Which AI clipping app should podcasters use for TikTok?",
+          "questionText": "Which AI app makes TikTok clips from long videos for podcasters?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -724,24 +724,24 @@
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:29.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (55)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:30.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (55)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:00:39.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (55)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00075",
-          "questionText": "Top AI video repurposing tools for podcasters in 2026?",
+          "questionText": "Top AI video repurposing tools for podcasters right now?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -775,24 +775,24 @@
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:40.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (54)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (56)"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:47.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (54)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (56)"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:00:48.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (54)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (56)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00076",
-          "questionText": "What app do podcasters use to make YouTube Shorts from long videos?",
+          "questionText": "What app makes YouTube Shorts from long videos for podcasters?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -811,32 +811,32 @@
             "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
-            "count": 3,
+            "count": 0,
             "of": 3,
             "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
+            "text": "Recommended in 0 of 3 valid runs"
           },
           "accuracy": {
-            "correct": 1,
+            "correct": 0,
             "incorrect": 0,
-            "unverifiable": 2,
+            "unverifiable": 3,
             "pendingReview": 0
           },
           "excerpts": [
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:55.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (67)"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(62)"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:56.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (67)"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(62)"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:01:03.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (67)"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(62)"
             }
           ],
           "answersNotMentioning": []
@@ -945,7 +945,7 @@
         },
         {
           "questionId": "id-00079",
-          "questionText": "Turning a one-hour video into short clips takes podcasters hours. What can speed this up?",
+          "questionText": "Trying to turn a one-hour video into clips for podcasters, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -953,7 +953,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:01:36.000Z",
+          "lastRunAt": "2026-10-25T14:01:37.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -979,24 +979,24 @@
             {
               "runNo": 1,
               "date": "2026-10-25T14:01:28.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (89)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (70)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:01:35.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (89)"
+              "date": "2026-10-25T14:01:36.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (70)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:01:36.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (89)"
+              "date": "2026-10-25T14:01:37.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (70)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00080",
-          "questionText": "Adding captions to short clips is slow for podcasters. What options exist?",
+          "questionText": "Adding captions to clips is slow for podcasters, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1004,7 +1004,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:01:51.000Z",
+          "lastRunAt": "2026-10-25T14:01:56.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1015,90 +1015,39 @@
             "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
-            "count": 3,
+            "count": 0,
             "of": 3,
             "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
+            "text": "Recommended in 0 of 3 valid runs"
           },
           "accuracy": {
-            "correct": 1,
+            "correct": 0,
             "incorrect": 0,
-            "unverifiable": 2,
+            "unverifiable": 3,
             "pendingReview": 0
           },
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:01:43.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (74)"
+              "date": "2026-10-25T14:01:47.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:01:44.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (74)"
+              "date": "2026-10-25T14:01:48.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:01:51.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (74)"
+              "date": "2026-10-25T14:01:56.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00081",
-          "questionText": "Which AI clip tool is better for podcasters, a free one or a paid one?",
-          "questionType": "COMPARE",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:00.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:01:52.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:01:59.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:02:00.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00082",
-          "questionText": "Why do the short clips from podcasters get so few views?",
+          "questionText": "My clips for podcasters get so few views, why?",
           "questionType": "PROBLEM",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1106,58 +1055,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:15.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:02:07.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:02:08.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:02:15.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00083",
-          "questionText": "Editing clips by hand takes podcasters too long. What can help?",
-          "questionType": "PROBLEM",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:24.000Z",
+          "lastRunAt": "2026-10-25T14:02:06.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1183,26 +1081,77 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:02:16.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (63)",
+              "date": "2026-10-25T14:01:57.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (46)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:23.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (63)",
+              "date": "2026-10-25T14:02:05.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (46)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:02:24.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (63)",
+              "date": "2026-10-25T14:02:06.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (46)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00084",
+          "questionId": "id-00082",
+          "questionText": "Editing clips by hand takes podcasters too long?",
+          "questionType": "PROBLEM",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:02:21.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 3,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:02:13.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:14.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:21.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00083",
           "questionText": "What is the best AI video clipping tool?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
@@ -1211,7 +1160,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:39.000Z",
+          "lastRunAt": "2026-10-25T14:02:30.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1236,25 +1185,76 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:02:31.000Z",
+              "date": "2026-10-25T14:02:22.000Z",
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (40)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:32.000Z",
+              "date": "2026-10-25T14:02:29.000Z",
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (40)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:02:39.000Z",
+              "date": "2026-10-25T14:02:30.000Z",
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (40)"
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00084",
+          "questionText": "What is the best AI tool to make short clips for video creators?",
+          "questionType": "RECOMMEND",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:02:45.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 3,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:02:37.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(64)"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:38.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(64)"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:45.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(64)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00085",
-          "questionText": "What is the best AI tool to turn long videos into short clips for video creators?",
+          "questionText": "Which AI app makes TikTok clips from long videos for video creators?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1262,7 +1262,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:48.000Z",
+          "lastRunAt": "2026-10-25T14:02:54.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1273,39 +1273,39 @@
             "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
-            "count": 3,
+            "count": 0,
             "of": 3,
             "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
+            "text": "Recommended in 0 of 3 valid runs"
           },
           "accuracy": {
-            "correct": 1,
+            "correct": 0,
             "incorrect": 0,
-            "unverifiable": 2,
+            "unverifiable": 3,
             "pendingReview": 0
           },
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:02:40.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (81)"
+              "date": "2026-10-25T14:02:46.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(68)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:47.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
+              "date": "2026-10-25T14:02:53.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(68)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:02:48.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (81)"
+              "date": "2026-10-25T14:02:54.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(68)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00086",
-          "questionText": "Which AI clipping app should video creators use for TikTok?",
+          "questionText": "Top AI video repurposing tools for video creators right now?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1313,7 +1313,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:03.000Z",
+          "lastRunAt": "2026-10-25T14:03:09.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1338,25 +1338,25 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:02:55.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (59)"
+              "date": "2026-10-25T14:03:01.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:56.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (59)"
+              "date": "2026-10-25T14:03:02.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (60)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:03:03.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (59)"
+              "date": "2026-10-25T14:03:09.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00087",
-          "questionText": "Top AI video repurposing tools for video creators in 2026?",
+          "questionText": "What app makes YouTube Shorts from long videos for video creators?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1364,7 +1364,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:12.000Z",
+          "lastRunAt": "2026-10-25T14:03:18.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1389,75 +1389,24 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:04.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (58)"
+              "date": "2026-10-25T14:03:10.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (66)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:03:11.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (58)"
+              "date": "2026-10-25T14:03:17.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:03:12.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (58)"
+              "date": "2026-10-25T14:03:18.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (66)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00088",
-          "questionText": "What app do video creators use to make YouTube Shorts from long videos?",
-          "questionType": "RECOMMEND",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:27.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 1,
-            "incorrect": 0,
-            "unverifiable": 2,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:03:19.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (71)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:03:20.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (71)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:03:27.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (71)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00089",
           "questionText": "How much does an AI clip maker cost for video creators?",
           "questionType": "PRICE",
           "provider": "fake-alpha",
@@ -1466,7 +1415,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:36.000Z",
+          "lastRunAt": "2026-10-25T14:03:33.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1491,24 +1440,24 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:28.000Z",
+              "date": "2026-10-25T14:03:25.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:03:35.000Z",
+              "date": "2026-10-25T14:03:26.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:03:36.000Z",
+              "date": "2026-10-25T14:03:33.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
           "answersNotMentioning": []
         },
         {
-          "questionId": "id-00090",
+          "questionId": "id-00089",
           "questionText": "Is there a free AI video clipping tool for video creators?",
           "questionType": "PRICE",
           "provider": "fake-alpha",
@@ -1517,7 +1466,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:51.000Z",
+          "lastRunAt": "2026-10-25T14:03:42.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1542,25 +1491,76 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:43.000Z",
+              "date": "2026-10-25T14:03:34.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:03:44.000Z",
+              "date": "2026-10-25T14:03:41.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:03:51.000Z",
+              "date": "2026-10-25T14:03:42.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00090",
+          "questionText": "Trying to turn a one-hour video into clips for video creators, what helps?",
+          "questionType": "PROBLEM",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:03:57.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 3,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:49.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:50.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:57.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00091",
-          "questionText": "Turning a one-hour video into short clips takes video creators hours. What can speed this up?",
+          "questionText": "Adding captions to clips is slow for video creators, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1568,7 +1568,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:00.000Z",
+          "lastRunAt": "2026-10-25T14:04:06.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1593,25 +1593,25 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:52.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (93)"
+              "date": "2026-10-25T14:03:58.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:03:59.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (93)"
+              "date": "2026-10-25T14:04:05.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:04:00.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (93)"
+              "date": "2026-10-25T14:04:06.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00092",
-          "questionText": "Adding captions to short clips is slow for video creators. What options exist?",
+          "questionText": "My clips for video creators get so few views, why?",
           "questionType": "PROBLEM",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1619,160 +1619,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:15.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 1,
-            "incorrect": 0,
-            "unverifiable": 2,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:04:07.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (78)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:04:08.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (78)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:04:15.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (78)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00093",
-          "questionText": "Which AI clip tool is better for video creators, a free one or a paid one?",
-          "questionType": "COMPARE",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:24.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:04:16.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:04:23.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:04:24.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00094",
-          "questionText": "Why do the short clips from video creators get so few views?",
-          "questionType": "PROBLEM",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:39.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:04:31.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:04:32.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:04:39.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00095",
-          "questionText": "Editing clips by hand takes video creators too long. What can help?",
-          "questionType": "PROBLEM",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:48.000Z",
+          "lastRunAt": "2026-10-25T14:04:21.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1798,27 +1645,78 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:04:40.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:04:13.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:04:47.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:04:14.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:04:48.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:04:21.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00096",
-          "questionText": "What is the best AI tool to turn long videos into short clips for social media managers?",
+          "questionId": "id-00093",
+          "questionText": "Editing clips by hand takes video creators too long?",
+          "questionType": "PROBLEM",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:04:30.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 3,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:22.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:29.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:30.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00094",
+          "questionText": "What is the best AI tool to make short clips for social media managers?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1826,7 +1724,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:03.000Z",
+          "lastRunAt": "2026-10-25T14:04:45.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1851,25 +1749,127 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:04:55.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (88)"
+              "date": "2026-10-25T14:04:37.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (71)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:04:56.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (88)"
+              "date": "2026-10-25T14:04:38.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (71)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:05:03.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (88)"
+              "date": "2026-10-25T14:04:45.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (71)"
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00095",
+          "questionText": "Which AI app makes TikTok clips from long videos for social media managers?",
+          "questionType": "RECOMMEND",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:04:54.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 3 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 1,
+            "incorrect": 0,
+            "unverifiable": 2,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:46.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (75)"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:53.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (75)"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:54.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (75)"
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00096",
+          "questionText": "Top AI video repurposing tools for social media managers right now?",
+          "questionType": "RECOMMEND",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:05:09.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 3,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:01.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(67)"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:02.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(67)"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:09.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(67)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00097",
-          "questionText": "Which AI clipping app should social media managers use for TikTok?",
+          "questionText": "What app makes YouTube Shorts from long videos for social media managers?",
           "questionType": "RECOMMEND",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -1877,7 +1877,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:12.000Z",
+          "lastRunAt": "2026-10-25T14:05:18.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -1888,140 +1888,38 @@
             "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
-            "count": 3,
+            "count": 0,
             "of": 3,
             "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
+            "text": "Recommended in 0 of 3 valid runs"
           },
           "accuracy": {
-            "correct": 1,
+            "correct": 0,
             "incorrect": 0,
-            "unverifiable": 2,
+            "unverifiable": 3,
             "pendingReview": 0
           },
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:05:04.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (66)"
+              "date": "2026-10-25T14:05:10.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:05:11.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)"
+              "date": "2026-10-25T14:05:17.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:05:12.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (66)"
+              "date": "2026-10-25T14:05:18.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00098",
-          "questionText": "Top AI video repurposing tools for social media managers in 2026?",
-          "questionType": "RECOMMEND",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:27.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 1,
-            "incorrect": 0,
-            "unverifiable": 2,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:05:19.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (65)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:05:20.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (65)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:05:27.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (65)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00099",
-          "questionText": "What app do social media managers use to make YouTube Shorts from long videos?",
-          "questionType": "RECOMMEND",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:36.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 1,
-            "incorrect": 0,
-            "unverifiable": 2,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:05:28.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (78)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:05:35.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (78)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:05:36.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (78)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00100",
           "questionText": "How much does an AI clip maker cost for social media managers?",
           "questionType": "PRICE",
           "provider": "fake-alpha",
@@ -2030,7 +1928,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:51.000Z",
+          "lastRunAt": "2026-10-25T14:05:33.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -2055,24 +1953,24 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:05:43.000Z",
+              "date": "2026-10-25T14:05:25.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:05:44.000Z",
+              "date": "2026-10-25T14:05:26.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:05:51.000Z",
+              "date": "2026-10-25T14:05:33.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
           "answersNotMentioning": []
         },
         {
-          "questionId": "id-00101",
+          "questionId": "id-00099",
           "questionText": "Is there a free AI video clipping tool for social media managers?",
           "questionType": "PRICE",
           "provider": "fake-alpha",
@@ -2081,7 +1979,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:00.000Z",
+          "lastRunAt": "2026-10-25T14:05:42.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -2106,25 +2004,127 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:05:52.000Z",
+              "date": "2026-10-25T14:05:34.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:05:59.000Z",
+              "date": "2026-10-25T14:05:41.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:06:00.000Z",
+              "date": "2026-10-25T14:05:42.000Z",
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00100",
+          "questionText": "Trying to turn a one-hour video into clips for social media managers, what helps?",
+          "questionType": "PROBLEM",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:05:57.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 3 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 1,
+            "incorrect": 0,
+            "unverifiable": 2,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:49.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (81)"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:50.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:57.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (81)"
+            }
+          ],
+          "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00101",
+          "questionText": "Adding captions to clips is slow for social media managers, what helps?",
+          "questionType": "PROBLEM",
+          "provider": "fake-alpha",
+          "model": "alpha-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:06:06.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 3,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 3 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 3,
+            "pendingReview": 0
+          },
+          "excerpts": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:58.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:06:05.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:06:06.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00102",
-          "questionText": "Turning a one-hour video into short clips takes social media managers hours. What can speed this up?",
+          "questionText": "My clips for social media managers get so few views, why?",
           "questionType": "PROBLEM",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -2132,109 +2132,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:15.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 1,
-            "incorrect": 0,
-            "unverifiable": 2,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:06:07.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (100)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:06:08.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (100)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:06:15.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (100)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00103",
-          "questionText": "Adding captions to short clips is slow for social media managers. What options exist?",
-          "questionType": "PROBLEM",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:24.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 1,
-            "incorrect": 0,
-            "unverifiable": 2,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:06:16.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (85)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:06:23.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (85)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:06:24.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (85)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00104",
-          "questionText": "Which AI clip tool is better for social media managers, a free one or a paid one?",
-          "questionType": "COMPARE",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:39.000Z",
+          "lastRunAt": "2026-10-25T14:06:21.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -2259,25 +2157,25 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:06:31.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
+              "date": "2026-10-25T14:06:13.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:06:32.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
+              "date": "2026-10-25T14:06:14.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:06:39.000Z",
-              "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
+              "date": "2026-10-25T14:06:21.000Z",
+              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
             }
           ],
           "answersNotMentioning": []
         },
         {
-          "questionId": "id-00105",
-          "questionText": "Why do the short clips from social media managers get so few views?",
+          "questionId": "id-00103",
+          "questionText": "Editing clips by hand takes social media managers too long?",
           "questionType": "PROBLEM",
           "provider": "fake-alpha",
           "model": "alpha-1",
@@ -2285,7 +2183,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:48.000Z",
+          "lastRunAt": "2026-10-25T14:06:30.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -2311,74 +2209,23 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:06:40.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:06:22.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:06:47.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:06:29.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:06:48.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:06:30.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
               "labelSource": "auto"
             }
           ]
-        },
-        {
-          "questionId": "id-00106",
-          "questionText": "Editing clips by hand takes social media managers too long. What can help?",
-          "questionType": "PROBLEM",
-          "provider": "fake-alpha",
-          "model": "alpha-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:07:02.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:06:55.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:06:56.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:07:02.000Z",
-              "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
-            }
-          ],
-          "answersNotMentioning": []
         },
         {
           "questionId": "id-00072",
@@ -2433,7 +2280,7 @@
         },
         {
           "questionId": "id-00073",
-          "questionText": "What is the best AI tool to turn long videos into short clips for podcasters?",
+          "questionText": "What is the best AI tool to make short clips for podcasters?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -2446,10 +2293,10 @@
           "reason": null,
           "nextStep": null,
           "mentioned": {
-            "count": 0,
+            "count": 3,
             "of": 3,
             "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
+            "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
             "count": 0,
@@ -2460,34 +2307,31 @@
           "accuracy": {
             "correct": 0,
             "incorrect": 0,
-            "unverifiable": 0,
+            "unverifiable": 3,
             "pendingReview": 0
           },
-          "excerpts": [],
-          "answersNotMentioning": [
+          "excerpts": [
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:16.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (77)",
-              "labelSource": "auto"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:23.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (77)",
-              "labelSource": "auto"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:00:24.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (77)",
-              "labelSource": "auto"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             }
-          ]
+          ],
+          "answersNotMentioning": []
         },
         {
           "questionId": "id-00074",
-          "questionText": "Which AI clipping app should podcasters use for TikTok?",
+          "questionText": "Which AI app makes TikTok clips from long videos for podcasters?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -2521,24 +2365,24 @@
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:35.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (55)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:33.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (55)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:00:41.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (55)"
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00075",
-          "questionText": "Top AI video repurposing tools for podcasters in 2026?",
+          "questionText": "Top AI video repurposing tools for podcasters right now?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -2551,10 +2395,10 @@
           "reason": null,
           "nextStep": null,
           "mentioned": {
-            "count": 0,
+            "count": 3,
             "of": 3,
             "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
+            "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
             "count": 0,
@@ -2565,34 +2409,31 @@
           "accuracy": {
             "correct": 0,
             "incorrect": 0,
-            "unverifiable": 0,
+            "unverifiable": 3,
             "pendingReview": 0
           },
-          "excerpts": [],
-          "answersNotMentioning": [
+          "excerpts": [
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:43.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (54)",
-              "labelSource": "auto"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(56)"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:49.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (54)",
-              "labelSource": "auto"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(56)"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:00:51.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (54)",
-              "labelSource": "auto"
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(56)"
             }
-          ]
+          ],
+          "answersNotMentioning": []
         },
         {
           "questionId": "id-00076",
-          "questionText": "What app do podcasters use to make YouTube Shorts from long videos?",
+          "questionText": "What app makes YouTube Shorts from long videos for podcasters?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -2627,19 +2468,19 @@
             {
               "runNo": 1,
               "date": "2026-10-25T14:00:57.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
               "date": "2026-10-25T14:00:59.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
               "date": "2026-10-25T14:01:05.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             }
           ]
@@ -2754,61 +2595,27 @@
         },
         {
           "questionId": "id-00079",
-          "questionText": "Turning a one-hour video into short clips takes podcasters hours. What can speed this up?",
+          "questionText": "Trying to turn a one-hour video into clips for podcasters, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
-          "validRuns": 3,
+          "validRuns": 0,
           "refusals": 0,
           "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:01:39.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 0,
-            "pendingReview": 0
-          },
+          "timeouts": 3,
+          "lastRunAt": "2026-10-25T14:02:01.000Z",
+          "status": "NOT_ASSESSED",
+          "reason": "Only 0 valid run(s) out of 3 (0 refusal, 0 error, 3 timeout); at least 2 are needed.",
+          "nextStep": "Re-run this question set when the provider is available.",
+          "mentioned": null,
+          "recommended": null,
+          "accuracy": null,
           "excerpts": [],
-          "answersNotMentioning": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:01:31.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (89)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:01:37.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (89)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:01:39.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (89)",
-              "labelSource": "auto"
-            }
-          ]
+          "answersNotMentioning": []
         },
         {
           "questionId": "id-00080",
-          "questionText": "Adding captions to short clips is slow for podcasters. What options exist?",
+          "questionText": "Adding captions to clips is slow for podcasters, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -2816,7 +2623,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:01:53.000Z",
+          "lastRunAt": "2026-10-25T14:02:09.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -2827,57 +2634,6 @@
             "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 3,
-            "incorrect": 0,
-            "unverifiable": 0,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:01:45.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (74)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:01:47.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (74)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:01:53.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (74)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00081",
-          "questionText": "Which AI clip tool is better for podcasters, a free one or a paid one?",
-          "questionType": "COMPARE",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:03.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
-          },
-          "recommended": {
             "count": 0,
             "of": 3,
             "pendingReview": 0,
@@ -2886,34 +2642,31 @@
           "accuracy": {
             "correct": 0,
             "incorrect": 0,
-            "unverifiable": 0,
+            "unverifiable": 3,
             "pendingReview": 0
           },
-          "excerpts": [],
-          "answersNotMentioning": [
+          "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:01:55.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (70)",
-              "labelSource": "auto"
+              "date": "2026-10-25T14:01:59.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:01.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (70)",
-              "labelSource": "auto"
+              "date": "2026-10-25T14:02:07.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:02:03.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (70)",
-              "labelSource": "auto"
+              "date": "2026-10-25T14:02:09.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             }
-          ]
+          ],
+          "answersNotMentioning": []
         },
         {
-          "questionId": "id-00082",
-          "questionText": "Why do the short clips from podcasters get so few views?",
+          "questionId": "id-00081",
+          "questionText": "My clips for podcasters get so few views, why?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -2921,7 +2674,7 @@
           "refusals": 3,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:17.000Z",
+          "lastRunAt": "2026-10-25T14:02:23.000Z",
           "status": "NOT_ASSESSED",
           "reason": "Only 0 valid run(s) out of 3 (3 refusal, 0 error, 0 timeout); at least 2 are needed.",
           "nextStep": "Review the refusals; consider rewording the question in a new question-set version.",
@@ -2932,8 +2685,8 @@
           "answersNotMentioning": []
         },
         {
-          "questionId": "id-00083",
-          "questionText": "Editing clips by hand takes podcasters too long. What can help?",
+          "questionId": "id-00082",
+          "questionText": "Editing clips by hand takes podcasters too long?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -2941,15 +2694,15 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:27.000Z",
+          "lastRunAt": "2026-10-25T14:02:33.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
           "mentioned": {
-            "count": 3,
+            "count": 0,
             "of": 3,
             "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
+            "text": "Mentioned in 0 of 3 valid runs"
           },
           "recommended": {
             "count": 0,
@@ -2960,30 +2713,33 @@
           "accuracy": {
             "correct": 0,
             "incorrect": 0,
-            "unverifiable": 3,
+            "unverifiable": 0,
             "pendingReview": 0
           },
-          "excerpts": [
+          "excerpts": [],
+          "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:02:19.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(63)"
+              "date": "2026-10-25T14:02:25.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (48)",
+              "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:25.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(63)"
+              "date": "2026-10-25T14:02:31.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (48)",
+              "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:02:27.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(63)"
+              "date": "2026-10-25T14:02:33.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (48)",
+              "labelSource": "auto"
             }
-          ],
-          "answersNotMentioning": []
+          ]
         },
         {
-          "questionId": "id-00084",
+          "questionId": "id-00083",
           "questionText": "What is the best AI video clipping tool?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
@@ -2992,7 +2748,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:41.000Z",
+          "lastRunAt": "2026-10-25T14:02:47.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3018,27 +2774,81 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:02:33.000Z",
+              "date": "2026-10-25T14:02:39.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (40)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:35.000Z",
+              "date": "2026-10-25T14:02:41.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (40)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:02:41.000Z",
+              "date": "2026-10-25T14:02:47.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (40)",
+              "labelSource": "auto"
+            }
+          ]
+        },
+        {
+          "questionId": "id-00084",
+          "questionText": "What is the best AI tool to make short clips for video creators?",
+          "questionType": "RECOMMEND",
+          "provider": "fake-beta",
+          "model": "beta-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:02:57.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 0 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 0,
+            "pendingReview": 0
+          },
+          "excerpts": [],
+          "answersNotMentioning": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:02:49.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:55.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:57.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
               "labelSource": "auto"
             }
           ]
         },
         {
           "questionId": "id-00085",
-          "questionText": "What is the best AI tool to turn long videos into short clips for video creators?",
+          "questionText": "Which AI app makes TikTok clips from long videos for video creators?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3046,58 +2856,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:02:51.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 3,
-            "incorrect": 0,
-            "unverifiable": 0,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:02:43.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:02:49.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:02:51.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00086",
-          "questionText": "Which AI clipping app should video creators use for TikTok?",
-          "questionType": "RECOMMEND",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:05.000Z",
+          "lastRunAt": "2026-10-25T14:03:11.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3123,27 +2882,27 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:02:57.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
+              "date": "2026-10-25T14:03:03.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (68)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:02:59.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
+              "date": "2026-10-25T14:03:05.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (68)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:03:05.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
+              "date": "2026-10-25T14:03:11.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (68)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00087",
-          "questionText": "Top AI video repurposing tools for video creators in 2026?",
+          "questionId": "id-00086",
+          "questionText": "Top AI video repurposing tools for video creators right now?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3151,7 +2910,61 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:15.000Z",
+          "lastRunAt": "2026-10-25T14:03:21.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 0 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 0,
+            "pendingReview": 0
+          },
+          "excerpts": [],
+          "answersNotMentioning": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:13.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (60)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:19.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (60)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:21.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (60)",
+              "labelSource": "auto"
+            }
+          ]
+        },
+        {
+          "questionId": "id-00087",
+          "questionText": "What app makes YouTube Shorts from long videos for video creators?",
+          "questionType": "RECOMMEND",
+          "provider": "fake-beta",
+          "model": "beta-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:03:35.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3176,75 +2989,24 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:07.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (58)"
+              "date": "2026-10-25T14:03:27.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:03:13.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (58)"
+              "date": "2026-10-25T14:03:29.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:03:15.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (58)"
+              "date": "2026-10-25T14:03:35.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)"
             }
           ],
           "answersNotMentioning": []
         },
         {
           "questionId": "id-00088",
-          "questionText": "What app do video creators use to make YouTube Shorts from long videos?",
-          "questionType": "RECOMMEND",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:29.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:03:21.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:03:23.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:03:29.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00089",
           "questionText": "How much does an AI clip maker cost for video creators?",
           "questionType": "PRICE",
           "provider": "fake-beta",
@@ -3253,7 +3015,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:39.000Z",
+          "lastRunAt": "2026-10-25T14:03:45.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3279,26 +3041,26 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:31.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (55)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 2,
               "date": "2026-10-25T14:03:37.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (55)",
               "labelSource": "auto"
             },
             {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:43.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (55)",
+              "labelSource": "auto"
+            },
+            {
               "runNo": 3,
-              "date": "2026-10-25T14:03:39.000Z",
+              "date": "2026-10-25T14:03:45.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (55)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00090",
+          "questionId": "id-00089",
           "questionText": "Is there a free AI video clipping tool for video creators?",
           "questionType": "PRICE",
           "provider": "fake-beta",
@@ -3307,7 +3069,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:03:53.000Z",
+          "lastRunAt": "2026-10-25T14:03:59.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3333,27 +3095,27 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:45.000Z",
+              "date": "2026-10-25T14:03:51.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (58)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:03:47.000Z",
+              "date": "2026-10-25T14:03:53.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (58)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:03:53.000Z",
+              "date": "2026-10-25T14:03:59.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (58)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00091",
-          "questionText": "Turning a one-hour video into short clips takes video creators hours. What can speed this up?",
+          "questionId": "id-00090",
+          "questionText": "Trying to turn a one-hour video into clips for video creators, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3361,7 +3123,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:03.000Z",
+          "lastRunAt": "2026-10-25T14:04:09.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3386,25 +3148,25 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:03:55.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(93)"
+              "date": "2026-10-25T14:04:01.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:04:01.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(93)"
+              "date": "2026-10-25T14:04:07.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:04:03.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(93)"
+              "date": "2026-10-25T14:04:09.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
             }
           ],
           "answersNotMentioning": []
         },
         {
-          "questionId": "id-00092",
-          "questionText": "Adding captions to short clips is slow for video creators. What options exist?",
+          "questionId": "id-00091",
+          "questionText": "Adding captions to clips is slow for video creators, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3412,7 +3174,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:17.000Z",
+          "lastRunAt": "2026-10-25T14:04:23.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3438,81 +3200,81 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:04:09.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (78)",
+              "date": "2026-10-25T14:04:15.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:04:11.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (78)",
+              "date": "2026-10-25T14:04:17.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:04:17.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (78)",
+              "date": "2026-10-25T14:04:23.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
+              "labelSource": "auto"
+            }
+          ]
+        },
+        {
+          "questionId": "id-00092",
+          "questionText": "My clips for video creators get so few views, why?",
+          "questionType": "PROBLEM",
+          "provider": "fake-beta",
+          "model": "beta-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:04:33.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 0 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 0,
+            "pendingReview": 0
+          },
+          "excerpts": [],
+          "answersNotMentioning": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:25.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:31.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:33.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
               "labelSource": "auto"
             }
           ]
         },
         {
           "questionId": "id-00093",
-          "questionText": "Which AI clip tool is better for video creators, a free one or a paid one?",
-          "questionType": "COMPARE",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:27.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 0,
-            "pendingReview": 0
-          },
-          "excerpts": [],
-          "answersNotMentioning": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:04:19.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (74)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:04:25.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (74)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:04:27.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (74)",
-              "labelSource": "auto"
-            }
-          ]
-        },
-        {
-          "questionId": "id-00094",
-          "questionText": "Why do the short clips from video creators get so few views?",
+          "questionText": "Editing clips by hand takes video creators too long?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3520,7 +3282,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:41.000Z",
+          "lastRunAt": "2026-10-25T14:04:47.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3545,33 +3307,33 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:04:33.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (60)"
+              "date": "2026-10-25T14:04:39.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (52)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:04:35.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (60)"
+              "date": "2026-10-25T14:04:41.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (52)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:04:41.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (60)"
+              "date": "2026-10-25T14:04:47.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (52)"
             }
           ],
           "answersNotMentioning": []
         },
         {
-          "questionId": "id-00095",
-          "questionText": "Editing clips by hand takes video creators too long. What can help?",
-          "questionType": "PROBLEM",
+          "questionId": "id-00094",
+          "questionText": "What is the best AI tool to make short clips for social media managers?",
+          "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
           "validRuns": 3,
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:04:51.000Z",
+          "lastRunAt": "2026-10-25T14:04:57.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3597,27 +3359,81 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:04:43.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:04:49.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:04:49.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:04:55.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:04:51.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
+              "date": "2026-10-25T14:04:57.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
+              "labelSource": "auto"
+            }
+          ]
+        },
+        {
+          "questionId": "id-00095",
+          "questionText": "Which AI app makes TikTok clips from long videos for social media managers?",
+          "questionType": "RECOMMEND",
+          "provider": "fake-beta",
+          "model": "beta-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:05:11.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 0 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 0,
+            "pendingReview": 0
+          },
+          "excerpts": [],
+          "answersNotMentioning": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:03.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (75)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:05.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (75)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:11.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (75)",
               "labelSource": "auto"
             }
           ]
         },
         {
           "questionId": "id-00096",
-          "questionText": "What is the best AI tool to turn long videos into short clips for social media managers?",
+          "questionText": "Top AI video repurposing tools for social media managers right now?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3625,109 +3441,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:05.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:04:57.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(88)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:04:59.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(88)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:05:05.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(88)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00097",
-          "questionText": "Which AI clipping app should social media managers use for TikTok?",
-          "questionType": "RECOMMEND",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:15.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:05:07.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(66)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:05:13.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(66)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:05:15.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(66)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00098",
-          "questionText": "Top AI video repurposing tools for social media managers in 2026?",
-          "questionType": "RECOMMEND",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:29.000Z",
+          "lastRunAt": "2026-10-25T14:05:21.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3753,27 +3467,27 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:05:21.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (65)",
+              "date": "2026-10-25T14:05:13.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:05:23.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (65)",
+              "date": "2026-10-25T14:05:19.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:05:29.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (65)",
+              "date": "2026-10-25T14:05:21.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00099",
-          "questionText": "What app do social media managers use to make YouTube Shorts from long videos?",
+          "questionId": "id-00097",
+          "questionText": "What app makes YouTube Shorts from long videos for social media managers?",
           "questionType": "RECOMMEND",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3781,7 +3495,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:39.000Z",
+          "lastRunAt": "2026-10-25T14:05:35.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3792,38 +3506,38 @@
             "text": "Mentioned in 3 of 3 valid runs"
           },
           "recommended": {
-            "count": 3,
+            "count": 0,
             "of": 3,
             "pendingReview": 0,
-            "text": "Recommended in 3 of 3 valid runs"
+            "text": "Recommended in 0 of 3 valid runs"
           },
           "accuracy": {
-            "correct": 3,
+            "correct": 0,
             "incorrect": 0,
-            "unverifiable": 0,
+            "unverifiable": 3,
             "pendingReview": 0
           },
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:05:31.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (78)"
+              "date": "2026-10-25T14:05:27.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:05:37.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (78)"
+              "date": "2026-10-25T14:05:29.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:05:39.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (78)"
+              "date": "2026-10-25T14:05:35.000Z",
+              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             }
           ],
           "answersNotMentioning": []
         },
         {
-          "questionId": "id-00100",
+          "questionId": "id-00098",
           "questionText": "How much does an AI clip maker cost for social media managers?",
           "questionType": "PRICE",
           "provider": "fake-beta",
@@ -3832,7 +3546,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:05:53.000Z",
+          "lastRunAt": "2026-10-25T14:05:45.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3858,26 +3572,26 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:05:45.000Z",
+              "date": "2026-10-25T14:05:37.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:05:47.000Z",
+              "date": "2026-10-25T14:05:43.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:05:53.000Z",
+              "date": "2026-10-25T14:05:45.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00101",
+          "questionId": "id-00099",
           "questionText": "Is there a free AI video clipping tool for social media managers?",
           "questionType": "PRICE",
           "provider": "fake-beta",
@@ -3886,7 +3600,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:03.000Z",
+          "lastRunAt": "2026-10-25T14:05:59.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -3912,27 +3626,27 @@
           "answersNotMentioning": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:05:55.000Z",
+              "date": "2026-10-25T14:05:51.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (65)",
               "labelSource": "auto"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:06:01.000Z",
+              "date": "2026-10-25T14:05:53.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (65)",
               "labelSource": "auto"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:06:03.000Z",
+              "date": "2026-10-25T14:05:59.000Z",
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (65)",
               "labelSource": "auto"
             }
           ]
         },
         {
-          "questionId": "id-00102",
-          "questionText": "Turning a one-hour video into short clips takes social media managers hours. What can speed this up?",
+          "questionId": "id-00100",
+          "questionText": "Trying to turn a one-hour video into clips for social media managers, what helps?",
           "questionType": "PROBLEM",
           "provider": "fake-beta",
           "model": "beta-1",
@@ -3940,220 +3654,7 @@
           "refusals": 0,
           "errors": 0,
           "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:17.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 0,
-            "pendingReview": 0
-          },
-          "excerpts": [],
-          "answersNotMentioning": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:06:09.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (100)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:06:11.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (100)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:06:17.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (100)",
-              "labelSource": "auto"
-            }
-          ]
-        },
-        {
-          "questionId": "id-00103",
-          "questionText": "Adding captions to short clips is slow for social media managers. What options exist?",
-          "questionType": "PROBLEM",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:27.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 3,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 3 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 3,
-            "pendingReview": 0
-          },
-          "excerpts": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:06:19.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(85)"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:06:25.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(85)"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:06:27.000Z",
-              "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(85)"
-            }
-          ],
-          "answersNotMentioning": []
-        },
-        {
-          "questionId": "id-00104",
-          "questionText": "Which AI clip tool is better for social media managers, a free one or a paid one?",
-          "questionType": "COMPARE",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:41.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 0,
-            "pendingReview": 0
-          },
-          "excerpts": [],
-          "answersNotMentioning": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:06:33.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (81)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:06:35.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (81)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:06:41.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (81)",
-              "labelSource": "auto"
-            }
-          ]
-        },
-        {
-          "questionId": "id-00105",
-          "questionText": "Why do the short clips from social media managers get so few views?",
-          "questionType": "PROBLEM",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:06:51.000Z",
-          "status": "REPORTED",
-          "reason": null,
-          "nextStep": null,
-          "mentioned": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Mentioned in 0 of 3 valid runs"
-          },
-          "recommended": {
-            "count": 0,
-            "of": 3,
-            "pendingReview": 0,
-            "text": "Recommended in 0 of 3 valid runs"
-          },
-          "accuracy": {
-            "correct": 0,
-            "incorrect": 0,
-            "unverifiable": 0,
-            "pendingReview": 0
-          },
-          "excerpts": [],
-          "answersNotMentioning": [
-            {
-              "runNo": 1,
-              "date": "2026-10-25T14:06:43.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 2,
-              "date": "2026-10-25T14:06:49.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
-              "labelSource": "auto"
-            },
-            {
-              "runNo": 3,
-              "date": "2026-10-25T14:06:51.000Z",
-              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
-              "labelSource": "auto"
-            }
-          ]
-        },
-        {
-          "questionId": "id-00106",
-          "questionText": "Editing clips by hand takes social media managers too long. What can help?",
-          "questionType": "PROBLEM",
-          "provider": "fake-beta",
-          "model": "beta-1",
-          "validRuns": 3,
-          "refusals": 0,
-          "errors": 0,
-          "timeouts": 0,
-          "lastRunAt": "2026-10-25T14:07:03.000Z",
+          "lastRunAt": "2026-10-25T14:06:09.000Z",
           "status": "REPORTED",
           "reason": null,
           "nextStep": null,
@@ -4178,21 +3679,183 @@
           "excerpts": [
             {
               "runNo": 1,
-              "date": "2026-10-25T14:06:57.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (74)"
+              "date": "2026-10-25T14:06:01.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
             },
             {
               "runNo": 2,
-              "date": "2026-10-25T14:06:59.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (74)"
+              "date": "2026-10-25T14:06:07.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
             },
             {
               "runNo": 3,
-              "date": "2026-10-25T14:07:03.000Z",
-              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (74)"
+              "date": "2026-10-25T14:06:09.000Z",
+              "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
             }
           ],
           "answersNotMentioning": []
+        },
+        {
+          "questionId": "id-00101",
+          "questionText": "Adding captions to clips is slow for social media managers, what helps?",
+          "questionType": "PROBLEM",
+          "provider": "fake-beta",
+          "model": "beta-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:06:23.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 0 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 0,
+            "pendingReview": 0
+          },
+          "excerpts": [],
+          "answersNotMentioning": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:06:15.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:06:17.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:06:23.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
+              "labelSource": "auto"
+            }
+          ]
+        },
+        {
+          "questionId": "id-00102",
+          "questionText": "My clips for social media managers get so few views, why?",
+          "questionType": "PROBLEM",
+          "provider": "fake-beta",
+          "model": "beta-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:06:33.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 0 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 0,
+            "pendingReview": 0
+          },
+          "excerpts": [],
+          "answersNotMentioning": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:06:25.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (57)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:06:31.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (57)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:06:33.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (57)",
+              "labelSource": "auto"
+            }
+          ]
+        },
+        {
+          "questionId": "id-00103",
+          "questionText": "Editing clips by hand takes social media managers too long?",
+          "questionType": "PROBLEM",
+          "provider": "fake-beta",
+          "model": "beta-1",
+          "validRuns": 3,
+          "refusals": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "lastRunAt": "2026-10-25T14:06:39.000Z",
+          "status": "REPORTED",
+          "reason": null,
+          "nextStep": null,
+          "mentioned": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Mentioned in 0 of 3 valid runs"
+          },
+          "recommended": {
+            "count": 0,
+            "of": 3,
+            "pendingReview": 0,
+            "text": "Recommended in 0 of 3 valid runs"
+          },
+          "accuracy": {
+            "correct": 0,
+            "incorrect": 0,
+            "unverifiable": 0,
+            "pendingReview": 0
+          },
+          "excerpts": [],
+          "answersNotMentioning": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:06:35.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:06:37.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:06:39.000Z",
+              "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
+              "labelSource": "auto"
+            }
+          ]
         }
       ],
       "coverage": {
@@ -4205,120 +3868,120 @@
       },
       "overall": {
         "scope": "all reporting providers",
-        "validAnswers": 207,
+        "validAnswers": 186,
         "excludedRefusals": 3,
         "excludedErrors": 0,
-        "excludedTimeouts": 0,
+        "excludedTimeouts": 3,
         "mentioned": {
-          "count": 138,
-          "of": 207,
+          "count": 117,
+          "of": 186,
           "wilson95": {
-            "low": 0.5999,
-            "high": 0.7273
+            "low": 0.5577,
+            "high": 0.6952
           },
           "note": null,
           "pendingReview": 0,
-          "text": "mentioned in 138 of 207 valid answers"
+          "text": "mentioned in 117 of 186 valid answers"
         },
         "recommended": {
-          "count": 84,
-          "of": 207,
+          "count": 51,
+          "of": 186,
           "wilson95": {
-            "low": 0.3412,
-            "high": 0.4738
+            "low": 0.2151,
+            "high": 0.3424
           },
           "note": null,
           "pendingReview": 0,
-          "text": "recommended in 84 of 207 valid answers"
+          "text": "recommended in 51 of 186 valid answers"
         },
-        "autoLabelOnly": 207
+        "autoLabelOnly": 186
       },
       "perProvider": [
         {
           "scope": "fake-alpha",
-          "validAnswers": 105,
+          "validAnswers": 96,
           "excludedRefusals": 0,
           "excludedErrors": 0,
           "excludedTimeouts": 0,
           "mentioned": {
-            "count": 96,
-            "of": 105,
+            "count": 87,
+            "of": 96,
             "wilson95": {
-              "low": 0.8451,
-              "high": 0.9543
+              "low": 0.8313,
+              "high": 0.9499
             },
             "note": null,
             "pendingReview": 0,
-            "text": "mentioned in 96 of 105 valid answers"
+            "text": "mentioned in 87 of 96 valid answers"
           },
           "recommended": {
-            "count": 60,
-            "of": 105,
+            "count": 36,
+            "of": 96,
             "wilson95": {
-              "low": 0.4759,
-              "high": 0.6619
+              "low": 0.2847,
+              "high": 0.4749
             },
             "note": null,
             "pendingReview": 0,
-            "text": "recommended in 60 of 105 valid answers"
+            "text": "recommended in 36 of 96 valid answers"
           },
-          "autoLabelOnly": 105
+          "autoLabelOnly": 96
         },
         {
           "scope": "fake-beta",
-          "validAnswers": 102,
+          "validAnswers": 90,
           "excludedRefusals": 3,
           "excludedErrors": 0,
-          "excludedTimeouts": 0,
+          "excludedTimeouts": 3,
           "mentioned": {
-            "count": 42,
-            "of": 102,
+            "count": 30,
+            "of": 90,
             "wilson95": {
-              "low": 0.3212,
-              "high": 0.5088
+              "low": 0.2445,
+              "high": 0.4358
             },
             "note": null,
             "pendingReview": 0,
-            "text": "mentioned in 42 of 102 valid answers"
+            "text": "mentioned in 30 of 90 valid answers"
           },
           "recommended": {
-            "count": 24,
-            "of": 102,
+            "count": 15,
+            "of": 90,
             "wilson95": {
-              "low": 0.1635,
-              "high": 0.3263
+              "low": 0.1037,
+              "high": 0.2569
             },
             "note": null,
             "pendingReview": 0,
-            "text": "recommended in 24 of 102 valid answers"
+            "text": "recommended in 15 of 90 valid answers"
           },
-          "autoLabelOnly": 102
+          "autoLabelOnly": 90
         }
       ],
       "competitors": [
         {
           "competitor": "Opus Clip",
-          "mentionedIn": 207,
-          "of": 207,
-          "text": "Opus Clip was mentioned in 207 of 207 valid answers"
+          "mentionedIn": 186,
+          "of": 186,
+          "text": "Opus Clip was mentioned in 186 of 186 valid answers"
         },
         {
           "competitor": "Descript",
-          "mentionedIn": 207,
-          "of": 207,
-          "text": "Descript was mentioned in 207 of 207 valid answers"
+          "mentionedIn": 186,
+          "of": 186,
+          "text": "Descript was mentioned in 186 of 186 valid answers"
         },
         {
           "competitor": "Vizard",
-          "mentionedIn": 18,
-          "of": 207,
-          "text": "Vizard was mentioned in 18 of 207 valid answers"
+          "mentionedIn": 39,
+          "of": 186,
+          "text": "Vizard was mentioned in 39 of 186 valid answers"
         },
         {
           "competitor": "Klap",
-          "mentionedIn": 18,
-          "of": 207,
-          "text": "Klap was mentioned in 18 of 207 valid answers"
+          "mentionedIn": 39,
+          "of": 186,
+          "text": "Klap was mentioned in 39 of 186 valid answers"
         }
       ],
       "humanReview": {
@@ -4337,7 +4000,7 @@
           },
           "ruleVersion": "label-rules-v1"
         },
-        "autoLabelOnly": 207
+        "autoLabelOnly": 186
       }
     },
     "nextSteps": [
@@ -4355,7 +4018,13 @@
       },
       {
         "area": "Does AI mention you?",
-        "item": "\"Why do the short clips from podcasters get so few views?\" on fake-beta",
+        "item": "\"Trying to turn a one-hour video into clips for podcasters, what helps?\" on fake-beta",
+        "status": "NOT_ASSESSED",
+        "message": "We could not check this yet. Next step: Re-run this question set when the provider is available."
+      },
+      {
+        "area": "Does AI mention you?",
+        "item": "\"My clips for podcasters get so few views, why?\" on fake-beta",
         "status": "NOT_ASSESSED",
         "message": "We could not check this yet. Next step: Review the refusals; consider rewording the question in a new question-set version."
       }
