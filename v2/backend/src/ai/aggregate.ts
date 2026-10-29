@@ -29,6 +29,8 @@ export interface FinalRun {
   excerpt: string | null;
   /** The full answer the provider gave (valid runs only). */
   answerText: string | null;
+  /** The provider's error message for an ERROR or TIMEOUT run, if any. */
+  error: string | null;
   competitorMentions: string[];
   labelSource: "human" | "auto" | null;
 }
@@ -102,6 +104,7 @@ export function aggregateCells(runs: FinalRun[], minValidRuns: number): CellResu
     const rs = groups.get(k)!.slice().sort((a, b) => a.runNo - b.runNo);
     const first = rs[0];
     const valid = rs.filter((r) => r.status === "VALID");
+    const firstError = rs.find((r) => (r.status === "ERROR" || r.status === "TIMEOUT") && r.error)?.error ?? null;
     const base = {
       questionId: first.questionId,
       questionText: first.questionText,
@@ -118,7 +121,7 @@ export function aggregateCells(runs: FinalRun[], minValidRuns: number): CellResu
       return {
         ...base,
         status: "NOT_ASSESSED" as const,
-        reason: `Only ${valid.length} valid run(s) out of ${rs.length} (${base.refusals} refusal, ${base.errors} error, ${base.timeouts} timeout); at least ${minValidRuns} are needed.`,
+        reason: `Only ${valid.length} valid run(s) out of ${rs.length} (${base.refusals} refusal, ${base.errors} error, ${base.timeouts} timeout); at least ${minValidRuns} are needed.${firstError ? ` Error from ${first.provider}: ${firstError}` : ""}`,
         nextStep: base.refusals > 0 && base.errors + base.timeouts === 0 ? "Review the refusals; consider rewording the question in a new question-set version." : "Re-run this question set when the provider is available.",
         mentioned: null,
         recommended: null,
