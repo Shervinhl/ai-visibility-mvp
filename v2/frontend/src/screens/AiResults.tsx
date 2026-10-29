@@ -20,6 +20,19 @@ function OverallLine({ o }: { o: Overall }) {
   );
 }
 
+/** First two sentences (max 280 characters) of an answer, with markdown symbols removed. The full text stays one click away. */
+function shortAnswer(text: string, max = 280): string {
+  const plain = text.replace(/[#*_`>|]/g, " ").replace(/\s+/g, " ").trim();
+  const sentences = plain.match(/[^.!?]+[.!?]+/g) ?? [plain];
+  let out = "";
+  for (const s of sentences.slice(0, 2)) {
+    if (out && (out + s).length > max) break;
+    out += s;
+  }
+  out = out.trim();
+  return out.length > max ? `${out.slice(0, max).trimEnd()}…` : out;
+}
+
 function CellRow({ c }: { c: Cell }) {
   return (
     <tr className="border-t border-slate-100 align-top">
@@ -58,12 +71,15 @@ function CellRow({ c }: { c: Cell }) {
           <div className="mb-2">
             <Expand label={`What ${c.provider} said without naming you (${c.answersNotMentioning.length})`}>
               {c.answersNotMentioning.map((a) => (
-                <blockquote key={a.runNo} className="mb-2 border-l-2 border-amber-300 pl-2 text-slate-700">
+                <div key={a.runNo} className="mb-2 border-l-2 border-amber-300 pl-2 text-slate-700">
                   <div className="text-[11px] text-slate-400">
                     Run {a.runNo} · {fmtDate(a.date)} · {a.labelSource === "human" ? "checked by a person" : "automatic label, not yet checked"}
                   </div>
-                  <div className="whitespace-pre-wrap">{a.text}</div>
-                </blockquote>
+                  <div>{shortAnswer(a.text)}</div>
+                  <Expand label="Full answer">
+                    <div className="whitespace-pre-wrap text-slate-600">{a.text}</div>
+                  </Expand>
+                </div>
               ))}
             </Expand>
           </div>
