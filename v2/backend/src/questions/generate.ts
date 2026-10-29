@@ -30,15 +30,16 @@ export interface TextGenerator {
   generate(prompt: string): Promise<string>;
 }
 
-export const QGEN_TEMPLATE_VERSION = "qgen-template-v3";
+export const QGEN_TEMPLATE_VERSION = "qgen-template-v4";
 export const QGEN_TEMPLATE =
-  "You are writing messages that a real person would type into an AI assistant such as ChatGPT or Claude when they need [product category] for [buyer type]. Write them the way people really type: short, plain and casual, usually 5 to 14 words, with everyday words. Do not sound like marketing copy, a survey or a formal brief. Do not write how-to questions (no \"how do I\", \"how can we\", steps or workflows). Do not name any company, product or brand. Do not invent facts. Output one message per line with a type tag: RECOMMEND, COMPARE, PRICE, or PROBLEM.";
+  "You are writing messages that a real person would type into an AI assistant such as ChatGPT or Claude when they need [product category] for [buyer type]. Write them the way people really type: short, plain and casual, usually 5 to 14 words, with everyday words. Do not sound like marketing copy, a survey or a formal brief. Ask so that a good answer would name specific tools or options, for example \"best app for ...\", \"which tool ...\", \"what do people use to ...\". Do not write yes/no questions or \"is it better to\" or \"are ... better than\" questions, because those get vague answers. Do not write how-to questions (no \"how do I\", \"how can we\", steps or workflows). Do not name any company, product or brand. Do not invent facts. Output one message per line with a type tag: RECOMMEND, COMPARE, PRICE, or PROBLEM.";
 /** Examples of the style only. They are never copied into the candidates. */
 export const QGEN_STYLE_EXAMPLES = [
   "best app to make shorts from a podcast?",
   "is there a free tool to cut my youtube videos",
   "how much do these clip apps cost a month",
   "why do my shorts get no views",
+  "which app is best for cutting podcasts into shorts?",
 ];
 
 export const MIN_CANDIDATES = 30;

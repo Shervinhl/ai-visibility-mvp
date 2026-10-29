@@ -29,6 +29,16 @@ export function wordCount(q: string): number {
   return q.trim().split(/\s+/).filter(Boolean).length;
 }
 
+/**
+ * Yes/no and "is it better" questions get vague answers that name no tool, so the answer cannot be counted.
+ * Example: "Are AI clip makers better than editing by hand?"
+ */
+const VAGUE_RE = /^\s*(are|is|do|does|should|would|will|can)\b.*\b(better|worth it|worth|good idea|the same|actually)\b/i;
+
+export function isVague(q: string): boolean {
+  return VAGUE_RE.test(q);
+}
+
 /** Returns why a question breaks the policy, or null when it is allowed. */
 export function questionProblem(q: string, facts: { businessName: string; aliases: string[]; competitors: string[] }): string | null {
   if (isHowTo(q)) return "how-to questions are not used (ask about the buyer's problem, a comparison, a price or a recommendation)";
@@ -40,5 +50,6 @@ export function questionProblem(q: string, facts: { businessName: string; aliase
   }
   const comp = competitorIn(q, facts.competitors);
   if (comp) return `names the competitor "${comp}" (questions must not name companies)`;
+  if (isVague(q)) return "yes/no or 'is it better' questions get vague answers that name no tool; ask for a specific tool or choice instead";
   return null;
 }

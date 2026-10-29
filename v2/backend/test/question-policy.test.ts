@@ -54,6 +54,13 @@ describe("question policy (v2.3)", () => {
     assert.equal(out.mix.byType.PROBLEM + out.mix.byType.RECOMMEND + out.mix.byType.COMPARE + out.mix.byType.PRICE, out.candidates.length);
   });
 
+  test("yes/no and 'is it better' questions are rejected because answers name no tool", () => {
+    assert.match(questionProblem("Are AI clip makers actually better than editing shorts by hand?", facts) ?? "", /vague/);
+    assert.match(questionProblem("Is it better to use a dedicated clipping tool or a recording platform?", facts) ?? "", /vague/);
+    assert.equal(questionProblem("Which app is best for cutting podcasts into shorts?", facts), null);
+    assert.equal(questionProblem("Is there a free tool to cut youtube videos?", facts), null);
+  });
+
   test("long, polished questions are rejected; short casual ones are kept", () => {
     const long = "I spend hours scrubbing through hour-long streams to find good moments, and is there an AI tool that can solve that for my team?";
     assert.match(questionProblem(long, facts) ?? "", /too long/);
