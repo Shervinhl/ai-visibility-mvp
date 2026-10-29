@@ -76,7 +76,7 @@ describe("question policy (v2.3)", () => {
 
 describe("reporting and providers (v2.3)", () => {
   test("one reporting provider is preliminary; two is not", () => {
-    const cell = (provider: string): CellResult => ({ questionId: "q", questionText: "Q?", questionType: "PRICE", provider, model: "m", status: "REPORTED", reason: null, nextStep: null, validRuns: 3, refusals: 0, errors: 0, timeouts: 0, mentioned: null, recommended: null, accuracy: null, excerpts: [], answersNotMentioning: [], lastRunAt: null });
+    const cell = (provider: string): CellResult => ({ questionId: "q", questionText: "Q?", questionType: "PRICE", provider, model: "m", status: "REPORTED", reason: null, nextStep: null, validRuns: 3, refusals: 0, errors: 0, timeouts: 0, mentioned: null, recommended: null, accuracy: null, excerpts: [], answersNotMentioning: [], answersNamed: [], lastRunAt: null });
     const one = providerCoverage([cell("anthropic")]);
     assert.equal(one.preliminary, true);
     assert.match(one.note ?? "", /Preliminary: only 1 provider/);

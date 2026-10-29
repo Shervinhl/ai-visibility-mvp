@@ -31,6 +31,8 @@ export interface FinalRun {
   answerText: string | null;
   /** The provider's error message for an ERROR or TIMEOUT run, if any. */
   error: string | null;
+  /** The business name or alias the automatic labeler matched, if any. */
+  matchedTerm: string | null;
   competitorMentions: string[];
   labelSource: "human" | "auto" | null;
 }
@@ -54,6 +56,8 @@ export interface CellResult {
   excerpts: { runNo: number; date: string; excerpt: string }[];
   /** Full answers from valid runs where the business was not mentioned, so the customer can read what the AI said. */
   answersNotMentioning: { runNo: number; date: string; text: string; labelSource: "human" | "auto" | null }[];
+  /** Full answers from valid runs that name the business, with the term that matched and whether it was recommended. */
+  answersNamed: { runNo: number; date: string; text: string; matchedTerm: string | null; recommended: boolean; labelSource: "human" | "auto" | null }[];
   lastRunAt: string | null;
 }
 
@@ -128,6 +132,7 @@ export function aggregateCells(runs: FinalRun[], minValidRuns: number): CellResu
         accuracy: null,
         excerpts: [],
         answersNotMentioning: [],
+        answersNamed: [],
       };
     }
     const decidedM = valid.filter((r) => r.mention === "MENTIONED" || r.mention === "NOT_MENTIONED");
@@ -155,6 +160,9 @@ export function aggregateCells(runs: FinalRun[], minValidRuns: number): CellResu
       answersNotMentioning: valid
         .filter((r) => r.mention !== "MENTIONED" && r.answerText)
         .map((r) => ({ runNo: r.runNo, date: r.finishedAt, text: r.answerText!, labelSource: r.labelSource })),
+      answersNamed: valid
+        .filter((r) => r.mention === "MENTIONED" && r.answerText)
+        .map((r) => ({ runNo: r.runNo, date: r.finishedAt, text: r.answerText!, matchedTerm: r.matchedTerm, recommended: r.recommend === "RECOMMENDED", labelSource: r.labelSource })),
     };
   });
 }

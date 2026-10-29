@@ -123,7 +123,7 @@ describe("labeling (C3)", () => {
 });
 
 function fr(over: Partial<FinalRun>): FinalRun {
-  return { aiRunId: "x", batchId: "b", questionId: "q1", questionText: "Q?", questionType: "RECOMMEND", provider: "fake-a", model: "m", runNo: 1, status: "VALID", finishedAt: "2026-10-25T12:00:00Z", mention: "NOT_MENTIONED", recommend: "NOT_RECOMMENDED", accuracy: null, excerpt: null, answerText: null, error: null, competitorMentions: [], labelSource: "auto", ...over };
+  return { aiRunId: "x", batchId: "b", questionId: "q1", questionText: "Q?", questionType: "RECOMMEND", provider: "fake-a", model: "m", runNo: 1, status: "VALID", finishedAt: "2026-10-25T12:00:00Z", mention: "NOT_MENTIONED", recommend: "NOT_RECOMMENDED", accuracy: null, excerpt: null, answerText: null, error: null, matchedTerm: null, competitorMentions: [], labelSource: "auto", ...over };
 }
 
 describe("reporting (C4)", () => {

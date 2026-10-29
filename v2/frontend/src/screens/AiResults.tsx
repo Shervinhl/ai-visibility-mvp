@@ -20,6 +20,17 @@ function OverallLine({ o }: { o: Overall }) {
   );
 }
 
+/** Text around the first match of the business name, so the mention is visible even deep in a long answer. */
+function aroundTerm(text: string, term: string | null, radius = 160): string {
+  if (!term) return shortAnswer(text);
+  const idx = text.toLowerCase().indexOf(term.toLowerCase());
+  if (idx < 0) return shortAnswer(text);
+  const start = Math.max(0, idx - radius);
+  const end = Math.min(text.length, idx + term.length + radius);
+  const plain = text.slice(start, end).replace(/[#*_`>|]/g, " ").replace(/\s+/g, " ").trim();
+  return `${start > 0 ? "…" : ""}${plain}${end < text.length ? "…" : ""}`;
+}
+
 /** First two sentences (max 280 characters) of an answer, with markdown symbols removed. The full text stays one click away. */
 function shortAnswer(text: string, max = 280): string {
   const plain = text.replace(/[#*_`>|]/g, " ").replace(/\s+/g, " ").trim();
@@ -102,7 +113,32 @@ function ResultCard({ c }: { c: Cell }) {
           tone={(a?.incorrect ?? 0) > 0 ? "bad" : "muted"}
         />
       </div>
+      <p className="mt-3 text-xs text-slate-500">
+        <span className="font-semibold text-slate-700">Named</span> = your business name appears in the answer.{" "}
+        <span className="font-semibold text-slate-700">Recommended</span> = the answer suggests your business as a choice. An answer can name you without recommending you.
+      </p>
       {pendingNamed > 0 && <p className="mt-2 text-xs text-amber-800">{pendingNamed} answer(s) are waiting for a person to check.</p>}
+
+      {c.answersNamed.length > 0 && (
+        <div className="mt-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Where {c.provider} named your business ({c.answersNamed.length})
+          </p>
+          <ul className="mt-2 space-y-2">
+            {c.answersNamed.map((x) => (
+              <li key={x.runNo} className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-slate-700">
+                <div className="text-[11px] text-slate-400">
+                  Run {x.runNo} · {fmtDate(x.date)} · matched “{x.matchedTerm ?? "name"}” · {x.recommended ? "recommended" : "not recommended"} · {x.labelSource === "human" ? "checked by a person" : "not yet checked"}
+                </div>
+                <div>{aroundTerm(x.text, x.matchedTerm)}</div>
+                <Expand label="Full answer">
+                  <div className="whitespace-pre-wrap text-slate-600">{x.text}</div>
+                </Expand>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {c.answersNotMentioning.length > 0 && (
         <div className="mt-4">

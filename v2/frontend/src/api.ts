@@ -116,6 +116,7 @@ export interface Cell {
   excerpts: { runNo: number; date: string; excerpt: string }[];
   /** Full answers from valid runs in which the business was not mentioned, one per run (each row is one provider). */
   answersNotMentioning: { runNo: number; date: string; text: string; labelSource: "human" | "auto" | null }[];
+  answersNamed: { runNo: number; date: string; text: string; matchedTerm: string | null; recommended: boolean; labelSource: "human" | "auto" | null }[];
   lastRunAt: string | null;
 }
 

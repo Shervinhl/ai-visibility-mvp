@@ -576,6 +576,7 @@ export function finalRuns(db: Db, batchIds: string[]): FinalRun[] {
       excerpt: auto ? (strOrNull(auto.details.excerpt) ?? null) : null,
       answerText: str(r.status) === "VALID" ? str(r.answer_text) : null,
       error: strOrNull(r.error) ?? null,
+      matchedTerm: auto ? (strOrNull(auto.details.matchedTerm) ?? null) : null,
       competitorMentions: auto ? ((auto.details.competitorMentions as string[]) ?? []) : [],
       labelSource: eff?.source ?? null,
     };
