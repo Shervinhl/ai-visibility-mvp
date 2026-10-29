@@ -6,7 +6,7 @@
       "name": "Flowjin",
       "factListVersion": 1
     },
-    "generatedAt": "2026-10-29T14:42:24.552Z",
+    "generatedAt": "2026-10-29T14:48:22.418Z",
     "technical": {
       "question": "Can AI read your site?",
       "run": {
@@ -635,7 +635,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (41)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:05.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (41)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:06.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (41)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:13.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (41)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00073",
@@ -686,7 +712,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:14.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:21.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (60)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:22.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00074",
@@ -737,7 +789,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:29.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:30.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:39.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00075",
@@ -788,7 +866,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (56)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:40.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (56)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:47.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (56)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:48.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (56)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00076",
@@ -839,7 +943,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(62)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:55.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(62)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:56.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(62)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:01:03.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(62)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00077",
@@ -890,7 +1020,33 @@
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:01:04.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:01:11.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:01:12.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00078",
@@ -941,7 +1097,33 @@
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:01:19.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:01:20.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:01:27.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00079",
@@ -992,7 +1174,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (70)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:01:28.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (70)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:01:36.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (70)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:01:37.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (70)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00080",
@@ -1043,7 +1251,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:01:47.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:01:48.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:01:56.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00081",
@@ -1097,7 +1331,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (46)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00082",
@@ -1148,7 +1383,33 @@
               "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:02:13.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:14.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:21.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00083",
@@ -1199,7 +1460,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (40)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:02:22.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (40)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:29.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (40)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:30.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (40)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00084",
@@ -1250,7 +1537,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(64)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:02:37.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(64)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:38.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(64)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:45.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(64)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00085",
@@ -1301,7 +1614,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(68)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:02:46.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(68)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:53.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(68)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:54.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(68)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00086",
@@ -1352,7 +1691,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:01.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:02.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (60)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:09.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (60)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00087",
@@ -1403,7 +1768,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (66)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:10.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (66)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:17.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:18.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (66)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00088",
@@ -1454,7 +1845,33 @@
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:25.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:26.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:33.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00089",
@@ -1505,7 +1922,33 @@
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:34.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:41.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:42.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00090",
@@ -1556,7 +1999,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:49.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:50.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:57.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00091",
@@ -1607,7 +2076,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:58.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:05.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:06.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00092",
@@ -1661,7 +2156,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00093",
@@ -1712,7 +2208,33 @@
               "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:22.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:29.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:30.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00094",
@@ -1763,7 +2285,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (71)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:37.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (71)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:38.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (71)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:45.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (71)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00095",
@@ -1814,7 +2362,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (75)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:46.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (75)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:53.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (75)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:54.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (75)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00096",
@@ -1865,7 +2439,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(67)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:01.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(67)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:02.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(67)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:09.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(67)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00097",
@@ -1916,7 +2516,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:10.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:17.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:18.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00098",
@@ -1967,7 +2593,33 @@
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:25.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:26.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:33.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00099",
@@ -2018,7 +2670,33 @@
               "excerpt": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:34.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:41.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:42.000Z",
+              "text": "Prices vary. Opus Clip has a free tier. Flowjin costs about $19 per month for its creator plan. Descript starts around $12 per month.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00100",
@@ -2069,7 +2747,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (81)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:49.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (81)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:50.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:57.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Descript** - a full editor with clipping features.\n3. **Flowjin** - turns long videos into captioned short clips; I'd recommend it if you publish podcasts weekly.\n\nPick based on budget and how much editing you want to do. (81)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00101",
@@ -2120,7 +2824,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:58.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:06:05.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:06:06.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(71)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00102",
@@ -2171,7 +2901,33 @@
               "excerpt": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing."
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:06:13.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:06:14.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:06:21.000Z",
+              "text": "Opus Clip is the most widely used. Flowjin is another option, but some users report limited export formats. Descript is better if you also need full editing.",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00103",
@@ -2225,7 +2981,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00072",
@@ -2276,7 +3033,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (41)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:07.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (41)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:08.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (41)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:15.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (41)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00073",
@@ -2327,7 +3110,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:16.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:23.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:24.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00074",
@@ -2378,7 +3187,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:35.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:33.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:41.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (64)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00075",
@@ -2429,7 +3264,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(56)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:00:43.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(56)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:00:49.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(56)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:00:51.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(56)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00076",
@@ -2483,7 +3344,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00077",
@@ -2537,7 +3399,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (51)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00078",
@@ -2591,7 +3454,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (54)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00079",
@@ -2611,7 +3475,8 @@
           "recommended": null,
           "accuracy": null,
           "excerpts": [],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": []
         },
         {
           "questionId": "id-00080",
@@ -2662,7 +3527,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:01:59.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:02:07.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:02:09.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(60)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00081",
@@ -2682,7 +3573,8 @@
           "recommended": null,
           "accuracy": null,
           "excerpts": [],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": []
         },
         {
           "questionId": "id-00082",
@@ -2736,7 +3628,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (48)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00083",
@@ -2790,7 +3683,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (40)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00084",
@@ -2844,7 +3738,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00085",
@@ -2898,7 +3793,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (68)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00086",
@@ -2952,7 +3848,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (60)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00087",
@@ -3003,7 +3900,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:03:27.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:03:29.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:03:35.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (66)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00088",
@@ -3057,7 +3980,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (55)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00089",
@@ -3111,7 +4035,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (58)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00090",
@@ -3162,7 +4087,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:01.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:07.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:09.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(74)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00091",
@@ -3216,7 +4167,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (64)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00092",
@@ -3270,7 +4222,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (50)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00093",
@@ -3321,7 +4274,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (52)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:04:39.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (52)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:04:41.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (52)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:04:47.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (52)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00094",
@@ -3375,7 +4354,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00095",
@@ -3429,7 +4409,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (75)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00096",
@@ -3483,7 +4464,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (67)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00097",
@@ -3534,7 +4516,33 @@
               "excerpt": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:05:27.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:05:29.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:05:35.000Z",
+              "text": "The most common choices are Opus Clip and Descript.\n\nOther options:\n- Vizard\n- Flowjin\n- Klap\n\n(73)",
+              "matchedTerm": "Flowjin",
+              "recommended": false,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00098",
@@ -3588,7 +4596,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (62)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00099",
@@ -3642,7 +4651,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (65)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00100",
@@ -3693,7 +4703,33 @@
               "excerpt": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)"
             }
           ],
-          "answersNotMentioning": []
+          "answersNotMentioning": [],
+          "answersNamed": [
+            {
+              "runNo": 1,
+              "date": "2026-10-25T14:06:01.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 2,
+              "date": "2026-10-25T14:06:07.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            },
+            {
+              "runNo": 3,
+              "date": "2026-10-25T14:06:09.000Z",
+              "text": "Here are strong options for this:\n\n1. **Opus Clip** - popular for viral-style clips.\n2. **Flowjin** - a great choice for podcasters; it finds highlight moments and adds Automatic captions.\n3. **Descript** - a full editor with clipping features.\n\nPick based on budget and how much editing you want to do. (81)",
+              "matchedTerm": "Flowjin",
+              "recommended": true,
+              "labelSource": "auto"
+            }
+          ]
         },
         {
           "questionId": "id-00101",
@@ -3747,7 +4783,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (71)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00102",
@@ -3801,7 +4838,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (57)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         },
         {
           "questionId": "id-00103",
@@ -3855,7 +4893,8 @@
               "text": "Start with the transcript, find moments with a strong hook, keep clips between 20 and 60 seconds, and add captions. Tools like Opus Clip and Descript can help. (59)",
               "labelSource": "auto"
             }
-          ]
+          ],
+          "answersNamed": []
         }
       ],
       "coverage": {
