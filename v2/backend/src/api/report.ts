@@ -1,7 +1,7 @@
 import { Db } from "../db/db";
 import * as repo from "../db/repo";
 import { AiConfig } from "../config";
-import { aggregateCells, aggregateCompetitors, aggregateOverall } from "../ai/aggregate";
+import { aggregateCells, aggregateCompetitors, aggregateOverall, providerCoverage } from "../ai/aggregate";
 import { AI_SECTION_COPY, notAssessedLine } from "../wording/catalog";
 
 /**
@@ -55,6 +55,8 @@ export function buildReport(db: Db, businessId: string, ai: AiConfig, opts: { ch
         nextSteps.push({ area: "Does AI mention you?", item: `"${c.questionText}" on ${c.provider}`, status: "NOT_ASSESSED", message: notAssessedLine(c.nextStep) });
       }
       const usedFactVersion = batches[0].factListVersion;
+      const overall = aggregateOverall(runs, cells, "all reporting providers", ai.minAnswersForComparison);
+      const coverage = providerCoverage(cells);
       aiSection = {
         question: "Does AI mention you?",
         ...AI_SECTION_COPY,
@@ -62,10 +64,17 @@ export function buildReport(db: Db, businessId: string, ai: AiConfig, opts: { ch
         factListVersionUsed: usedFactVersion,
         runs: batches.map((b) => ({ id: b.id, startedAt: b.startedAt, finishedAt: b.finishedAt, providers: b.providers, settings: b.settings, runsPerQuestion: b.runsPerQuestion })),
         perQuestion: cells,
-        overall: aggregateOverall(runs, cells, "all providers", ai.minAnswersForComparison),
+        coverage,
+        overall,
         perProvider: providers.map((p) => aggregateOverall(runs.filter((r) => r.provider === p), cells.filter((c) => c.provider === p), p, ai.minAnswersForComparison)),
         competitors: facts.content.competitors.length ? aggregateCompetitors(runs, facts.content.competitors, cells) : { note: "No competitor list in the fact list, so competitor mentions are not counted." },
-        humanReview: { open: queue.filter((q) => !q.done).length, items: queue.length, agreement: repo.labelAgreement(db, ids) },
+        humanReview: {
+          open: queue.filter((q) => !q.done).length,
+          items: queue.length,
+          agreement: repo.labelAgreement(db, ids),
+          /** Answers whose label is still automatic. They are shown as provisional until a person checks them. */
+          autoLabelOnly: overall.autoLabelOnly,
+        },
       };
     }
   }

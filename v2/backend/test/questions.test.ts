@@ -14,7 +14,7 @@ describe("question generation (B2)", () => {
     const parsed = parseTaggedLines("RECOMMEND: What is the best tool for clips?\n2. [PRICE] How much do clip tools cost?\n- How do I caption a podcast? (HOWTO)\nnot a question line\nCOMPARE | Is Descript better than Opus Clip?");
     assert.deepEqual(
       parsed.map((p) => p.type),
-      ["RECOMMEND", "PRICE", "HOWTO", "COMPARE"]
+      ["RECOMMEND", "PRICE", "COMPARE"]
     );
     assert.equal(parsed[0].text, "What is the best tool for clips?");
   });
@@ -32,7 +32,7 @@ describe("question generation (B2)", () => {
     assert.equal(classifyQuestion("Opus Clip vs Descript for podcasts"), "COMPARE");
     assert.equal(classifyQuestion("how much does an AI clipping tool cost"), "PRICE");
     assert.equal(classifyQuestion("best AI tool to clip podcasts"), "RECOMMEND");
-    assert.equal(classifyQuestion("how do I add captions to a short video"), "HOWTO");
+    assert.equal(classifyQuestion("how do I add captions to a short video"), "PROBLEM");
     assert.equal(classifyQuestion("my clips get no views on TikTok"), "PROBLEM");
   });
   test("reads a Search Console CSV export and keeps question-like queries", () => {
@@ -47,7 +47,7 @@ describe("question generation (B2)", () => {
     assert.ok(gen.removed.some((r) => /business name/.test(r.reason)));
     assert.ok(gen.removed.some((r) => /duplicate/.test(r.reason)));
     assert.equal(gen.mix.total, gen.candidates.length);
-    assert.equal(gen.mix.byGroup.RECOMMEND + gen.mix.byGroup.COMPARE_OR_PRICE + gen.mix.byGroup.HOWTO_OR_PROBLEM, gen.candidates.length);
+    assert.equal(gen.mix.byGroup.RECOMMEND + gen.mix.byGroup.COMPARE_OR_PRICE + gen.mix.byGroup.PROBLEM, gen.candidates.length);
     assert.equal(gen.candidates.filter((c) => c.source === "CUSTOMER").length, 1);
   });
   test("without a provider, only client questions are used and a warning names the missing keys", async () => {
@@ -59,7 +59,7 @@ describe("question generation (B2)", () => {
     const qs: CandidateQuestion[] = [];
     for (let i = 0; i < 30; i++) qs.push({ text: `rec ${i}`, type: "RECOMMEND", source: "LLM" });
     for (let i = 0; i < 15; i++) qs.push({ text: `cmp ${i}`, type: "COMPARE", source: "LLM" });
-    for (let i = 0; i < 15; i++) qs.push({ text: `how ${i}`, type: "HOWTO", source: "LLM" });
+    for (let i = 0; i < 15; i++) qs.push({ text: `problem ${i}`, type: "PROBLEM", source: "LLM" });
     const out = balance(qs, 40);
     assert.equal(out.length, 40);
     assert.ok(out.filter((q) => q.type === "RECOMMEND").length <= 14);

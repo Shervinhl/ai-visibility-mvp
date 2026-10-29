@@ -13,7 +13,7 @@ import { ProviderHttpError } from "../ai/providers";
 import { validateReviewer } from "../questions/rules";
 import { AiProvider } from "../ai/providers";
 import { RunDeps, runQuestionSet } from "../ai/runner";
-import { aggregateCells, aggregateCompetitors, aggregateOverall } from "../ai/aggregate";
+import { aggregateCells, aggregateCompetitors, aggregateOverall, providerCoverage } from "../ai/aggregate";
 import { compareRuns } from "../retest/compare";
 import { buildReport } from "./report";
 
@@ -275,7 +275,8 @@ export function createApp(deps: AppDeps): AppHandle {
         runs: batches.map((b) => ({ ...b, progress: repo.batchProgress(db, b.id) })),
         shownRunIds: ids,
         perQuestion: cells,
-        overall: ids.length ? aggregateOverall(runs, cells, "all providers", aiConfig.minAnswersForComparison) : null,
+        coverage: providerCoverage(cells),
+        overall: ids.length ? aggregateOverall(runs, cells, "all reporting providers", aiConfig.minAnswersForComparison) : null,
         perProvider: providers.map((p) => aggregateOverall(runs.filter((r) => r.provider === p), cells.filter((c) => c.provider === p), p, aiConfig.minAnswersForComparison)),
         competitors: facts.competitors.length ? aggregateCompetitors(runs, facts.competitors, cells) : [],
         reviewQueue: repo.reviewQueue(db, ids),

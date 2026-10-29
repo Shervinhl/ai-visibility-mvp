@@ -47,6 +47,8 @@ export interface AiConfig {
   concurrencyPerProvider: number;
   models: { anthropic: string; openai: string; gemini: string };
   keys: { anthropic?: string; openai?: string; gemini?: string };
+  /** Providers allowed to answer questions. Default: anthropic and gemini (OpenAI is off unless listed). */
+  providers: ("anthropic" | "openai" | "gemini")[];
 }
 
 export interface AppConfig {
@@ -83,6 +85,15 @@ function envNumber(name: string, fallback: number): number {
 function envString(name: string, fallback: string): string {
   const raw = process.env[name];
   return raw === undefined || raw.trim() === "" ? fallback : raw.trim();
+}
+
+/** Comma-separated list of known provider names, e.g. "anthropic,gemini". Unknown names are ignored. */
+function envProviders(name: string, fallback: ("anthropic" | "openai" | "gemini")[]): ("anthropic" | "openai" | "gemini")[] {
+  const raw = process.env[name];
+  if (raw === undefined || raw.trim() === "") return fallback;
+  const known = ["anthropic", "openai", "gemini"] as const;
+  const picked = raw.split(",").map((s) => s.trim().toLowerCase()).filter((s): s is (typeof known)[number] => (known as readonly string[]).includes(s));
+  return picked.length ? [...new Set(picked)] : fallback;
 }
 
 function envSecret(name: string): string | undefined {
@@ -138,6 +149,7 @@ export function loadAiConfig(): AiConfig {
       openai: envSecret("OPENAI_API_KEY"),
       gemini: envSecret("GEMINI_API_KEY"),
     },
+    providers: envProviders("V2_PROVIDERS", ["anthropic", "gemini"]),
   };
 }
 

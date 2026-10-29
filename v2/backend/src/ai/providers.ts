@@ -148,10 +148,11 @@ export class GeminiProvider implements AiProvider {
 
 /** Providers that have a key configured, in a fixed order. */
 export function configuredProviders(cfg: AiConfig): AiProvider[] {
+  const allowed = new Set(cfg.providers);
   const out: AiProvider[] = [];
-  if (cfg.keys.anthropic) out.push(new AnthropicProvider(cfg.keys.anthropic, cfg.models.anthropic, cfg));
-  if (cfg.keys.openai) out.push(new OpenAiProvider(cfg.keys.openai, cfg.models.openai, cfg));
-  if (cfg.keys.gemini) out.push(new GeminiProvider(cfg.keys.gemini, cfg.models.gemini, cfg));
+  if (cfg.keys.anthropic && allowed.has("anthropic")) out.push(new AnthropicProvider(cfg.keys.anthropic, cfg.models.anthropic, cfg));
+  if (cfg.keys.openai && allowed.has("openai")) out.push(new OpenAiProvider(cfg.keys.openai, cfg.models.openai, cfg));
+  if (cfg.keys.gemini && allowed.has("gemini")) out.push(new GeminiProvider(cfg.keys.gemini, cfg.models.gemini, cfg));
   return out;
 }
 

@@ -8,8 +8,8 @@ export function errorText(e: unknown): string {
 }
 
 export type Status = "PASS" | "FAIL" | "NOT_ASSESSED" | "NOT_APPLICABLE";
-export type QuestionType = "RECOMMEND" | "COMPARE" | "PRICE" | "HOWTO" | "PROBLEM";
-export const QUESTION_TYPES: QuestionType[] = ["RECOMMEND", "COMPARE", "PRICE", "HOWTO", "PROBLEM"];
+export type QuestionType = "RECOMMEND" | "COMPARE" | "PRICE" | "PROBLEM";
+export const QUESTION_TYPES: QuestionType[] = ["RECOMMEND", "COMPARE", "PRICE", "PROBLEM"];
 
 export interface FactList {
   businessName: string;
@@ -114,6 +114,8 @@ export interface Cell {
   recommended: { count: number; of: number; pendingReview: number; text: string } | null;
   accuracy: { correct: number; incorrect: number; unverifiable: number; pendingReview: number } | null;
   excerpts: { runNo: number; date: string; excerpt: string }[];
+  /** Full answers from valid runs in which the business was not mentioned, one per run (each row is one provider). */
+  answersNotMentioning: { runNo: number; date: string; text: string; labelSource: "human" | "auto" | null }[];
   lastRunAt: string | null;
 }
 
@@ -125,6 +127,14 @@ export interface Overall {
   excludedTimeouts: number;
   mentioned: { count: number; of: number; wilson95: { low: number; high: number } | null; note: string | null; pendingReview: number; text: string };
   recommended: { count: number; of: number; wilson95: { low: number; high: number } | null; note: string | null; pendingReview: number; text: string };
+  /** Valid answers whose label is still automatic (no person has checked them yet). */
+  autoLabelOnly: number;
+}
+
+export interface ProviderCoverage {
+  reporting: string[];
+  preliminary: boolean;
+  note: string | null;
 }
 
 export interface ReviewItem {
@@ -148,6 +158,7 @@ export interface RunsView {
   perQuestion: Cell[];
   overall: Overall | null;
   perProvider: Overall[];
+  coverage: ProviderCoverage;
   competitors: { competitor: string; mentionedIn: number; of: number; text: string }[];
   reviewQueue: ReviewItem[];
   agreement: { sampled: number; humanLabeled: number; mentionAgreement: { agree: number; of: number }; recommendAgreement: { agree: number; of: number }; ruleVersion: string };

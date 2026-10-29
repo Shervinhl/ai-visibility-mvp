@@ -27,6 +27,8 @@ export interface FinalRun {
   recommend: EffRecommend | null;
   accuracy: EffAccuracy;
   excerpt: string | null;
+  /** The full answer the provider gave (valid runs only). */
+  answerText: string | null;
   competitorMentions: string[];
   labelSource: "human" | "auto" | null;
 }
@@ -48,6 +50,8 @@ export interface CellResult {
   recommended: { count: number; of: number; pendingReview: number; text: string } | null;
   accuracy: { correct: number; incorrect: number; unverifiable: number; pendingReview: number } | null;
   excerpts: { runNo: number; date: string; excerpt: string }[];
+  /** Full answers from valid runs where the business was not mentioned, so the customer can read what the AI said. */
+  answersNotMentioning: { runNo: number; date: string; text: string; labelSource: "human" | "auto" | null }[];
   lastRunAt: string | null;
 }
 
@@ -59,6 +63,21 @@ export interface OverallResult {
   excludedTimeouts: number;
   mentioned: Proportion & { pendingReview: number; text: string };
   recommended: Proportion & { pendingReview: number; text: string };
+  /** Valid answers whose label is still the automatic one (no person has checked them yet). */
+  autoLabelOnly: number;
+}
+
+/**
+ * Which providers gave valid answers for reported cells. Fewer than two means the result is preliminary:
+ * it is one provider's answers, not a comparison.
+ */
+export function providerCoverage(cells: CellResult[]): { reporting: string[]; preliminary: boolean; note: string | null } {
+  const reporting = [...new Set(cells.filter((c) => c.status === "REPORTED").map((c) => c.provider))].sort();
+  const preliminary = reporting.length < 2;
+  const note = preliminary
+    ? `Preliminary: only ${reporting.length} provider${reporting.length === 1 ? "" : "s"} gave valid answers${reporting.length ? ` (${reporting.join(", ")})` : ""}. At least two are needed, so this is not a comparison yet.`
+    : null;
+  return { reporting, preliminary, note };
 }
 
 export interface CompetitorResult {
@@ -105,6 +124,7 @@ export function aggregateCells(runs: FinalRun[], minValidRuns: number): CellResu
         recommended: null,
         accuracy: null,
         excerpts: [],
+        answersNotMentioning: [],
       };
     }
     const decidedM = valid.filter((r) => r.mention === "MENTIONED" || r.mention === "NOT_MENTIONED");
@@ -129,6 +149,9 @@ export function aggregateCells(runs: FinalRun[], minValidRuns: number): CellResu
         pendingReview: mentionedRuns.filter((r) => r.accuracy === "PENDING_REVIEW").length,
       },
       excerpts: valid.filter((r) => r.excerpt).map((r) => ({ runNo: r.runNo, date: r.finishedAt, excerpt: r.excerpt! })),
+      answersNotMentioning: valid
+        .filter((r) => r.mention !== "MENTIONED" && r.answerText)
+        .map((r) => ({ runNo: r.runNo, date: r.finishedAt, text: r.answerText!, labelSource: r.labelSource })),
     };
   });
 }
@@ -152,6 +175,7 @@ export function aggregateOverall(runs: FinalRun[], cells: CellResult[], scope: s
     excludedTimeouts: runs.filter((r) => r.status === "TIMEOUT").length,
     mentioned: { ...m, pendingReview: pM, text: phrase("mentioned", m, "valid answers") },
     recommended: { ...rc, pendingReview: pR, text: phrase("recommended", rc, "valid answers") },
+    autoLabelOnly: valid.filter((r) => r.labelSource === "auto").length,
   };
 }
 

@@ -12,6 +12,7 @@ function OverallLine({ o }: { o: Overall }) {
       </div>
       {o.mentioned.note && <div className="text-xs text-amber-800">{o.mentioned.note}</div>}
       {o.mentioned.pendingReview > 0 && <div className="text-xs text-amber-800">{o.mentioned.pendingReview} answer(s) await human review and are not counted yet.</div>}
+      {o.autoLabelOnly > 0 && <div className="text-xs text-amber-800">{o.autoLabelOnly} answer(s) use an automatic label that no person has checked yet. These results are provisional.</div>}
       <div className="text-xs text-slate-500">
         Not counted: {o.excludedRefusals} refusal(s), {o.excludedErrors} error(s), {o.excludedTimeouts} timeout(s).
       </div>
@@ -53,6 +54,20 @@ function CellRow({ c }: { c: Cell }) {
         )}
       </td>
       <td className="py-2 text-xs">
+        {c.answersNotMentioning.length > 0 && (
+          <div className="mb-2">
+            <Expand label={`What ${c.provider} said without naming you (${c.answersNotMentioning.length})`}>
+              {c.answersNotMentioning.map((a) => (
+                <blockquote key={a.runNo} className="mb-2 border-l-2 border-amber-300 pl-2 text-slate-700">
+                  <div className="text-[11px] text-slate-400">
+                    Run {a.runNo} · {fmtDate(a.date)} · {a.labelSource === "human" ? "checked by a person" : "automatic label, not yet checked"}
+                  </div>
+                  <div className="whitespace-pre-wrap">{a.text}</div>
+                </blockquote>
+              ))}
+            </Expand>
+          </div>
+        )}
         {c.excerpts.length > 0 && (
           <Expand label={`${c.excerpts.length} excerpt(s)`}>
             {c.excerpts.map((e) => (
@@ -199,7 +214,7 @@ export default function AiResults({ detail, reviewer, onChanged }: { detail: Bus
   return (
     <Section
       title="Does AI mention you?"
-      subtitle="Real buyer questions asked to two or more AI assistants through their official APIs, three times each. Counts only, no score."
+      subtitle="Approved buyer questions asked to two or more AI assistants through their official APIs, three times each. Counts only, no score."
       actions={
         <div className="flex flex-wrap items-center gap-2">
           <select className="input w-56" value={setId ?? ""} onChange={(e) => { setSetId(e.target.value || null); setRunId(null); }}>
@@ -233,6 +248,7 @@ export default function AiResults({ detail, reviewer, onChanged }: { detail: Bus
               ))}
             </ul>
           </div>
+          {view.coverage.preliminary && view.coverage.note && <Notice kind="warn">{view.coverage.note}</Notice>}
           {view.overall && (
             <div className="card space-y-2">
               <div className="font-semibold">Across the question set</div>

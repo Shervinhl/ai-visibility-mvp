@@ -1,13 +1,14 @@
 import { FactList } from "../facts/types";
 import { wordBoundaryRegex } from "../checks/html";
+import { questionProblem } from "./policy";
 
 /**
  * Part B2: candidate question generation.
  * The LLM prompt is a fixed, versioned template. Changing any wording means a new template version.
  */
 
-export type QuestionType = "RECOMMEND" | "COMPARE" | "PRICE" | "HOWTO" | "PROBLEM";
-export const QUESTION_TYPES: QuestionType[] = ["RECOMMEND", "COMPARE", "PRICE", "HOWTO", "PROBLEM"];
+export type QuestionType = "RECOMMEND" | "COMPARE" | "PRICE" | "PROBLEM";
+export const QUESTION_TYPES: QuestionType[] = ["RECOMMEND", "COMPARE", "PRICE", "PROBLEM"];
 export type QuestionSource = "LLM" | "CUSTOMER" | "GSC" | "SUGGESTION" | "REVIEWER";
 
 export interface CandidateQuestion {
@@ -29,17 +30,18 @@ export interface TextGenerator {
   generate(prompt: string): Promise<string>;
 }
 
-export const QGEN_TEMPLATE_VERSION = "qgen-template-v1";
+export const QGEN_TEMPLATE_VERSION = "qgen-template-v2";
 export const QGEN_TEMPLATE =
-  "You are writing questions a real buyer would ask an AI assistant when looking for [product category] for [buyer type]. Write natural questions. Do not include the company name. Do not invent facts. Output one question per line with a type tag: RECOMMEND, COMPARE, PRICE, HOWTO, or PROBLEM.";
+  "You are writing questions a buyer would ask an AI assistant when looking for [product category] for [buyer type]. Write natural questions about the buyer's problem, a recommendation, a comparison or a price. Do not write how-to questions (no \"how do I\", \"how can we\", steps or workflows). Do not name any company, product or brand. Do not include the company name. Do not invent facts. Output one question per line with a type tag: RECOMMEND, COMPARE, PRICE, or PROBLEM.";
 
 export const MIN_CANDIDATES = 30;
 export const MAX_CANDIDATES = 40;
 /** Buyer types used for generation calls (each buyer type is one LLM call). */
 export const MAX_BUYER_TYPES_PER_GENERATION = 5;
 
-export function buildGenerationPrompt(productCategory: string, buyerType: string, count: number, references: string[]): string {
+export function buildGenerationPrompt(productCategory: string, buyerType: string, count: number, references: string[], avoidNames: string[] = []): string {
   const lines = [QGEN_TEMPLATE.replace("[product category]", productCategory).replace("[buyer type]", buyerType), `Write ${count} questions.`, 'Format each line as: TYPE: question (for example "RECOMMEND: ...").'];
+  if (avoidNames.length) lines.push(`Never mention these names in a question: ${avoidNames.slice(0, 20).join(", ")}.`);
   if (references.length) {
     lines.push("Real wording from buyers, for tone only (do not copy, do not use any company names):");
     for (const r of references.slice(0, 15)) lines.push(`- ${r}`);
@@ -47,9 +49,9 @@ export function buildGenerationPrompt(productCategory: string, buyerType: string
   return lines.join("\n");
 }
 
-const TAG_RE = /\b(RECOMMEND|COMPARE|PRICE|HOWTO|PROBLEM)\b/;
+const TAG_RE = /\b(RECOMMEND|COMPARE|PRICE|PROBLEM)\b/;
 
-/** Parses LLM output lines like "RECOMMEND: ...", "[PRICE] ...", "1. ... (HOWTO)", "... | COMPARE". */
+/** Parses LLM output lines like "RECOMMEND: ...", "[PRICE] ...", "1. ... (PROBLEM)", "... | COMPARE". Lines with any other tag are skipped. */
 export function parseTaggedLines(text: string): { text: string; type: QuestionType }[] {
   const out: { text: string; type: QuestionType }[] = [];
   for (const raw of text.split(/\r?\n/)) {
@@ -60,7 +62,7 @@ export function parseTaggedLines(text: string): { text: string; type: QuestionTy
     const type = m[1] as QuestionType;
     const q = line
       .replace(/^\s*(?:\d+[.)]|[-*•])\s*/, "")
-      .replace(/\[?\(?\b(RECOMMEND|COMPARE|PRICE|HOWTO|PROBLEM)\b\)?\]?\s*[:|\-–—]?\s*/, "")
+      .replace(/\[?\(?\b(RECOMMEND|COMPARE|PRICE|PROBLEM)\b\)?\]?\s*[:|\-–—]?\s*/, "")
       .replace(/\s*[|\-–—:]\s*$/, "")
       .replace(/^["“]|["”]$/g, "")
       .trim();
@@ -76,7 +78,6 @@ export function classifyQuestion(q: string): QuestionType {
   if (/\b(vs\.?|versus|compare|compared|comparison|alternatives?|better than|difference between)\b/.test(s)) return "COMPARE";
   if (/\b(price|prices|pricing|cost|costs|how much|cheap|cheapest|free|affordable|per month|subscription|plan|plans)\b/.test(s)) return "PRICE";
   if (/\b(best|top|recommend|recommendation|which (tool|app|service|software|company)|what (tool|app|service|software) should)\b/.test(s)) return "RECOMMEND";
-  if (/^(how (do|can|to|should)|what('s| is) the best way|steps to)\b/.test(s)) return "HOWTO";
   return "PROBLEM";
 }
 
@@ -157,9 +158,9 @@ export function toQuestion(s: string): string {
   return /[?.!]$/.test(cap) ? cap : `${cap}?`;
 }
 
-export type MixGroup = "RECOMMEND" | "COMPARE_OR_PRICE" | "HOWTO_OR_PROBLEM";
+export type MixGroup = "RECOMMEND" | "COMPARE_OR_PRICE" | "PROBLEM";
 export function mixGroup(t: QuestionType): MixGroup {
-  return t === "RECOMMEND" ? "RECOMMEND" : t === "COMPARE" || t === "PRICE" ? "COMPARE_OR_PRICE" : "HOWTO_OR_PROBLEM";
+  return t === "RECOMMEND" ? "RECOMMEND" : t === "COMPARE" || t === "PRICE" ? "COMPARE_OR_PRICE" : "PROBLEM";
 }
 
 export interface MixReport {
@@ -171,8 +172,8 @@ export interface MixReport {
 }
 
 export function mixReport(qs: { type: QuestionType }[]): MixReport {
-  const byType = { RECOMMEND: 0, COMPARE: 0, PRICE: 0, HOWTO: 0, PROBLEM: 0 } as Record<QuestionType, number>;
-  const byGroup = { RECOMMEND: 0, COMPARE_OR_PRICE: 0, HOWTO_OR_PROBLEM: 0 } as Record<MixGroup, number>;
+  const byType = { RECOMMEND: 0, COMPARE: 0, PRICE: 0, PROBLEM: 0 } as Record<QuestionType, number>;
+  const byGroup = { RECOMMEND: 0, COMPARE_OR_PRICE: 0, PROBLEM: 0 } as Record<MixGroup, number>;
   for (const q of qs) {
     byType[q.type] += 1;
     byGroup[mixGroup(q.type)] += 1;
@@ -184,7 +185,7 @@ export function mixReport(qs: { type: QuestionType }[]): MixReport {
     total,
     byType,
     byGroup,
-    target: "about one third RECOMMEND, one third COMPARE or PRICE, one third HOWTO or PROBLEM",
+    target: "about one third RECOMMEND, one third COMPARE or PRICE, one third PROBLEM",
     note: total === 0 ? "No questions." : off.length ? `Mix is off target for: ${off.join(", ")}.` : "Mix is close to target.",
   };
 }
@@ -212,11 +213,11 @@ export interface GenerationOutput {
 export function balance(qs: CandidateQuestion[], max: number): CandidateQuestion[] {
   if (qs.length <= max) return qs;
   const pri = (q: CandidateQuestion) => (q.source === "LLM" ? 1 : 0);
-  const groups: Record<MixGroup, CandidateQuestion[]> = { RECOMMEND: [], COMPARE_OR_PRICE: [], HOWTO_OR_PROBLEM: [] };
+  const groups: Record<MixGroup, CandidateQuestion[]> = { RECOMMEND: [], COMPARE_OR_PRICE: [], PROBLEM: [] };
   qs.forEach((q) => groups[mixGroup(q.type)].push(q));
   for (const g of Object.values(groups)) g.sort((a, b) => pri(a) - pri(b));
   const out: CandidateQuestion[] = [];
-  const order: MixGroup[] = ["RECOMMEND", "COMPARE_OR_PRICE", "HOWTO_OR_PROBLEM"];
+  const order: MixGroup[] = ["RECOMMEND", "COMPARE_OR_PRICE", "PROBLEM"];
   while (out.length < max && order.some((g) => groups[g].length)) {
     for (const g of order) {
       if (out.length >= max) break;
@@ -243,9 +244,10 @@ export async function generateCandidates(input: GenerationInput): Promise<Genera
   if (input.generator) {
     const buyers = facts.buyers.slice(0, MAX_BUYER_TYPES_PER_GENERATION);
     const per = Math.ceil(((MIN_CANDIDATES + MAX_CANDIDATES) / 2 + 6) / buyers.length); // ask for a few extra to survive de-duplication
-    const references = clientSupplied.filter((c) => !mentionsBusiness(c.text, facts)).map((c) => c.text);
+    const references = clientSupplied.filter((c) => !questionProblem(c.text, facts)).map((c) => c.text);
+    const avoid = [facts.businessName, ...facts.aliases, ...facts.competitors].filter(Boolean);
     for (const buyer of buyers) {
-      const prompt = buildGenerationPrompt(facts.productCategory, buyer, per, references);
+      const prompt = buildGenerationPrompt(facts.productCategory, buyer, per, references, avoid);
       prompts.push(prompt);
       const text = await input.generator.generate(prompt);
       rawOutputs.push(text);
@@ -260,9 +262,9 @@ export async function generateCandidates(input: GenerationInput): Promise<Genera
   const exact = new Set<string>();
   const bags = new Set<string>();
   for (const q of pool) {
-    const brand = mentionsBusiness(q.text, facts);
-    if (brand) {
-      removed.push({ text: q.text, source: q.source, reason: `contains the business name or alias "${brand}"` });
+    const problem = questionProblem(q.text, facts);
+    if (problem) {
+      removed.push({ text: q.text, source: q.source, reason: problem });
       continue;
     }
     const e = exactKey(q.text);

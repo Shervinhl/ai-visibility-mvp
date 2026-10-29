@@ -5,6 +5,7 @@ import { CheckRunOutput } from "../checks/runner";
 import { CHECK_IDS, CHECK_NAMES, CheckOutcome, CheckStatus } from "../checks/types";
 import { findingFor, Finding } from "../wording/catalog";
 import { CandidateQuestion, GenerationOutput, mixReport, QuestionType, QUESTION_TYPES } from "../questions/generate";
+import { questionProblem } from "../questions/policy";
 import { draftStatus, freezeProblem, QuestionSetStatus, QuestionStatus, versionLabel } from "../questions/rules";
 import { AttemptRecord } from "../ai/runner";
 import { AccuracyLabel, AutoLabel, inDoubleLabelSample, labelAnswer, LABEL_RULES_VERSION, MentionLabel, RecommendLabel } from "../ai/labeler";
@@ -328,6 +329,7 @@ export type QuestionPatch = { action: "approve" } | { action: "remove" } | { act
  * the frozen set is untouched.
  */
 export function patchQuestion(db: Db, setId: string, questionId: string, patch: QuestionPatch, reviewer: string, clock: Clock): { questionSetId: string; questionId: string; createdNewSet: boolean } {
+  if (patch.action === "edit" && patch.text !== undefined) enforceQuestionPolicy(db, setId, patch.text);
   return tx(db, () => {
     const { set, questions } = getQuestionSet(db, setId);
     let targetSet = setId;
@@ -359,9 +361,18 @@ export function patchQuestion(db: Db, setId: string, questionId: string, patch: 
   });
 }
 
+/** Question policy (no how-to questions, no company names). Throws a 400 with the reason. */
+export function enforceQuestionPolicy(db: Db, setId: string, text: string): void {
+  const row = db.prepare("SELECT business_id FROM question_set WHERE id = ?").get(setId) as Row | undefined;
+  if (!row) return;
+  const problem = questionProblem(text, getFactList(db, str(row.business_id)).content);
+  if (problem) throw new UserError(400, `This question cannot be used: ${problem}.`);
+}
+
 export function addQuestion(db: Db, setId: string, text: string, type: QuestionType, reviewer: string, clock: Clock): { questionSetId: string; questionId: string; createdNewSet: boolean } {
   if (!QUESTION_TYPES.includes(type)) throw new UserError(400, `type must be one of ${QUESTION_TYPES.join(", ")}`);
   if (!text.trim()) throw new UserError(400, "text is required");
+  enforceQuestionPolicy(db, setId, text);
   return tx(db, () => {
     const { set } = getQuestionSet(db, setId);
     let target = setId;
@@ -563,6 +574,7 @@ export function finalRuns(db: Db, batchIds: string[]): FinalRun[] {
       recommend: eff?.recommend ?? null,
       accuracy: eff?.accuracy ?? null,
       excerpt: auto ? (strOrNull(auto.details.excerpt) ?? null) : null,
+      answerText: str(r.status) === "VALID" ? str(r.answer_text) : null,
       competitorMentions: auto ? ((auto.details.competitorMentions as string[]) ?? []) : [],
       labelSource: eff?.source ?? null,
     };

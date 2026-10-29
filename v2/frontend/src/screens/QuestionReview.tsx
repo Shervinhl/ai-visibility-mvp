@@ -266,7 +266,7 @@ export default function QuestionReview({ detail, reviewer, onChanged }: { detail
               </Notice>
             ))}
             <div>
-              Template {gen.templateVersion} · {gen.generator ? `${gen.generator.provider} (${gen.generator.model})` : "no AI generator"} · {gen.mix.total} candidates · RECOMMEND {gen.mix.byGroup.RECOMMEND}, COMPARE/PRICE {gen.mix.byGroup.COMPARE_OR_PRICE}, HOWTO/PROBLEM {gen.mix.byGroup.HOWTO_OR_PROBLEM}. {gen.mix.note}
+              Template {gen.templateVersion} · {gen.generator ? `${gen.generator.provider} (${gen.generator.model})` : "no AI generator"} · {gen.mix.total} candidates · RECOMMEND {gen.mix.byGroup.RECOMMEND}, COMPARE/PRICE {gen.mix.byGroup.COMPARE_OR_PRICE}, PROBLEM {gen.mix.byGroup.PROBLEM}. {gen.mix.note}
             </div>
             {gen.removed.length > 0 && (
               <Expand label={`${gen.removed.length} removed`}>
@@ -306,7 +306,7 @@ export default function QuestionReview({ detail, reviewer, onChanged }: { detail
             </div>
           </div>
           <div className="text-xs text-slate-500">
-            Approved mix: RECOMMEND {view.approvedMix.byGroup.RECOMMEND} · COMPARE/PRICE {view.approvedMix.byGroup.COMPARE_OR_PRICE} · HOWTO/PROBLEM {view.approvedMix.byGroup.HOWTO_OR_PROBLEM}. {view.approvedMix.note}
+            Approved mix: RECOMMEND {view.approvedMix.byGroup.RECOMMEND} · COMPARE/PRICE {view.approvedMix.byGroup.COMPARE_OR_PRICE} · PROBLEM {view.approvedMix.byGroup.PROBLEM}. {view.approvedMix.note}
           </div>
           {frozen && <Notice>This set is frozen. Editing, removing or adding creates a new draft set; results already collected stay linked to {view.set.version}.</Notice>}
           <table className="w-full text-left text-sm">
