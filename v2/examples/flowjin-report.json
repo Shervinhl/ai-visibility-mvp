@@ -6,7 +6,7 @@
       "name": "Flowjin",
       "factListVersion": 1
     },
-    "generatedAt": "2026-10-29T14:15:06.860Z",
+    "generatedAt": "2026-10-29T14:22:25.914Z",
     "technical": {
       "question": "Can AI read your site?",
       "run": {
@@ -2605,7 +2605,7 @@
           "timeouts": 3,
           "lastRunAt": "2026-10-25T14:02:01.000Z",
           "status": "NOT_ASSESSED",
-          "reason": "Only 0 valid run(s) out of 3 (0 refusal, 0 error, 3 timeout); at least 2 are needed.",
+          "reason": "Only 0 valid run(s) out of 3 (0 refusal, 0 error, 3 timeout); at least 2 are needed. Error from fake-beta: timeout after 60000 ms",
           "nextStep": "Re-run this question set when the provider is available.",
           "mentioned": null,
           "recommended": null,
