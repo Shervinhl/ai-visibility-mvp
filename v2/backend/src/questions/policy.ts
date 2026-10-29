@@ -21,9 +21,20 @@ export function competitorIn(q: string, competitors: string[]): string | null {
   return null;
 }
 
+/** Real people type short messages. Longer, polished wording is rejected. */
+export const MIN_WORDS = 4;
+export const MAX_WORDS = 16;
+
+export function wordCount(q: string): number {
+  return q.trim().split(/\s+/).filter(Boolean).length;
+}
+
 /** Returns why a question breaks the policy, or null when it is allowed. */
 export function questionProblem(q: string, facts: { businessName: string; aliases: string[]; competitors: string[] }): string | null {
   if (isHowTo(q)) return "how-to questions are not used (ask about the buyer's problem, a comparison, a price or a recommendation)";
+  const words = wordCount(q);
+  if (words > MAX_WORDS) return `too long (${words} words; keep it under ${MAX_WORDS}, like a message a person would type)`;
+  if (words < MIN_WORDS) return `too short (${words} words; at least ${MIN_WORDS})`;
   for (const term of [facts.businessName, ...facts.aliases]) {
     if (term && wordBoundaryRegex(term).test(q)) return `contains the business name or alias "${term}"`;
   }

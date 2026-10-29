@@ -54,6 +54,13 @@ describe("question policy (v2.3)", () => {
     assert.equal(out.mix.byType.PROBLEM + out.mix.byType.RECOMMEND + out.mix.byType.COMPARE + out.mix.byType.PRICE, out.candidates.length);
   });
 
+  test("long, polished questions are rejected; short casual ones are kept", () => {
+    const long = "I spend hours scrubbing through hour-long streams to find good moments, and is there an AI tool that can solve that for my team?";
+    assert.match(questionProblem(long, facts) ?? "", /too long/);
+    assert.match(questionProblem("Clips?", facts) ?? "", /too short/);
+    assert.equal(questionProblem("is there a free tool to cut my youtube videos", facts), null);
+  });
+
   test("the generation prompt tells the model to avoid how-to questions and company names", () => {
     assert.match(QGEN_TEMPLATE, /Do not write how-to questions/);
     assert.match(QGEN_TEMPLATE, /Do not name any company/);

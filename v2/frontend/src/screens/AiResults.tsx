@@ -33,61 +33,103 @@ function shortAnswer(text: string, max = 280): string {
   return out.length > max ? `${out.slice(0, max).trimEnd()}…` : out;
 }
 
-function CellRow({ c }: { c: Cell }) {
+const TYPE_NAME: Record<string, string> = { RECOMMEND: "Recommendation", COMPARE: "Comparison", PRICE: "Price", PROBLEM: "Problem" };
+
+function Stat({ label, value, hint, tone }: { label: string; value: string; hint: string; tone: "good" | "bad" | "muted" }) {
+  const box = tone === "good" ? "border-emerald-200 bg-emerald-50" : tone === "bad" ? "border-rose-200 bg-rose-50" : "border-slate-200 bg-slate-50";
   return (
-    <tr className="border-t border-slate-100 align-top">
-      <td className="py-2 pr-2">
-        <div>{c.questionText}</div>
-        <div className="text-[11px] text-slate-400">{c.questionType}</div>
-      </td>
-      <td className="py-2 pr-2 text-xs">
-        {c.provider}
-        <div className="text-slate-400">{c.model}</div>
-      </td>
-      <td className="py-2 pr-2 text-sm">
-        {c.status === "NOT_ASSESSED" ? (
-          <div>
-            <Badge status="NOT_ASSESSED" />
-            <div className="mt-1 text-xs">{c.reason}</div>
-            <div className="text-xs text-slate-500">Next: {c.nextStep}</div>
-          </div>
-        ) : (
-          <div className="space-y-0.5">
-            <div>{c.mentioned?.text}</div>
-            <div>{c.recommended?.text}</div>
-            {c.accuracy && (c.accuracy.correct + c.accuracy.incorrect + c.accuracy.unverifiable + c.accuracy.pendingReview > 0) && (
-              <div className="text-xs text-slate-500">
-                Accuracy when mentioned: {c.accuracy.correct} CORRECT · {c.accuracy.incorrect} INCORRECT · {c.accuracy.unverifiable} UNVERIFIABLE{c.accuracy.pendingReview ? ` · ${c.accuracy.pendingReview} awaiting review` : ""}
-              </div>
-            )}
-            <div className="text-[11px] text-slate-400">
-              {c.validRuns} valid · {c.refusals} refusal · {c.errors} error · {c.timeouts} timeout · {fmtDate(c.lastRunAt)}
-            </div>
-          </div>
-        )}
-      </td>
-      <td className="py-2 text-xs">
-        {c.answersNotMentioning.length > 0 && (
-          <div className="mb-2">
-            <Expand label={`What ${c.provider} said without naming you (${c.answersNotMentioning.length})`}>
-              {c.answersNotMentioning.map((a) => (
-                <div key={a.runNo} className="mb-2 border-l-2 border-amber-300 pl-2 text-slate-700">
-                  <div className="text-[11px] text-slate-400">
-                    Run {a.runNo} · {fmtDate(a.date)} · {a.labelSource === "human" ? "checked by a person" : "automatic label, not yet checked"}
-                  </div>
-                  <div>{shortAnswer(a.text)}</div>
-                  <Expand label="Full answer">
-                    <div className="whitespace-pre-wrap text-slate-600">{a.text}</div>
-                  </Expand>
+    <div className={`rounded-lg border px-3 py-2 ${box}`}>
+      <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">{label}</div>
+      <div className="text-lg font-semibold text-slate-900">{value}</div>
+      <div className="text-xs text-slate-600">{hint}</div>
+    </div>
+  );
+}
+
+function ResultCard({ c }: { c: Cell }) {
+  const header = (
+    <div>
+      <p className="text-base font-medium text-slate-900">{c.questionText}</p>
+      <p className="mt-0.5 text-xs text-slate-500">
+        {TYPE_NAME[c.questionType] ?? c.questionType} · {c.provider} ({c.model})
+      </p>
+    </div>
+  );
+
+  if (c.status === "NOT_ASSESSED") {
+    return (
+      <article className="rounded-xl border border-amber-200 bg-white p-4">
+        {header}
+        <p className="mt-3 text-sm text-slate-800">Not checked yet: {c.reason}</p>
+        <p className="mt-1 text-sm text-slate-500">Next step: {c.nextStep}</p>
+      </article>
+    );
+  }
+
+  const named = c.mentioned?.count ?? 0;
+  const namedOf = c.mentioned?.of ?? 0;
+  const pendingNamed = c.mentioned?.pendingReview ?? 0;
+  const recommended = c.recommended?.count ?? 0;
+  const recommendedOf = c.recommended?.of ?? 0;
+  const a = c.accuracy;
+  const checkedDetails = a ? a.correct + a.incorrect + a.unverifiable : 0;
+  const toCheck = a?.pendingReview ?? 0;
+
+  return (
+    <article className="rounded-xl border border-slate-200 bg-white p-4">
+      {header}
+      <div className="mt-3 grid gap-2 sm:grid-cols-3">
+        <Stat
+          label="Named"
+          value={`${named} of ${namedOf}`}
+          hint={named ? "answers name your business" : "no answer named your business"}
+          tone={named > 0 ? "good" : "bad"}
+        />
+        <Stat
+          label="Recommended"
+          value={`${recommended} of ${recommendedOf}`}
+          hint={recommended ? "answers recommend your business" : "no answer recommended your business"}
+          tone={recommended > 0 ? "good" : "bad"}
+        />
+        <Stat
+          label="Details when named"
+          value={checkedDetails ? `${a?.correct ?? 0} correct` : "–"}
+          hint={
+            checkedDetails || toCheck
+              ? `${a?.incorrect ?? 0} wrong · ${a?.unverifiable ?? 0} can't verify${toCheck ? ` · ${toCheck} to check` : ""}`
+              : "nothing to check yet"
+          }
+          tone={(a?.incorrect ?? 0) > 0 ? "bad" : "muted"}
+        />
+      </div>
+      {pendingNamed > 0 && <p className="mt-2 text-xs text-amber-800">{pendingNamed} answer(s) are waiting for a person to check.</p>}
+
+      {c.answersNotMentioning.length > 0 && (
+        <div className="mt-4">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            What {c.provider} answered when it did not name you ({c.answersNotMentioning.length})
+          </p>
+          <ul className="mt-2 space-y-2">
+            {c.answersNotMentioning.map((x) => (
+              <li key={x.runNo} className="rounded-lg bg-stone-50 px-3 py-2 text-sm text-slate-700">
+                <div className="text-[11px] text-slate-400">
+                  Run {x.runNo} · {fmtDate(x.date)} · {x.labelSource === "human" ? "checked by a person" : "not yet checked"}
                 </div>
-              ))}
-            </Expand>
-          </div>
-        )}
-        {c.excerpts.length > 0 && (
-          <Expand label={`${c.excerpts.length} excerpt(s)`}>
+                <div>{shortAnswer(x.text)}</div>
+                <Expand label="Full answer">
+                  <div className="whitespace-pre-wrap text-slate-600">{x.text}</div>
+                </Expand>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {c.excerpts.length > 0 && (
+        <div className="mt-3">
+          <Expand label={`Where your name appears (${c.excerpts.length})`}>
             {c.excerpts.map((e) => (
-              <blockquote key={e.runNo} className="mb-2 border-l-2 border-slate-300 pl-2 text-slate-600">
+              <blockquote key={e.runNo} className="mb-2 border-l-2 border-emerald-300 pl-2 text-sm text-slate-700">
                 <div className="text-[11px] text-slate-400">
                   Run {e.runNo} · {fmtDate(e.date)}
                 </div>
@@ -95,9 +137,13 @@ function CellRow({ c }: { c: Cell }) {
               </blockquote>
             ))}
           </Expand>
-        )}
-      </td>
-    </tr>
+        </div>
+      )}
+
+      <p className="mt-3 text-[11px] text-slate-400">
+        {c.validRuns} valid runs · {c.refusals} refused · {c.errors} errors · {c.timeouts} timeouts · last run {fmtDate(c.lastRunAt)}
+      </p>
+    </article>
   );
 }
 
@@ -285,22 +331,10 @@ export default function AiResults({ detail, reviewer, onChanged }: { detail: Bus
             </div>
           )}
           {view.perQuestion.length > 0 && (
-            <div className="card overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead className="text-xs uppercase text-slate-400">
-                  <tr>
-                    <th className="pb-1">Question</th>
-                    <th className="pb-1">Provider</th>
-                    <th className="pb-1">Result</th>
-                    <th className="pb-1">Answer excerpts</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {view.perQuestion.map((c) => (
-                    <CellRow key={`${c.questionId}-${c.provider}`} c={c} />
-                  ))}
-                </tbody>
-              </table>
+            <div className="space-y-3">
+              {view.perQuestion.map((c) => (
+                <ResultCard key={`${c.questionId}-${c.provider}`} c={c} />
+              ))}
             </div>
           )}
           <div className="space-y-2">

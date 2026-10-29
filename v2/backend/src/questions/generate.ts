@@ -30,9 +30,16 @@ export interface TextGenerator {
   generate(prompt: string): Promise<string>;
 }
 
-export const QGEN_TEMPLATE_VERSION = "qgen-template-v2";
+export const QGEN_TEMPLATE_VERSION = "qgen-template-v3";
 export const QGEN_TEMPLATE =
-  "You are writing questions a buyer would ask an AI assistant when looking for [product category] for [buyer type]. Write natural questions about the buyer's problem, a recommendation, a comparison or a price. Do not write how-to questions (no \"how do I\", \"how can we\", steps or workflows). Do not name any company, product or brand. Do not include the company name. Do not invent facts. Output one question per line with a type tag: RECOMMEND, COMPARE, PRICE, or PROBLEM.";
+  "You are writing messages that a real person would type into an AI assistant such as ChatGPT or Claude when they need [product category] for [buyer type]. Write them the way people really type: short, plain and casual, usually 5 to 14 words, with everyday words. Do not sound like marketing copy, a survey or a formal brief. Do not write how-to questions (no \"how do I\", \"how can we\", steps or workflows). Do not name any company, product or brand. Do not invent facts. Output one message per line with a type tag: RECOMMEND, COMPARE, PRICE, or PROBLEM.";
+/** Examples of the style only. They are never copied into the candidates. */
+export const QGEN_STYLE_EXAMPLES = [
+  "best app to make shorts from a podcast?",
+  "is there a free tool to cut my youtube videos",
+  "how much do these clip apps cost a month",
+  "why do my shorts get no views",
+];
 
 export const MIN_CANDIDATES = 30;
 export const MAX_CANDIDATES = 40;
@@ -40,7 +47,12 @@ export const MAX_CANDIDATES = 40;
 export const MAX_BUYER_TYPES_PER_GENERATION = 5;
 
 export function buildGenerationPrompt(productCategory: string, buyerType: string, count: number, references: string[], avoidNames: string[] = []): string {
-  const lines = [QGEN_TEMPLATE.replace("[product category]", productCategory).replace("[buyer type]", buyerType), `Write ${count} questions.`, 'Format each line as: TYPE: question (for example "RECOMMEND: ...").'];
+  const lines = [
+    QGEN_TEMPLATE.replace("[product category]", productCategory).replace("[buyer type]", buyerType),
+    `Write ${count} messages.`,
+    `Style examples (do not copy them): ${QGEN_STYLE_EXAMPLES.map((e) => `"${e}"`).join(" ")}`,
+    'Format each line as: TYPE: message (for example "RECOMMEND: ...").',
+  ];
   if (avoidNames.length) lines.push(`Never mention these names in a question: ${avoidNames.slice(0, 20).join(", ")}.`);
   if (references.length) {
     lines.push("Real wording from buyers, for tone only (do not copy, do not use any company names):");

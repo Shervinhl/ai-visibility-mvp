@@ -18,25 +18,24 @@ export function fakeGenerator(): TextGenerator {
     provider: "fake-generator",
     model: "fake-gen-1",
     generate: async (prompt: string) => {
-      const buyer = /for ([^.]+?)\. Write natural/.exec(prompt)?.[1] ?? "buyers";
+      const buyer = /for ([^.]+?)\. Write them/.exec(prompt)?.[1] ?? "buyers";
       const b = buyer.replace(/^AI video clipping tool for /, "");
       return [
-        `RECOMMEND: What is the best AI tool to turn long videos into short clips for ${b}?`,
-        `RECOMMEND: Which AI clipping app should ${b} use for TikTok?`,
-        `RECOMMEND: Top AI video repurposing tools for ${b} in 2026?`,
-        `RECOMMEND: What app do ${b} use to make YouTube Shorts from long videos?`,
-        `COMPARE: Opus Clip vs Descript for ${b}: which is better?`,
-        `COMPARE: What are good alternatives to Opus Clip for ${b}?`,
+        `RECOMMEND: What is the best AI tool to make short clips for ${b}?`,
+        `RECOMMEND: Which AI app makes TikTok clips from long videos for ${b}?`,
+        `RECOMMEND: Top AI video repurposing tools for ${b} right now?`,
+        `RECOMMEND: What app makes YouTube Shorts from long videos for ${b}?`,
+        `COMPARE: Opus Clip vs Descript for ${b}, which is better?`,
+        `COMPARE: Good alternatives to Opus Clip for ${b}?`,
         `PRICE: How much does an AI clip maker cost for ${b}?`,
         `PRICE: Is there a free AI video clipping tool for ${b}?`,
-        `PROBLEM: Turning a one-hour video into short clips takes ${b} hours. What can speed this up?`,
-        `PROBLEM: Adding captions to short clips is slow for ${b}. What options exist?`,
-        `COMPARE: Which AI clip tool is better for ${b}, a free one or a paid one?`,
-        `PROBLEM: Why do the short clips from ${b} get so few views?`,
-        `PROBLEM: Editing clips by hand takes ${b} too long. What can help?`,
+        `PROBLEM: Trying to turn a one-hour video into clips for ${b}, what helps?`,
+        `PROBLEM: Adding captions to clips is slow for ${b}, what helps?`,
+        `PROBLEM: My clips for ${b} get so few views, why?`,
+        `PROBLEM: Editing clips by hand takes ${b} too long`,
         `RECOMMEND: What is the best AI video clipping tool?`,
         `RECOMMEND: Is Flowjin good for ${b}?`,
-      ].join("\n");
+        ].join("\n");
     },
   };
 }
