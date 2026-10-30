@@ -1,7 +1,7 @@
 import { Db } from "../db/db";
 import * as repo from "../db/repo";
 import { AiConfig } from "../config";
-import { aggregateCells, aggregateCompetitors, aggregateOverall, providerCoverage } from "../ai/aggregate";
+import { aggregateCells, aggregateCompetitors, aggregateDimensions, aggregateOverall, providerCoverage } from "../ai/aggregate";
 import { AI_SECTION_COPY, notAssessedLine } from "../wording/catalog";
 
 /**
@@ -67,6 +67,7 @@ export function buildReport(db: Db, businessId: string, ai: AiConfig, opts: { ch
         coverage,
         overall,
         perProvider: providers.map((p) => aggregateOverall(runs.filter((r) => r.provider === p), cells.filter((c) => c.provider === p), p, ai.minAnswersForComparison)),
+        dimensions: aggregateDimensions(runs, cells, facts.content.competitors, ai.minAnswersForComparison),
         competitors: facts.content.competitors.length ? aggregateCompetitors(runs, facts.content.competitors, cells) : { note: "No competitor list in the fact list, so competitor mentions are not counted." },
         humanReview: {
           open: queue.filter((q) => !q.done).length,

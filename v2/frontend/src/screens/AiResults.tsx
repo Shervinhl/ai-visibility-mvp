@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { api, BusinessDetail, Cell, errorText, fmtDate, Overall, pct, ReviewItem, RunsView } from "../api";
+import { api, BusinessDetail, Cell, DimensionReport, errorText, fmtDate, Overall, pct, RateRow, ReviewItem, RunsView } from "../api";
 import { Badge, Expand, Notice, Section } from "../components/ui";
 
 function OverallLine({ o }: { o: Overall }) {
@@ -53,6 +53,79 @@ function Stat({ label, value, hint, tone }: { label: string; value: string; hint
       <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">{label}</div>
       <div className="text-lg font-semibold text-slate-900">{value}</div>
       <div className="text-xs text-slate-600">{hint}</div>
+    </div>
+  );
+}
+
+/** "3 of 10 (30%)": the count and its denominator are always shown with the percentage. */
+function rateText(r: RateRow): string {
+  if (!r.of) return "no answers yet";
+  return `${r.count} of ${r.of} (${Math.round((100 * r.count) / r.of)}%)`;
+}
+
+function DimensionsPanel({ d }: { d: DimensionReport }) {
+  const cell = "px-2 py-1 text-right";
+  return (
+    <div className="card space-y-3 text-sm">
+      <div>
+        <div className="font-semibold">Measurement details ({d.rulesVersion})</div>
+        <div className="text-xs text-slate-500">
+          Based on {d.measured} measured answers out of {d.validAnswers} valid ones{d.pendingAmbiguous ? `; ${d.pendingAmbiguous} wait for a person to decide if the name refers to your business` : ""}
+          {d.noDimensionData ? `; ${d.noDimensionData} were labeled before these measures existed (run the test again to include them)` : ""}.
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
+        <Stat label="Explicit mention" value={rateText(d.explicitMention)} hint="Your business name appears" tone="muted" />
+        <Stat label="Alias mention" value={rateText(d.aliasMention)} hint="An approved alias appears" tone="muted" />
+        <Stat label="Recommended" value={rateText(d.recommendation)} hint="Strong or conditional" tone="good" />
+        <Stat label="Strong recommendation" value={rateText(d.strongRecommendation)} hint="Clear endorsement" tone="good" />
+        <Stat label="Negative mention" value={rateText(d.negativeMention)} hint="Named with a warning" tone="bad" />
+        <Stat label="High prominence" value={rateText(d.highProminence)} hint="First choice or clearly emphasized" tone="muted" />
+        <Stat label="Intent: fully addressed" value={rateText(d.intentAlignment.fully)} hint={d.intentAlignment.note} tone="muted" />
+        <Stat label="Citations exposed" value={`${d.citationAvailability.available} of ${d.citationAvailability.of}`} hint={d.citationAvailability.note} tone="muted" />
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-left text-xs">
+          <thead className="text-slate-500">
+            <tr>
+              <th className="px-2 py-1">Brand</th>
+              <th className={cell}>Mentioned</th>
+              <th className={cell}>Recommended</th>
+              <th className={cell}>Strong</th>
+              <th className={cell}>High prominence</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[d.target, ...d.competitors].map((row, i) => (
+              <tr key={row.name} className={`border-t ${i === 0 ? "bg-emerald-50 font-semibold" : ""}`}>
+                <td className="px-2 py-1">{i === 0 ? `Your business` : row.name}</td>
+                <td className={cell}>{rateText(row.mentioned)}</td>
+                <td className={cell}>{rateText(row.recommended)}</td>
+                <td className={cell}>{rateText(row.strongRecommendation)}</td>
+                <td className={cell}>{rateText(row.highProminence)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="text-xs text-slate-600">
+        Head to head ({d.competitorComparison.of} answers): a competitor recommended but not you in {d.competitorComparison.competitorRecommendedTargetNot}; you recommended but no competitor in {d.competitorComparison.targetRecommendedCompetitorNot}; both in {d.competitorComparison.bothRecommended}; neither in {d.competitorComparison.neitherRecommended}.
+        A higher mention rate for a competitor is an observation about AI answers, not proof of better content or SEO.
+      </div>
+      {d.brandAccuracy.note && <div className="text-xs text-slate-500">{d.brandAccuracy.note}</div>}
+      {d.brandAccuracy.evaluable > 0 && (
+        <div className="text-xs text-slate-600">
+          Claims: {d.brandAccuracy.correct} correct, {d.brandAccuracy.incorrect} incorrect, {d.brandAccuracy.unverifiable} unverifiable (not counted in the rate).
+        </div>
+      )}
+      <details className="text-xs text-slate-600">
+        <summary className="cursor-pointer">Not measured yet, and why</summary>
+        <ul className="mt-1 list-disc pl-5">
+          {d.notMeasured.map((n) => (
+            <li key={n}>{n}</li>
+          ))}
+        </ul>
+      </details>
     </div>
   );
 }
@@ -366,6 +439,7 @@ export default function AiResults({ detail, reviewer, onChanged }: { detail: Bus
               </ul>
             </div>
           )}
+          {view.dimensions && <DimensionsPanel d={view.dimensions} />}
           {view.perQuestion.length > 0 && (
             <div className="space-y-3">
               {view.perQuestion.map((c) => (

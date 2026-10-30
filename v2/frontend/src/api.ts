@@ -152,6 +152,45 @@ export interface ReviewItem {
   done: boolean;
 }
 
+export interface RateRow {
+  count: number;
+  of: number;
+  wilson95: { low: number; high: number } | null;
+  note: string | null;
+}
+
+export interface DimensionRowView {
+  name: string;
+  mentioned: RateRow;
+  recommended: RateRow;
+  strongRecommendation: RateRow;
+  highProminence: RateRow;
+}
+
+/** Dimension metrics (dimensions-v1). Every rate uses `measured` answers as its denominator. */
+export interface DimensionReport {
+  rulesVersion: string;
+  validAnswers: number;
+  measured: number;
+  pendingAmbiguous: number;
+  noDimensionData: number;
+  mention: RateRow;
+  explicitMention: RateRow;
+  aliasMention: RateRow;
+  implicitReference: null;
+  recommendation: RateRow;
+  strongRecommendation: RateRow;
+  negativeMention: RateRow;
+  highProminence: RateRow;
+  brandAccuracy: { correct: number; incorrect: number; unverifiable: number; evaluable: number; rate: RateRow | null; note: string | null };
+  intentAlignment: { measured: number; fully: RateRow; partially: RateRow; poorly: number; notAddressed: number; note: string };
+  citationAvailability: { available: number; of: number; note: string };
+  target: DimensionRowView;
+  competitors: DimensionRowView[];
+  competitorComparison: { competitorRecommendedTargetNot: number; bothRecommended: number; targetRecommendedCompetitorNot: number; neitherRecommended: number; of: number };
+  notMeasured: string[];
+}
+
 export interface RunsView {
   questionSet: { id: string; version: string | null; status: string };
   runs: { id: string; status: string; startedAt: string; finishedAt: string | null; providers: string[]; settings: Record<string, unknown>; runsPerQuestion: number; error: string | null; progress: { finalRuns: number; attempts: number } }[];
@@ -161,6 +200,7 @@ export interface RunsView {
   perProvider: Overall[];
   coverage: ProviderCoverage;
   competitors: { competitor: string; mentionedIn: number; of: number; text: string }[];
+  dimensions: DimensionReport | null;
   reviewQueue: ReviewItem[];
   agreement: { sampled: number; humanLabeled: number; mentionAgreement: { agree: number; of: number }; recommendAgreement: { agree: number; of: number }; ruleVersion: string };
 }

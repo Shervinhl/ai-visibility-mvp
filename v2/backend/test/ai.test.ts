@@ -88,9 +88,10 @@ describe("labeling (C3)", () => {
     assert.equal(labelAnswer("Go with the flow and relax.", f).mentioned, "AMBIGUOUS");
     assert.equal(labelAnswer("Flow is an AI video clipping tool like Opus Clip.", f).mentioned, "MENTIONED");
   });
-  test("shortlist position is RECOMMENDED; 'other options' with no endorsement is not", () => {
+  test("a plain shortlist position is NEUTRAL (not a recommendation); 'other options' with no endorsement is not", () => {
     const short = "Best tools:\n1. **Flowjin** - finds highlights.\n2. Opus Clip";
-    assert.equal(labelAnswer(short, flowjinFacts).recommended, "RECOMMENDED");
+    assert.equal(labelAnswer(short, flowjinFacts).recommended, "NOT_RECOMMENDED");
+    assert.equal(labelAnswer(short, flowjinFacts).dimensions.target.strength, "neutral");
     const other = "Opus Clip is the top pick.\n\nOther options:\n- Flowjin\n- Klap";
     const l = labelAnswer(other, flowjinFacts);
     assert.equal(l.mentioned, "MENTIONED");

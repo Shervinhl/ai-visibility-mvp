@@ -9,6 +9,7 @@ import { questionProblem } from "../questions/policy";
 import { draftStatus, freezeProblem, QuestionSetStatus, QuestionStatus, versionLabel } from "../questions/rules";
 import { AttemptRecord } from "../ai/runner";
 import { AccuracyLabel, AutoLabel, inDoubleLabelSample, labelAnswer, LABEL_RULES_VERSION, MentionLabel, RecommendLabel } from "../ai/labeler";
+import type { RunDimensions } from "../ai/dimensions";
 import { EffAccuracy, EffMention, EffRecommend, FinalRun } from "../ai/aggregate";
 import { BatchMeta, comparisonProblem } from "../retest/compare";
 
@@ -459,7 +460,10 @@ export function saveAttempts(db: Db, batchId: string, records: AttemptRecord[], 
     for (const r of records) {
       const id = clock.id();
       ins.run(id, batchId, r.questionId, r.provider, r.model, JSON.stringify(r.settings), r.runNo, r.attemptNo, r.isFinal ? 1 : 0, r.status, r.httpStatus, r.rawResponse, r.answerText, r.finishReason, r.error, r.needsReview ? 1 : 0, r.reviewReason, r.refusalRulesVersion, r.startedAt, r.finishedAt);
-      if (r.isFinal && r.status === "VALID") insertAutoLabel(db, id, labelAnswer(r.answerText, facts), clock);
+      if (r.isFinal && r.status === "VALID") {
+        const qText = (db.prepare("SELECT text FROM question WHERE id = ?").get(r.questionId) as Row | undefined)?.text;
+        insertAutoLabel(db, id, labelAnswer(r.answerText, facts, typeof qText === "string" ? qText : undefined), clock);
+      }
     }
   });
 }
@@ -475,7 +479,7 @@ function insertAutoLabel(db: Db, aiRunId: string, l: AutoLabel, clock: Clock): v
     `auto:${l.ruleVersion}`,
     clock.now().toISOString(),
     l.needsReview ? 1 : 0,
-    JSON.stringify({ matchedTerm: l.matchedTerm, excerpt: l.excerpt, claims: l.claims, recommendationEvidence: l.recommendationEvidence, competitorMentions: l.competitorMentions, reviewReasons: l.reviewReasons })
+    JSON.stringify({ matchedTerm: l.matchedTerm, excerpt: l.excerpt, claims: l.claims, recommendationEvidence: l.recommendationEvidence, competitorMentions: l.competitorMentions, reviewReasons: l.reviewReasons, dimensions: l.dimensions })
   );
 }
 
@@ -578,6 +582,7 @@ export function finalRuns(db: Db, batchIds: string[]): FinalRun[] {
       error: strOrNull(r.error) ?? null,
       matchedTerm: auto ? (strOrNull(auto.details.matchedTerm) ?? null) : null,
       competitorMentions: auto ? ((auto.details.competitorMentions as string[]) ?? []) : [],
+      dims: auto && auto.details.dimensions ? (auto.details.dimensions as RunDimensions) : null,
       labelSource: eff?.source ?? null,
     };
   });

@@ -1,12 +1,15 @@
 import { createHash } from "crypto";
 import { escapeRegex, wordBoundaryRegex } from "../checks/html";
 import { FactList } from "../facts/types";
+import { BrandSignal, DIMENSIONS_RULES_VERSION, evaluateBrands, intentCoverage, IntentResult, noTarget, Prominence, RecStrength, RunDimensions, sentencesWith } from "./dimensions";
 
 /**
  * Part C3: automatic labels for VALID answers. Rule version is stored with every label.
  * AMBIGUOUS mentions and INCORRECT accuracy are never final: they wait for a human label.
+ * v2: recommendation comes from the strength rules in dimensions.ts (a plain shortlist position is NEUTRAL,
+ * not a recommendation), and per-answer dimensions are stored with the label.
  */
-export const LABEL_RULES_VERSION = "label-rules-v1";
+export const LABEL_RULES_VERSION = "label-rules-v2";
 
 export type MentionLabel = "MENTIONED" | "NOT_MENTIONED" | "AMBIGUOUS";
 export type RecommendLabel = "RECOMMENDED" | "NOT_RECOMMENDED";
@@ -33,14 +36,10 @@ export interface AutoLabel {
   needsReview: boolean;
   reviewReasons: string[];
   ruleVersion: string;
+  dimensions: RunDimensions;
 }
 
 const STOPWORDS = new Set(["tool", "tools", "software", "service", "services", "platform", "with", "that", "this", "your", "from", "best", "app", "apps", "and", "the", "for"]);
-
-function sentencesWith(text: string, re: RegExp): string[] {
-  const sentences = text.split(/(?<=[.!?])\s+|\n+/);
-  return sentences.filter((s) => re.test(s));
-}
 
 /** The list item or paragraph that contains a mention: from its line to the next list item, heading or blank line. */
 function mentionBlocks(text: string, re: RegExp): string[] {
@@ -57,11 +56,6 @@ function mentionBlocks(text: string, re: RegExp): string[] {
   }
   return blocks;
 }
-
-const OTHER_SECTION = /\b(other|additional|more|honou?rable|alternative)\s+(options|tools|choices|alternatives|picks|mentions|apps|services|platforms|solutions)\b|\balso (worth considering|consider)\b|\bhonou?rable mentions?\b/i;
-const WARNING = /\b(however|but|avoid|not recommended|drawbacks?|downsides?|cons\b|limitations?|lacks?|issues?|complaints?|be aware|caution|beware|mixed reviews|not (?:ideal|great|the best)|outdated|discontinued|reportedly)\b/i;
-const ENDORSE = /\b(I(?:'d| would)? recommend|highly recommended|top (?:pick|choice)|best (?:choice|option|pick|overall|for)|great (?:choice|option|fit)|ideal (?:for|choice)|stands? out|go with|first choice|excellent (?:choice|option)|strong (?:choice|option|pick))\b/i;
-const LIST_ITEM = /^\s*(?:\d+[.)]|[-*•]|#{1,6})\s+/;
 
 function windowsAround(text: string, re: RegExp, radius = 250): string[] {
   const g = new RegExp(re.source, re.flags.includes("g") ? re.flags : re.flags + "g");
@@ -155,24 +149,32 @@ function buyerClaims(block: string, f: FactList): Claim[] {
   return claims;
 }
 
-export function labelAnswer(answer: string, f: FactList): AutoLabel {
+const CITATIONS_NOT_AVAILABLE = { availability: "not_available_from_provider" as const, sources: [] as string[] };
+
+function toRecommend(s: RecStrength): RecommendLabel {
+  return s === "strong" || s === "qualified" ? "RECOMMENDED" : "NOT_RECOMMENDED";
+}
+
+export function labelAnswer(answer: string, f: FactList, question?: string): AutoLabel {
   const reviewReasons: string[] = [];
-  const competitorMentions = f.competitors.filter((c) => c && wordBoundaryRegex(c).test(answer));
-  const terms = [f.businessName, ...f.aliases].filter(Boolean);
-  let matchedTerm: string | null = null;
-  let mentionRe: RegExp | null = null;
-  for (const t of terms) {
-    const re = wordBoundaryRegex(t);
-    if (re.test(answer)) {
-      matchedTerm = t;
-      mentionRe = new RegExp(terms.map((x) => wordBoundaryRegex(x).source).join("|"), "iu");
-      break;
-    }
-  }
+  const brands = evaluateBrands(answer, f);
+  const competitorMentions = brands.competitors.filter((c) => c.mentioned).map((c) => c.name);
+  const intent: IntentResult | null = question !== undefined ? intentCoverage(question, answer) : null;
+  const dimensions = (target: BrandSignal): RunDimensions => ({
+    rulesVersion: DIMENSIONS_RULES_VERSION,
+    mentionType: brands.mentionType,
+    target,
+    competitors: brands.competitors,
+    intent,
+    claims: [],
+    citations: CITATIONS_NOT_AVAILABLE,
+  });
+  const matchedTerm = brands.matchedTerm;
   const base = { claims: [] as Claim[], recommendationEvidence: [] as string[], competitorMentions, ruleVersion: LABEL_RULES_VERSION };
-  if (!mentionRe || !matchedTerm) {
-    return { ...base, mentioned: "NOT_MENTIONED", recommended: "NOT_RECOMMENDED", accuracy: null, matchedTerm: null, excerpt: null, needsReview: false, reviewReasons };
+  if (!brands.targetRe || !matchedTerm) {
+    return { ...base, mentioned: "NOT_MENTIONED", recommended: "NOT_RECOMMENDED", accuracy: null, matchedTerm: null, excerpt: null, needsReview: false, reviewReasons, dimensions: dimensions(noTarget(f.businessName)) };
   }
+  const mentionRe = brands.targetRe;
   const firstIdx = answer.search(mentionRe);
   const excerpt = (firstIdx > 200 ? "…" : "") + answer.slice(Math.max(0, firstIdx - 200), Math.min(answer.length, firstIdx + 300)) + (firstIdx + 300 < answer.length ? "…" : "");
   // Ambiguity: homonym context near a mention, or a common-word name with no anchor near any mention.
@@ -187,36 +189,22 @@ export function labelAnswer(answer: string, f: FactList): AutoLabel {
   if (homonymHits.length) reviewReasons.push(`possible other organization with the same name (${homonymHits.join(", ")})`);
   if (!homonymHits.length && f.nameIsCommonWord && anchors.length === 0) reviewReasons.push("name is a common word and no product, domain, category or competitor appears near the mention");
   if (reviewReasons.length) {
-    return { ...base, mentioned: "AMBIGUOUS", recommended: null, accuracy: null, matchedTerm, excerpt, needsReview: true, reviewReasons };
+    const uncertain: BrandSignal = { ...brands.target, strength: "uncertain" as RecStrength, prominence: "uncertain" as Prominence };
+    return { ...base, mentioned: "AMBIGUOUS", recommended: null, accuracy: null, matchedTerm, excerpt, needsReview: true, reviewReasons, dimensions: dimensions(uncertain) };
   }
-  // Recommendation.
-  const lines = answer.split(/\r?\n/);
-  const otherStart = lines.findIndex((l) => OTHER_SECTION.test(l));
-  const mentionLines = lines.map((l, i) => ({ l, i })).filter((x) => mentionRe!.test(x.l));
-  const mentionSentences = sentencesWith(answer, mentionRe);
-  const warning = mentionSentences.find((s) => WARNING.test(s));
-  const endorsed = mentionSentences.find((s) => ENDORSE.test(s));
-  const shortlisted = mentionLines.find((x) => (otherStart < 0 || x.i < otherStart) && LIST_ITEM.test(x.l) && x.l.search(mentionRe!) <= 80);
-  const evidence: string[] = [];
-  let recommended: RecommendLabel = "NOT_RECOMMENDED";
-  if (warning) evidence.push(`mention has a warning: "${warning.trim().slice(0, 200)}"`);
-  else if (endorsed) {
-    recommended = "RECOMMENDED";
-    evidence.push(`explicit endorsement: "${endorsed.trim().slice(0, 200)}"`);
-  } else if (shortlisted) {
-    recommended = "RECOMMENDED";
-    evidence.push(`in the main shortlist: "${shortlisted.l.trim().slice(0, 200)}"`);
-  } else if (otherStart >= 0 && mentionLines.every((x) => x.i > otherStart)) evidence.push(`listed only under "${lines[otherStart].trim().slice(0, 100)}" with no endorsement`);
-  else evidence.push("mentioned without a shortlist position or endorsement");
+  // Recommendation: strength from dimensions-v1 (negative > qualified > strong > neutral).
+  const recommended = toRecommend(brands.target.strength);
+  const evidence = brands.target.evidence ? [brands.target.evidence] : [];
   // Accuracy.
   const blocks = mentionBlocks(answer, mentionRe);
-  const scope = blocks.length ? blocks.join("\n") : mentionSentences.join(" ");
+  const scope = blocks.length ? blocks.join("\n") : sentencesWith(answer, mentionRe).join(" ");
   const claims = [...priceClaims(scope, f), ...locationClaims(scope, f), ...productClaims(scope, f), ...buyerClaims(scope, f)];
   let accuracy: AccuracyLabel = "UNVERIFIABLE";
   if (claims.some((c) => c.verdict === "INCORRECT")) accuracy = "INCORRECT";
   else if (claims.some((c) => c.verdict === "CORRECT")) accuracy = "CORRECT";
   if (accuracy === "INCORRECT") reviewReasons.push("an INCORRECT claim needs a human decision");
-  return { ...base, mentioned: "MENTIONED", recommended, accuracy, matchedTerm, excerpt, claims, recommendationEvidence: evidence, needsReview: reviewReasons.length > 0, reviewReasons };
+  const claimVerdicts = claims.map((c) => ({ kind: c.kind, verdict: c.verdict }));
+  return { ...base, mentioned: "MENTIONED", recommended, accuracy, matchedTerm, excerpt, claims, recommendationEvidence: evidence, needsReview: reviewReasons.length > 0, reviewReasons, dimensions: { ...dimensions(brands.target), claims: claimVerdicts } };
 }
 
 /** Deterministic 20% sample for double labeling (by run id hash). */

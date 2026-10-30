@@ -6,7 +6,7 @@
       "name": "Flowjin",
       "factListVersion": 1
     },
-    "generatedAt": "2026-10-29T14:48:22.418Z",
+    "generatedAt": "2026-10-30T18:40:04.117Z",
     "technical": {
       "question": "Can AI read your site?",
       "run": {
@@ -4997,6 +4997,332 @@
           "autoLabelOnly": 90
         }
       ],
+      "dimensions": {
+        "rulesVersion": "dimensions-v1",
+        "validAnswers": 186,
+        "measured": 186,
+        "pendingAmbiguous": 0,
+        "noDimensionData": 0,
+        "mention": {
+          "count": 117,
+          "of": 186,
+          "wilson95": {
+            "low": 0.5577,
+            "high": 0.6952
+          },
+          "note": null
+        },
+        "explicitMention": {
+          "count": 117,
+          "of": 186,
+          "wilson95": {
+            "low": 0.5577,
+            "high": 0.6952
+          },
+          "note": null
+        },
+        "aliasMention": {
+          "count": 0,
+          "of": 186,
+          "wilson95": {
+            "low": 0,
+            "high": 0.0202
+          },
+          "note": null
+        },
+        "implicitReference": null,
+        "recommendation": {
+          "count": 51,
+          "of": 186,
+          "wilson95": {
+            "low": 0.2151,
+            "high": 0.3424
+          },
+          "note": null
+        },
+        "strongRecommendation": {
+          "count": 0,
+          "of": 186,
+          "wilson95": {
+            "low": 0,
+            "high": 0.0202
+          },
+          "note": null
+        },
+        "negativeMention": {
+          "count": 9,
+          "of": 186,
+          "wilson95": {
+            "low": 0.0257,
+            "high": 0.0894
+          },
+          "note": null
+        },
+        "highProminence": {
+          "count": 0,
+          "of": 186,
+          "wilson95": {
+            "low": 0,
+            "high": 0.0202
+          },
+          "note": null
+        },
+        "brandAccuracy": {
+          "correct": 27,
+          "incorrect": 0,
+          "unverifiable": 54,
+          "evaluable": 27,
+          "rate": {
+            "count": 27,
+            "of": 27,
+            "wilson95": {
+              "low": 0.8754,
+              "high": 1
+            },
+            "note": null
+          },
+          "note": null
+        },
+        "intentAlignment": {
+          "measured": 186,
+          "fully": {
+            "count": 8,
+            "of": 186,
+            "wilson95": {
+              "low": 0.022,
+              "high": 0.0826
+            },
+            "note": null
+          },
+          "partially": {
+            "count": 20,
+            "of": 186,
+            "wilson95": {
+              "low": 0.0707,
+              "high": 0.1602
+            },
+            "note": null
+          },
+          "poorly": 111,
+          "notAddressed": 47,
+          "note": "Lexical requirement coverage: the share of the question's requirement words that appear in the answer. It does not judge whether the answer really resolves the question."
+        },
+        "citationAvailability": {
+          "available": 0,
+          "of": 186,
+          "note": "Not available from provider: no connected provider returns citations or sources."
+        },
+        "target": {
+          "name": "target",
+          "mentioned": {
+            "count": 117,
+            "of": 186,
+            "wilson95": {
+              "low": 0.5577,
+              "high": 0.6952
+            },
+            "note": null
+          },
+          "recommended": {
+            "count": 51,
+            "of": 186,
+            "wilson95": {
+              "low": 0.2151,
+              "high": 0.3424
+            },
+            "note": null
+          },
+          "strongRecommendation": {
+            "count": 0,
+            "of": 186,
+            "wilson95": {
+              "low": 0,
+              "high": 0.0202
+            },
+            "note": null
+          },
+          "highProminence": {
+            "count": 0,
+            "of": 186,
+            "wilson95": {
+              "low": 0,
+              "high": 0.0202
+            },
+            "note": null
+          }
+        },
+        "competitors": [
+          {
+            "name": "Opus Clip",
+            "mentioned": {
+              "count": 186,
+              "of": 186,
+              "wilson95": {
+                "low": 0.9798,
+                "high": 1
+              },
+              "note": null
+            },
+            "recommended": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            },
+            "strongRecommendation": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            },
+            "highProminence": {
+              "count": 51,
+              "of": 186,
+              "wilson95": {
+                "low": 0.2151,
+                "high": 0.3424
+              },
+              "note": null
+            }
+          },
+          {
+            "name": "Descript",
+            "mentioned": {
+              "count": 186,
+              "of": 186,
+              "wilson95": {
+                "low": 0.9798,
+                "high": 1
+              },
+              "note": null
+            },
+            "recommended": {
+              "count": 9,
+              "of": 186,
+              "wilson95": {
+                "low": 0.0257,
+                "high": 0.0894
+              },
+              "note": null
+            },
+            "strongRecommendation": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            },
+            "highProminence": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            }
+          },
+          {
+            "name": "Vizard",
+            "mentioned": {
+              "count": 39,
+              "of": 186,
+              "wilson95": {
+                "low": 0.1573,
+                "high": 0.2738
+              },
+              "note": null
+            },
+            "recommended": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            },
+            "strongRecommendation": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            },
+            "highProminence": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            }
+          },
+          {
+            "name": "Klap",
+            "mentioned": {
+              "count": 39,
+              "of": 186,
+              "wilson95": {
+                "low": 0.1573,
+                "high": 0.2738
+              },
+              "note": null
+            },
+            "recommended": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            },
+            "strongRecommendation": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            },
+            "highProminence": {
+              "count": 0,
+              "of": 186,
+              "wilson95": {
+                "low": 0,
+                "high": 0.0202
+              },
+              "note": null
+            }
+          }
+        ],
+        "competitorComparison": {
+          "competitorRecommendedTargetNot": 9,
+          "bothRecommended": 0,
+          "targetRecommendedCompetitorNot": 51,
+          "neitherRecommended": 126,
+          "of": 186
+        },
+        "notMeasured": [
+          "Implicit references: not measured. Detecting them needs a semantic judge, which is not built yet.",
+          "Citations: not available from the current providers, so no source analysis is shown.",
+          "Intent alignment: lexical coverage only, not a judgment of whether the answer resolves the question.",
+          "Dimensions come from the automatic rules. Human decisions change the headline counts, not these fields."
+        ]
+      },
       "competitors": [
         {
           "competitor": "Opus Clip",
@@ -5037,7 +5363,7 @@
             "agree": 0,
             "of": 0
           },
-          "ruleVersion": "label-rules-v1"
+          "ruleVersion": "label-rules-v2"
         },
         "autoLabelOnly": 186
       }

@@ -1,5 +1,6 @@
 import { AccuracyLabel } from "./labeler";
 import { AttemptStatus } from "./runner";
+import type { RunDimensions } from "./dimensions";
 import { phrase, Proportion, proportion } from "./stats";
 
 /**
@@ -34,6 +35,8 @@ export interface FinalRun {
   /** The business name or alias the automatic labeler matched, if any. */
   matchedTerm: string | null;
   competitorMentions: string[];
+  /** Per-answer dimensions from the automatic label (absent for answers labeled before dimensions-v1). */
+  dims?: RunDimensions | null;
   labelSource: "human" | "auto" | null;
 }
 
@@ -200,3 +203,136 @@ export function aggregateCompetitors(runs: FinalRun[], competitors: string[], ce
     return { competitor: c, mentionedIn: n, of: valid.length, text: `${c} was mentioned in ${n} of ${valid.length} valid answers` };
   });
 }
+
+export interface DimensionRow {
+  name: string;
+  mentioned: Proportion;
+  recommended: Proportion;
+  strongRecommendation: Proportion;
+  highProminence: Proportion;
+}
+
+export interface DimensionReport {
+  rulesVersion: string;
+  /** Valid answers in reported cells. */
+  validAnswers: number;
+  /** Valid answers with automatic dimensions that are not AMBIGUOUS. Every rate below uses this as its denominator. */
+  measured: number;
+  /** Valid answers still AMBIGUOUS (no dimensions until a person decides). */
+  pendingAmbiguous: number;
+  /** Valid answers labeled before dimensions-v1 existed (re-run the test to measure them). */
+  noDimensionData: number;
+  mention: Proportion;
+  explicitMention: Proportion;
+  aliasMention: Proportion;
+  /** Null: implicit references are not measured by the rules (see notMeasured). */
+  implicitReference: null;
+  recommendation: Proportion;
+  strongRecommendation: Proportion;
+  negativeMention: Proportion;
+  highProminence: Proportion;
+  brandAccuracy: { correct: number; incorrect: number; unverifiable: number; evaluable: number; rate: Proportion | null; note: string | null };
+  intentAlignment: { measured: number; fully: Proportion; partially: Proportion; poorly: number; notAddressed: number; note: string };
+  citationAvailability: { available: number; of: number; note: string };
+  target: DimensionRow;
+  competitors: DimensionRow[];
+  competitorComparison: { competitorRecommendedTargetNot: number; bothRecommended: number; targetRecommendedCompetitorNot: number; neitherRecommended: number; of: number };
+  notMeasured: string[];
+}
+
+/**
+ * Dimension metrics (dimensions-v1). They come from the automatic dimensions, not from human overrides:
+ * human decisions still change the headline counts, but not these per-dimension fields.
+ */
+export function aggregateDimensions(runs: FinalRun[], cells: CellResult[], competitors: string[], minForComparison: number): DimensionReport {
+  const reported = new Set(cells.filter((c) => c.status === "REPORTED").map((c) => `${c.questionId}|${c.provider}`));
+  const valid = runs.filter((r) => r.status === "VALID" && reported.has(`${r.questionId}|${r.provider}`));
+  const withDims = valid.filter((r) => r.dims);
+  const pendingAmbiguous = withDims.filter((r) => r.dims!.target.strength === "uncertain").length;
+  const m = withDims.filter((r) => r.dims!.target.strength !== "uncertain").map((r) => r.dims!);
+  const N = m.length;
+  const isRec = (s: string) => s === "strong" || s === "qualified";
+  const p = (count: number) => proportion(count, N, minForComparison);
+  const rowFor = (name: string, pick: (d: RunDimensions) => BrandSignalLike): DimensionRow => {
+    const sig = (d: RunDimensions) => pick(d);
+    return {
+      name,
+      mentioned: proportion(m.filter((d) => sig(d).mentioned).length, N, minForComparison),
+      recommended: proportion(m.filter((d) => isRec(sig(d).strength)).length, N, minForComparison),
+      strongRecommendation: proportion(m.filter((d) => sig(d).strength === "strong").length, N, minForComparison),
+      highProminence: proportion(m.filter((d) => sig(d).prominence === "high").length, N, minForComparison),
+    };
+  };
+  const targetRow = rowFor("target", (d) => d.target);
+  const compRows = competitors.map((name) => rowFor(name, (d) => d.competitors.find((c) => c.name === name) ?? { mentioned: false, strength: "none", prominence: "not_applicable" }));
+
+  const claims = m.flatMap((d) => (d.target.mentioned ? d.claims : []));
+  const correct = claims.filter((c) => c.verdict === "CORRECT").length;
+  const incorrect = claims.filter((c) => c.verdict === "INCORRECT").length;
+  const unverifiable = claims.filter((c) => c.verdict === "UNVERIFIABLE").length;
+  const evaluable = correct + incorrect;
+
+  const intents = m.filter((d) => d.intent && d.intent.status !== "uncertain").map((d) => d.intent!.status);
+  const fully = intents.filter((s) => s === "fully_addressed").length;
+  const partially = intents.filter((s) => s === "partially_addressed").length;
+  const compRec = (d: RunDimensions) => d.competitors.some((c) => isRec(c.strength));
+  const tRec = (d: RunDimensions) => isRec(d.target.strength);
+  const cnt = (f: (d: RunDimensions) => boolean) => m.filter(f).length;
+
+  const avail = withDims.length;
+  const availableCount = withDims.filter((r) => r.dims!.citations.availability === "available").length;
+
+  return {
+    rulesVersion: "dimensions-v1",
+    validAnswers: valid.length,
+    measured: N,
+    pendingAmbiguous,
+    noDimensionData: valid.length - withDims.length,
+    mention: p(cnt((d) => d.target.mentioned)),
+    explicitMention: p(cnt((d) => d.target.mentioned && d.mentionType === "explicit")),
+    aliasMention: p(cnt((d) => d.target.mentioned && d.mentionType === "alias")),
+    implicitReference: null,
+    recommendation: p(cnt((d) => isRec(d.target.strength))),
+    strongRecommendation: p(cnt((d) => d.target.strength === "strong")),
+    negativeMention: p(cnt((d) => d.target.strength === "negative")),
+    highProminence: p(cnt((d) => d.target.prominence === "high")),
+    brandAccuracy: {
+      correct,
+      incorrect,
+      unverifiable,
+      evaluable,
+      rate: evaluable ? proportion(correct, evaluable, minForComparison) : null,
+      note: evaluable ? null : "No evaluable claims yet (only CORRECT or INCORRECT claims count). No accuracy rate is shown.",
+    },
+    intentAlignment: {
+      measured: intents.length,
+      fully: proportion(fully, intents.length, minForComparison),
+      partially: proportion(partially, intents.length, minForComparison),
+      poorly: intents.filter((s) => s === "poorly_addressed").length,
+      notAddressed: intents.filter((s) => s === "not_addressed").length,
+      note: "Lexical requirement coverage: the share of the question's requirement words that appear in the answer. It does not judge whether the answer really resolves the question.",
+    },
+    citationAvailability: {
+      available: availableCount,
+      of: avail,
+      note: availableCount === 0 ? "Not available from provider: no connected provider returns citations or sources." : `${availableCount} of ${avail} answers exposed citations.`,
+    },
+    target: targetRow,
+    competitors: compRows,
+    competitorComparison: {
+      competitorRecommendedTargetNot: cnt((d) => compRec(d) && !tRec(d)),
+      bothRecommended: cnt((d) => compRec(d) && tRec(d)),
+      targetRecommendedCompetitorNot: cnt((d) => !compRec(d) && tRec(d)),
+      neitherRecommended: cnt((d) => !compRec(d) && !tRec(d)),
+      of: N,
+    },
+    notMeasured: [
+      "Implicit references: not measured. Detecting them needs a semantic judge, which is not built yet.",
+      "Citations: not available from the current providers, so no source analysis is shown.",
+      "Intent alignment: lexical coverage only, not a judgment of whether the answer resolves the question.",
+      "Dimensions come from the automatic rules. Human decisions change the headline counts, not these fields.",
+    ],
+  };
+}
+
+type BrandSignalLike = { mentioned: boolean; strength: string; prominence: string };
