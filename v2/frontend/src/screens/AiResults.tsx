@@ -33,7 +33,13 @@ function aroundTerm(text: string, term: string | null, radius = 160): string {
 
 /** First two sentences (max 280 characters) of an answer, with markdown symbols removed. The full text stays one click away. */
 function shortAnswer(text: string, max = 280): string {
-  const plain = text.replace(/[#*_`>|]/g, " ").replace(/\s+/g, " ").trim();
+  // List markers ("1.") and abbreviations ("etc.", "e.g.") must not end a sentence.
+  const plain = text
+    .replace(/[#*_`>|]/g, " ")
+    .replace(/\b\d+[.)](?=\s|$)/g, " ")
+    .replace(/\b(etc|e\.g|i\.e|vs|approx)\./gi, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
   const sentences = plain.match(/[^.!?]+[.!?]+/g) ?? [plain];
   let out = "";
   for (const s of sentences.slice(0, 2)) {
@@ -288,7 +294,9 @@ function ReviewCard({ item, reviewer, onSaved }: { item: ReviewItem; reviewer: s
       </div>
       {item.autoLabel && (
         <div className="flex flex-wrap gap-1 text-xs">
-          Automatic label: <Badge status={item.autoLabel.mentioned} /> {item.autoLabel.recommended && <Badge status={item.autoLabel.recommended} />} {item.autoLabel.accuracy && <Badge status={item.autoLabel.accuracy} />}
+          Automatic label: <Badge status={item.autoLabel.mentioned} />
+          {item.autoLabel.mentioned === "MENTIONED" && item.autoLabel.recommended && <Badge status={item.autoLabel.recommended} />}
+          {item.autoLabel.mentioned === "MENTIONED" && item.autoLabel.accuracy && <Badge status={item.autoLabel.accuracy} />}
         </div>
       )}
       <Expand label="Full answer">
@@ -309,15 +317,21 @@ function ReviewCard({ item, reviewer, onSaved }: { item: ReviewItem; reviewer: s
           <option>MENTIONED</option>
           <option>NOT_MENTIONED</option>
         </select>
-        <select className="input w-44" value={recommended} disabled={mentioned !== "MENTIONED"} onChange={(e) => setRecommended(e.target.value as typeof recommended)}>
-          <option>RECOMMENDED</option>
-          <option>NOT_RECOMMENDED</option>
-        </select>
-        <select className="input w-40" value={accuracy} disabled={mentioned !== "MENTIONED"} onChange={(e) => setAccuracy(e.target.value as typeof accuracy)}>
-          <option>CORRECT</option>
-          <option>INCORRECT</option>
-          <option>UNVERIFIABLE</option>
-        </select>
+        {mentioned === "MENTIONED" ? (
+          <>
+            <select className="input w-44" value={recommended} onChange={(e) => setRecommended(e.target.value as typeof recommended)}>
+              <option>RECOMMENDED</option>
+              <option>NOT_RECOMMENDED</option>
+            </select>
+            <select className="input w-40" value={accuracy} onChange={(e) => setAccuracy(e.target.value as typeof accuracy)}>
+              <option>CORRECT</option>
+              <option>INCORRECT</option>
+              <option>UNVERIFIABLE</option>
+            </select>
+          </>
+        ) : (
+          <span className="text-xs text-slate-500">Not mentioned: nothing to record for recommendation or accuracy.</span>
+        )}
         <input className="input flex-1" placeholder="Note (optional)" value={note} onChange={(e) => setNote(e.target.value)} />
         <button className="btn" disabled={reviewer.trim().length < 2} onClick={save}>
           Save label

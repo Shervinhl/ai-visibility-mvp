@@ -124,3 +124,25 @@ describe("dimension aggregation", () => {
     assert.equal(r.noDimensionData, 1);
   });
 });
+
+describe("name variants and endorsement phrases (v3)", () => {
+  test("a competitor is found when written without the space", () => {
+    const e = evaluateBrands("The best-known is OpusClip .", f);
+    assert.equal(e.competitors.find((c) => c.name === "Opus Clip")!.mentioned, true);
+  });
+  test("a domain-style competitor is found by its bare brand name", () => {
+    const f2 = { ...f, competitors: ["Vizard.ai", "copy.ai"] };
+    const e = evaluateBrands("Vizard is another option. The copy tool is fine.", f2);
+    assert.equal(e.competitors.find((c) => c.name === "Vizard.ai")!.mentioned, true);
+    assert.equal(e.competitors.find((c) => c.name === "copy.ai")!.mentioned, false);
+  });
+  test("common phrases that recommend a tool are strong", () => {
+    assert.equal(labelAnswer("Opus Clip is the most popular pick for this.", f).dimensions.competitors.find((c) => c.name === "Opus Clip")!.strength, "strong");
+    assert.equal(labelAnswer("Flowjin is the best starting point.", f).dimensions.target.strength, "strong");
+    assert.equal(labelAnswer("Flowjin is the best starting point for podcasters.", f).dimensions.target.strength, "qualified");
+    assert.equal(labelAnswer("Start with Flowjin.", f).dimensions.target.strength, "strong");
+  });
+  test("a plain factual mention stays neutral", () => {
+    assert.equal(labelAnswer("Flowjin was founded in 2021.", f).dimensions.target.strength, "neutral");
+  });
+});

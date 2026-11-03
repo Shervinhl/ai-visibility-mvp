@@ -6,10 +6,11 @@ import { BrandSignal, DIMENSIONS_RULES_VERSION, evaluateBrands, intentCoverage, 
 /**
  * Part C3: automatic labels for VALID answers. Rule version is stored with every label.
  * AMBIGUOUS mentions and INCORRECT accuracy are never final: they wait for a human label.
+ * v3: name variants (OpusClip = Opus Clip, Vizard = Vizard.ai) and more endorsement phrases.
  * v2: recommendation comes from the strength rules in dimensions.ts (a plain shortlist position is NEUTRAL,
  * not a recommendation), and per-answer dimensions are stored with the label.
  */
-export const LABEL_RULES_VERSION = "label-rules-v2";
+export const LABEL_RULES_VERSION = "label-rules-v3";
 
 export type MentionLabel = "MENTIONED" | "NOT_MENTIONED" | "AMBIGUOUS";
 export type RecommendLabel = "RECOMMENDED" | "NOT_RECOMMENDED";

@@ -1,5 +1,16 @@
 # Changelog
 
+## v2.11: fixes from the first live test (label-rules-v3)
+
+- Competitor and business names match their other spellings: "OpusClip" for "Opus Clip", "Vizard" for "Vizard.ai". The bare brand of a domain-style name is used only when it is 4+ letters and not a generic word (so "copy.ai" does not match "copy").
+- When a name and an alias both match, the longer matched text wins ("Flowjin AI" is an alias, not the business name).
+- More endorsement phrases count as recommendations: "is the most popular pick", "best starting point", "most commonly recommended", "Start with X".
+- Review form: recommendation and accuracy are hidden for answers where the business is not mentioned. The automatic label line no longer shows them for those answers.
+- "Short answer" no longer ends at list numbers ("1.") or abbreviations ("etc.").
+- Answers labeled before v2.11 keep their old labels. Run the test again to apply the new rules.
+
+Known, not changed: Gemini HTTP 429 comes from the provider's rate limit. Set V2_AI_CONCURRENCY=1 to send one request at a time. Named businesses that are not in the competitor list are still not tracked.
+
 ## v2.10: "Does AI mention you?" measurement model (dimensions-v1)
 
 ### What is measured now (automatic rules, per answer, stored with the label)

@@ -46,10 +46,51 @@ export interface BrandEvaluation {
 
 export const OTHER_SECTION = /\b(other|additional|more|honou?rable|alternative)\s+(options|tools|choices|alternatives|picks|mentions|apps|services|platforms|solutions)\b|\b(also (worth considering|consider))\b|\bhonou?rable mentions?\b/i;
 export const WARNING = /\b(however|but|avoid|not recommended|drawbacks?|downsides?|cons\b|limitations?|lacks?|issues?|complaints?|be aware|caution|beware|mixed reviews|not (?:ideal|great|the best)|outdated|discontinued|reportedly)\b/i;
-export const ENDORSE = /\b(I(?:'d| would)? recommend|highly recommended|top (?:pick|choice)|best (?:choice|option|pick|overall|for)|great (?:choice|option|fit)|ideal (?:for|choice)|stands? out|go with|first choice|excellent (?:choice|option)|strong (?:choice|option|pick))\b/i;
+export const ENDORSE = new RegExp(
+  [
+    "I(?:'d| would)? recommend",
+    "highly recommended",
+    "(?:commonly|most commonly|widely|often) recommended",
+    "top (?:pick|choice)",
+    "best (?:choice|option|pick|overall|for|starting point|place to start|all[- ]rounder|bet|fit)",
+    "(?:most|very) (?:popular|common|widely used|commonly used|reliable) (?:pick|choice|option)",
+    "(?:is|are) (?:the )?(?:strongest|best|top) (?:pick|choice|option|all[- ]rounder)",
+    "great (?:choice|option|fit)",
+    "ideal (?:for|choice)",
+    "stands? out",
+    "go with",
+    "start (?:with|here)",
+    "first choice",
+    "excellent (?:choice|option)",
+    "strong (?:choice|option|pick)",
+  ].join("|"),
+  "i"
+);
 /** Conditions or use cases that turn a positive mention into a qualified recommendation. */
 export const CONDITION = /\b(if you|if your|when you|may be|might be|could be|suitable for|good fit|best if|especially (?:for|if)|particularly (?:for|if)|for (?:teams|businesses|creators|agencies|podcasters|small|smaller|enterprises|beginners|freelancers|marketers|students|startups))\b/i;
 export const LIST_ITEM = /^\s*(?:\d+[.)]|[-*•]|#{1,6})\s+/;
+
+/** Words that must never be matched as a bare name, e.g. the base of "copy.ai". */
+const GENERIC_BASE = new Set(["copy", "pro", "app", "tool", "video", "clip"]);
+
+/**
+ * Spellings a brand is commonly written with: "Opus Clip" also as "OpusClip", and "Vizard.ai" also as "Vizard".
+ * The bare base of a domain-style name is used only when it is long enough and not a generic word.
+ */
+export function nameVariants(name: string): string[] {
+  const n = name.trim();
+  if (!n) return [];
+  const out = new Set<string>([n]);
+  if (/\s/.test(n)) out.add(n.replace(/\s+/g, ""));
+  const m = /^(.+?)\.(ai|io|com|co|app|tv|so)$/i.exec(n);
+  if (m && m[1].length >= 4 && !GENERIC_BASE.has(m[1].toLowerCase())) out.add(m[1]);
+  return [...out];
+}
+
+/** One regex matching any spelling of a name. */
+export function nameRegex(name: string): RegExp {
+  return new RegExp(nameVariants(name).map((v) => wordBoundaryRegex(v).source).join("|"), "iu");
+}
 
 export function sentencesWith(text: string, re: RegExp): string[] {
   const sentences = text.split(/(?<=[.!?])\s+|\n+/);
@@ -117,23 +158,27 @@ function signal(answer: string, re: RegExp, name: string): BrandSignal {
 /** Evaluates the target business and every configured competitor against one answer. */
 export function evaluateBrands(answer: string, f: FactList): BrandEvaluation {
   // Longest first, so "Flowjin AI" is reported as an alias rather than as the shorter business name.
-  const terms = [f.businessName, ...f.aliases].filter(Boolean).sort((a, b) => b.length - a.length);
+  const terms = [f.businessName, ...f.aliases].filter(Boolean);
+  // The longest matched text wins, so "Flowjin AI" is an alias even though "Flowjin" also appears in it.
+  // On a tie the business name wins (it comes first).
   let matchedTerm: string | null = null;
+  let bestLen = 0;
   for (const t of terms) {
-    if (wordBoundaryRegex(t).test(answer)) {
+    const hit = answer.match(nameRegex(t));
+    if (hit && hit[0].length > bestLen) {
       matchedTerm = t;
-      break;
+      bestLen = hit[0].length;
     }
   }
-  const targetRe = matchedTerm ? new RegExp(terms.map((x) => wordBoundaryRegex(x).source).join("|"), "iu") : null;
+  const targetRe = matchedTerm ? new RegExp(terms.flatMap(nameVariants).map((x) => wordBoundaryRegex(x).source).join("|"), "iu") : null;
   const target = targetRe ? signal(answer, targetRe, f.businessName) : noTarget(f.businessName);
-  const competitors = f.competitors.filter((c) => c).map((c) => signal(answer, wordBoundaryRegex(c), c));
+  const competitors = f.competitors.filter((c) => c).map((c) => signal(answer, nameRegex(c), c));
 
   // Mention order: first appearance in the text among brands that were mentioned.
   const firsts = [target, ...competitors]
     .filter((b) => b.mentioned)
     .map((b) => {
-      const re = b === target && targetRe ? targetRe : wordBoundaryRegex(b.name);
+      const re = b === target && targetRe ? targetRe : nameRegex(b.name);
       return { b, at: answer.search(nonGlobal(re)) };
     })
     .sort((x, y) => x.at - y.at);

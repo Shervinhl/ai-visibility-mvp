@@ -6,7 +6,7 @@
       "name": "Flowjin",
       "factListVersion": 1
     },
-    "generatedAt": "2026-10-30T18:40:04.117Z",
+    "generatedAt": "2026-11-03T14:48:34.084Z",
     "technical": {
       "question": "Can AI read your site?",
       "run": {
@@ -5164,29 +5164,29 @@
               "note": null
             },
             "recommended": {
-              "count": 0,
+              "count": 39,
               "of": 186,
               "wilson95": {
-                "low": 0,
-                "high": 0.0202
+                "low": 0.1573,
+                "high": 0.2738
               },
               "note": null
             },
             "strongRecommendation": {
-              "count": 0,
+              "count": 39,
               "of": 186,
               "wilson95": {
-                "low": 0,
-                "high": 0.0202
+                "low": 0.1573,
+                "high": 0.2738
               },
               "note": null
             },
             "highProminence": {
-              "count": 51,
+              "count": 90,
               "of": 186,
               "wilson95": {
-                "low": 0.2151,
-                "high": 0.3424
+                "low": 0.4131,
+                "high": 0.5553
               },
               "note": null
             }
@@ -5203,29 +5203,29 @@
               "note": null
             },
             "recommended": {
-              "count": 9,
+              "count": 48,
               "of": 186,
               "wilson95": {
-                "low": 0.0257,
-                "high": 0.0894
+                "low": 0.2005,
+                "high": 0.3254
               },
               "note": null
             },
             "strongRecommendation": {
-              "count": 0,
+              "count": 39,
               "of": 186,
               "wilson95": {
-                "low": 0,
-                "high": 0.0202
+                "low": 0.1573,
+                "high": 0.2738
               },
               "note": null
             },
             "highProminence": {
-              "count": 0,
+              "count": 39,
               "of": 186,
               "wilson95": {
-                "low": 0,
-                "high": 0.0202
+                "low": 0.1573,
+                "high": 0.2738
               },
               "note": null
             }
@@ -5310,10 +5310,10 @@
           }
         ],
         "competitorComparison": {
-          "competitorRecommendedTargetNot": 9,
+          "competitorRecommendedTargetNot": 48,
           "bothRecommended": 0,
           "targetRecommendedCompetitorNot": 51,
-          "neitherRecommended": 126,
+          "neitherRecommended": 87,
           "of": 186
         },
         "notMeasured": [
@@ -5363,7 +5363,7 @@
             "agree": 0,
             "of": 0
           },
-          "ruleVersion": "label-rules-v2"
+          "ruleVersion": "label-rules-v3"
         },
         "autoLabelOnly": 186
       }
